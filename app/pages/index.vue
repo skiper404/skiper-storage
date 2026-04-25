@@ -1,0 +1,63 @@
+<script setup lang="ts">
+import { useInfoBar } from '~/composables/useInfoBar'
+import type { UploadedFile } from '~/types/uploaded-file.type'
+
+definePageMeta({ auth: true })
+const { appName } = useAppConfig()
+useHead({ title: `Dashboard | ${appName}` })
+
+const { data, refresh } = await useFetch<UploadedFile[]>('/api/files/files')
+
+const files = computed(() => data.value ?? [])
+const { isOpen: isInfoBarOpen, toggle: toggleInfoBar } = useInfoBar()
+
+const { remainingSize } = useStorage(files)
+</script>
+
+<template>
+  <div class="relative mt-12 flex flex-col p-2">
+    <Transition name="slide-down">
+      <FilesInfoBar
+        :files="files ?? []"
+        v-if="isInfoBarOpen"
+        class="transition-transform"
+      />
+    </Transition>
+
+    <Button
+      size="icon-sm"
+      variant="outline"
+      :class="[
+        'absolute left-1/2 z-10 -translate-x-1/2 bg-gray-300 backdrop-blur-xs dark:bg-gray-800/50',
+        {
+          'top-2': !isInfoBarOpen,
+          'top-20': isInfoBarOpen
+        }
+      ]"
+      @click="toggleInfoBar"
+    >
+      <Icon name="lucide:chevron-up" v-if="isInfoBarOpen" />
+      <Icon name="lucide:chevron-down" v-else />
+    </Button>
+    <UploadButton
+      v-if="!files.length"
+      :remainingSize="remainingSize"
+      @success="refresh"
+    />
+    <FilesList v-if="files.length" :files="files ?? []" />
+    <NoFiles v-else />
+  </div>
+</template>
+
+<style>
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: all 0.25s ease;
+}
+
+.slide-down-enter-from,
+.slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-40px);
+}
+</style>

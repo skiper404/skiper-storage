@@ -1,0 +1,77 @@
+{
+  "auth": {
+    "login": {
+      "title": "Connexion",
+      "emailField": "Email",
+      "passwordField": "Mot de passe",
+      "submitButton": "Se connecter",
+      "noAccount": "Vous n'avez pas de compte ?",
+      "createAccount": "Créer",
+      "separator": "ou",
+      "oauth": "Continuer avec"
+    },
+    "create": {
+      "title": "Créer un utilisateur",
+      "emailField": "Email",
+      "usernameField": "Nom d'utilisateur",
+      "passwordField": "Mot de passe",
+      "submitButton": "Créer",
+      "haveAccount": "Vous avez déjà un compte ?",
+      "loginAccount": "Connexion"
+    },
+    "errors": {
+      "invalidEmail": "Veuillez saisir une adresse email valide",
+      "conflictEmail": "Cet email est déjà enregistré",
+      "emptyField": "Ce champ ne peut pas être vide",
+      "minLength": "Le mot de passe doit contenir au moins 8 caractères",
+      "maxLength": "Le mot de passe ne doit pas dépasser 30 caractères",
+      "uppercaseRequired": "Le mot de passe doit contenir au moins une lettre majuscule",
+      "lowercaseRequired": "Le mot de passe doit contenir au moins une lettre minuscule",
+      "digitRequired": "Le mot de passe doit contenir au moins un chiffre",
+      "invalidCredentials": "Email ou mot de passe incorrect"
+    }
+  },
+  "ui": {
+    "upload": {
+      "uploadButton": "Téléverser des fichiers",
+      "addButton": "Ajouter des fichiers",
+      "title": "Téléversement de fichiers",
+      "description": {
+        "quantity": "Sélectionnez 1 à 10 fichiers à téléverser.",
+        "formats": "Formats pris en charge :"
+      }
+    },
+    "empty": {
+      "title": "Aucun fichier pour le moment",
+      "description": "Vous n'avez pas encore téléchargé de fichiers. Commencez par télécharger votre premier fichier."
+    },
+    "theme": "Thème",
+    "locale": "Langue",
+    "signOut": "Se déconnecter",
+    "close": "Fermer",
+    "download": "Télécharger",
+    "delete": "Supprimer",
+    "deleteForm": {
+      "title": "Supprimer le fichier",
+      "description": "Voulez-vous vraiment supprimer ce fichier ?",
+      "no": "Non",
+      "yes": "Oui"
+    },
+    "info": {
+      "totalFiles": "Eléments",
+      "storage": "Stockage",
+      "categories": {
+        "audio": "audio",
+        "video": "vidéo",
+        "image": "image"
+      }
+    },
+    "fr": {
+      "notFound": {
+        "title": "404 - Introuvable",
+        "description": "La page que vous recherchez n'existe pas. Essayez de rechercher ce dont vous avez besoin ci-dessous.",
+        "button": "Retour"
+      }
+    }
+  }
+}

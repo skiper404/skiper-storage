@@ -1,0 +1,77 @@
+{
+  "auth": {
+    "login": {
+      "title": "Iniciar sesión",
+      "emailField": "Correo electrónico",
+      "passwordField": "Contraseña",
+      "submitButton": "Entrar",
+      "noAccount": "¿No tienes una cuenta?",
+      "createAccount": "Crear",
+      "separator": "o",
+      "es": "Continuar con"
+    },
+    "create": {
+      "title": "Crear usuario",
+      "emailField": "Correo electrónico",
+      "usernameField": "Nombre de usuario",
+      "passwordField": "Contraseña",
+      "submitButton": "Crear",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "loginAccount": "Iniciar sesión"
+    },
+    "errors": {
+      "invalidEmail": "Introduce una dirección de correo válida",
+      "conflictEmail": "Este correo ya está registrado",
+      "emptyField": "Este campo no puede estar vacío",
+      "minLength": "La contraseña debe tener al menos 8 caracteres",
+      "maxLength": "La contraseña no debe tener más de 30 caracteres",
+      "uppercaseRequired": "La contraseña debe contener al menos una letra mayúscula",
+      "lowercaseRequired": "La contraseña debe contener al menos una letra minúscula",
+      "digitRequired": "La contraseña debe contener al menos un número",
+      "invalidCredentials": "Correo o contraseña incorrectos"
+    }
+  },
+  "ui": {
+    "upload": {
+      "uploadButton": "Subir archivos",
+      "addButton": "Agregar archivos",
+      "title": "Subir archivos",
+      "description": {
+        "quantity": "Selecciona entre 1 y 10 archivos para subir.",
+        "formats": "Formatos compatibles:"
+      }
+    },
+    "empty": {
+      "title": "No hay archivos todavía",
+      "description": "Aún no has subido ningún archivo. Empieza subiendo tu primer archivo."
+    },
+    "theme": "Tema",
+    "locale": "Idioma",
+    "signOut": "Cerrar sesión",
+    "close": "Cerrar",
+    "download": "Descargar",
+    "delete": "Eliminar",
+    "deleteForm": {
+      "title": "Eliminar archivo",
+      "description": "¿Realmente quieres eliminarlo?",
+      "no": "No",
+      "yes": "Sí"
+    },
+    "info": {
+      "totalFiles": "Elementos",
+      "storage": "Almacenamiento",
+      "categories": {
+        "audio": "audio",
+        "video": "video",
+        "image": "imagen"
+      }
+    },
+    "es": {
+      "notFound": {
+        "title": "404 - No encontrado",
+        "description": "La página que buscas no existe. Intenta buscar lo que necesitas abajo.",
+        "button": "Volver"
+      }
+    }
+  }
+}

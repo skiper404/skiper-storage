@@ -1,0 +1,77 @@
+{
+  "auth": {
+    "login": {
+      "title": "Zaloguj się",
+      "emailField": "Email",
+      "passwordField": "Hasło",
+      "submitButton": "Zaloguj",
+      "noAccount": "Nie masz konta?",
+      "createAccount": "Utwórz",
+      "separator": "lub",
+      "oauth": "Kontynuuj z"
+    },
+    "create": {
+      "title": "Utwórz użytkownika",
+      "emailField": "Email",
+      "usernameField": "Nazwa użytkownika",
+      "passwordField": "Hasło",
+      "submitButton": "Utwórz",
+      "haveAccount": "Masz już konto?",
+      "loginAccount": "Zaloguj się"
+    },
+    "errors": {
+      "invalidEmail": "Wprowadź prawidłowy adres email",
+      "conflictEmail": "Ten adres email jest już zarejestrowany",
+      "emptyField": "To pole nie może być puste",
+      "minLength": "Hasło musi mieć co najmniej 8 znaków",
+      "maxLength": "Hasło może mieć maksymalnie 30 znaków",
+      "uppercaseRequired": "Hasło musi zawierać co najmniej jedną wielką literę",
+      "lowercaseRequired": "Hasło musi zawierać co najmniej jedną małą literę",
+      "digitRequired": "Hasło musi zawierać co najmniej jedną cyfrę",
+      "invalidCredentials": "Nieprawidłowy email lub hasło"
+    }
+  },
+  "ui": {
+    "upload": {
+      "uploadButton": "Prześlij pliki",
+      "addButton": "Dodaj pliki",
+      "title": "Przesyłanie plików",
+      "description": {
+        "quantity": "Wybierz od 1 do 10 plików do przesłania.",
+        "formats": "Obsługiwane formaty:"
+      }
+    },
+    "empty": {
+      "title": "Brak plików",
+      "description": "Nie przesłałeś jeszcze żadnych plików. Zacznij od przesłania swojego pierwszego pliku."
+    },
+    "theme": "Motyw",
+    "locale": "Język",
+    "signOut": "Wyloguj się",
+    "close": "Zamknij",
+    "download": "Pobierz",
+    "delete": "Usuń",
+    "deleteForm": {
+      "title": "Usuń plik",
+      "description": "Czy na pewno chcesz usunąć plik?",
+      "no": "Nie",
+      "yes": "Tak"
+    },
+    "info": {
+      "totalFiles": "Elementów",
+      "storage": "Pamięć",
+      "categories": {
+        "audio": "audio",
+        "video": "wideo",
+        "image": "obraz"
+      }
+    },
+    "pl": {
+      "notFound": {
+        "title": "404 - Nie znaleziono",
+        "description": "Strona, której szukasz, nie istnieje. Spróbuj wyszukać to, czego potrzebujesz poniżej.",
+        "button": "Powrót"
+      }
+    }
+  }
+}

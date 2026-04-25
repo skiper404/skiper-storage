@@ -1,0 +1,75 @@
+{
+  "auth": {
+    "login": {
+      "title": "Login",
+      "emailField": "Email",
+      "passwordField": "Password",
+      "submitButton": "Log in",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create",
+      "separator": "or",
+      "oauth": "Continue with"
+    },
+    "create": {
+      "title": "Create user",
+      "emailField": "Email",
+      "usernameField": "Username",
+      "passwordField": "Password",
+      "submitButton": "Create",
+      "haveAccount": "Already have an accont?",
+      "loginAccount": "Login"
+    },
+    "errors": {
+      "invalidEmail": "Please enter a valid email address",
+      "conflictEmail": "This email is already registered",
+      "emptyField": "This field cannot be empty",
+      "minLength": "Password must be at least 8 characters",
+      "maxLength": "Password must be no more than 30 characters",
+      "uppercaseRequired": "Password must contain at least one uppercase letter",
+      "lowercaseRequired": "Password must contain at least one lowercase letter",
+      "digitRequired": "Password must contain at least one number",
+      "invalidCredentials": "Wrong email or password"
+    }
+  },
+  "ui": {
+    "upload": {
+      "uploadButton": "Upload files",
+      "addButton": "Add files",
+      "title": "Upload files",
+      "description": {
+        "quantity": "Select 1-10 files to upload.",
+        "formats": "Supported formats:"
+      }
+    },
+    "empty": {
+      "title": "Cloud storage Empty",
+      "description": "You haven't uploaded any files yet. Get started by uploading your first file to access them anywhere."
+    },
+    "theme": "Theme",
+    "locale": "Locale",
+    "signOut": "Sign Out",
+    "close": "Close",
+    "download": "Download",
+    "delete": "Delete",
+    "deleteForm": {
+      "title": "Delete file",
+      "description": "Are you really want delete",
+      "no": "No",
+      "yes": "Yes"
+    },
+    "info": {
+      "totalFiles": "Items",
+      "storage": "Storage",
+      "categories": {
+        "audio": "audio",
+        "video": "video",
+        "image": "image"
+      }
+    },
+    "notFound": {
+      "title": "404 - Not Found",
+      "description": "The page you're looking for doesn't exist. Try searching for what you need below.",
+      "button": "Back"
+    }
+  }
+}
