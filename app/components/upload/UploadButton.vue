@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { toast } from 'vue-sonner'
 
-import { ALLOWED_FORMATS } from '~/constants'
+import { ALLOWED_FORMATS } from '~~/shared/constants'
 
 const props = defineProps<{ remainingSize: number }>()
 const emit = defineEmits(['success'])

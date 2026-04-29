@@ -27,18 +27,20 @@ const { remainingSize } = useStorage(files)
 
     <Button
       size="icon-sm"
-      variant="outline"
+      variant="secondary"
       :class="[
-        'absolute left-1/2 z-10 -translate-x-1/2 bg-gray-300 backdrop-blur-xs dark:bg-gray-800/50',
+        'absolute left-1/2 z-10 -translate-x-1/2 ',
         {
           'top-2': !isInfoBarOpen,
-          'top-20': isInfoBarOpen
+          'top-24': isInfoBarOpen
         }
       ]"
       @click="toggleInfoBar"
     >
-      <Icon name="lucide:chevron-up" v-if="isInfoBarOpen" />
-      <Icon name="lucide:chevron-down" v-else />
+      <Icon
+        name="lucide:chevron-up"
+        :class="['transition duration-300', { 'rotate-180': isInfoBarOpen }]"
+      />
     </Button>
     <UploadButton :remainingSize="remainingSize" @success="refresh" />
     <FilesList v-if="files.length" :files="files ?? []" />

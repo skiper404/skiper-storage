@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "prisma generate && prisma db push && nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -33,6 +33,7 @@
     "jsonwebtoken": "^9.0.3",
     "jwt-decode": "^4.0.0",
     "lucide-vue-next": "^1.0.0",
+    "ngrok": "^5.0.0-beta.2",
     "nuxt": "^4.4.2",
     "nuxt-auth-utils": "^0.5.29",
     "nuxt-authorization": "^0.3.5",

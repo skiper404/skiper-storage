@@ -65,6 +65,6 @@ enum Role {
 
 enum Plan {
   FREE
-  PAID
+  PRO
   PREMIUM
 }

@@ -3,6 +3,12 @@ export default defineNuxtConfig({
 
   devtools: { enabled: false },
 
+  vite: {
+    server: {
+      allowedHosts: true
+    }
+  },
+
   modules: [
     '@nuxt/icon',
     '@nuxtjs/tailwindcss',
@@ -15,8 +21,7 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
-    '@pinia/nuxt',
-    'nuxt-auth-utils'
+    '@pinia/nuxt'
   ],
 
   components: [
@@ -35,6 +40,15 @@ export default defineNuxtConfig({
       bucket: process.env.R2_BUCKET_NAME as string,
       endpoint: process.env.R2_ENDPOINT as string,
       region: 'auto'
+    }
+  },
+
+  runtimeConfig: {
+    liqpayPublicKey: process.env.LIQPAY_PUBLIC_KEY as string,
+    liqpayPrivateKey: process.env.LIQPAY_PRIVATE_KEY as string,
+
+    public: {
+      appUrl: process.env.NUXT_PUBLIC_APP_URL
     }
   },
 

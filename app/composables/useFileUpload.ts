@@ -1,9 +1,6 @@
 import type { SelectedFile } from '~~/shared/types/selected-file.type'
 
-import { STORAGE_LIMIT } from '~/constants'
 import { getCategory } from '~/lib/getCategory'
-
-STORAGE_LIMIT
 
 export const useFileUpload = (
   selectedFiles: Ref<SelectedFile[]>,

@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { filesize } from 'filesize'
 
+import { STORAGE_PLANS } from '~~/shared/constants'
 import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
-
-import { STORAGE_LIMIT } from '~/constants'
 
 const props = defineProps<{ files: UploadedFile[] }>()
 
 const { totalSize, usedPercentage } = useStorage(toRef(props, 'files'))
+
+const { user } = useUserSession()
+const storagePlan = computed(() => user.value?.plan || 'FREE')
 </script>
 
 <template>
@@ -29,7 +31,8 @@ const { totalSize, usedPercentage } = useStorage(toRef(props, 'files'))
       ></div>
     </div>
     <div class="text-[10px] text-gray-400 sm:text-xs">
-      {{ filesize(totalSize) }} / {{ filesize(STORAGE_LIMIT) }}
+      {{ filesize(totalSize) }} / {{ filesize(STORAGE_PLANS[storagePlan]) }}
     </div>
+    <UpgradeButton />
   </div>
 </template>
