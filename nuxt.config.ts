@@ -6,15 +6,17 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/icon',
     '@nuxtjs/tailwindcss',
-    '@sidebase/nuxt-auth',
-    'shadcn-nuxt',
     '@nuxtjs/color-mode',
     '@nuxthub/core',
     '@nuxt/image',
+    'nuxt-auth-utils',
+    'nuxt-authorization',
+    'shadcn-nuxt',
     'dayjs-nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'nuxt-auth-utils'
   ],
 
   components: [
@@ -24,14 +26,6 @@ export default defineNuxtConfig({
       global: true
     }
   ],
-
-  auth: {
-    isEnabled: true,
-    globalAppMiddleware: true,
-    originEnvKey: 'AUTH_ORIGIN',
-    baseURL: 'http://localhost:3000/api/auth',
-    provider: { type: 'authjs' }
-  },
 
   hub: {
     blob: {

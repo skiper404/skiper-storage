@@ -2,7 +2,7 @@
 import { filesize } from 'filesize'
 import { toast } from 'vue-sonner'
 
-import type { UploadedFile } from '~/types/uploaded-file.type'
+import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 const { file } = defineProps<{ file: UploadedFile }>()
 const { t } = useI18n()

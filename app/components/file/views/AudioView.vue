@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { UploadedFile } from '~/types/uploaded-file.type'
+import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 const props = defineProps<{ file: UploadedFile }>()
 

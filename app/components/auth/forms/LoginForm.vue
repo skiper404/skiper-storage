@@ -12,23 +12,17 @@ const { handleSubmit, setErrors } = useForm({
 })
 
 const { t } = useI18n()
-const { signIn, getSession } = useAuth()
 
 const onSubmit = handleSubmit(async data => {
-  const res = await signIn('credentials', {
-    ...data,
-    redirect: false
-  })
-
-  if (res?.error) {
-    setErrors({
-      email: 'invalidCredentials',
-      password: 'invalidCredentials'
+  try {
+    await $fetch('/auth/login', {
+      method: 'POST',
+      body: data
     })
-    return
+    await navigateTo('/')
+  } catch (error: any) {
+    console.log(error)
   }
-  await getSession()
-  await navigateTo('/')
 })
 </script>
 
@@ -90,23 +84,18 @@ const onSubmit = handleSubmit(async data => {
         <div class="h-0.5 bg-secondary-foreground w-full"></div>
       </div>
 
-      <Button
-        class="w-full"
-        variant="outline"
-        size="lg"
-        @click="() => signIn('github')"
-      >
-        <Icon name="fa:github" size="20" class="text-primary" />
-        {{ t('auth.login.oauth') }} GitHub
+      <Button as-child class="w-full" variant="outline" size="lg">
+        <a href="/auth/github">
+          <Icon name="fa:github" size="20" class="text-primary" />
+          {{ t('auth.login.oauth') }} GitHub
+        </a>
       </Button>
-      <Button
-        class="w-full mt-4"
-        variant="outline"
-        size="lg"
-        @click="() => signIn('google')"
-      >
-        <Icon name="logos:google-icon" size="20" />
-        {{ t('auth.login.oauth') }} Google
+
+      <Button as-child class="w-full mt-4" variant="outline" size="lg">
+        <a href="/auth/google">
+          <Icon name="logos:google-icon" size="20" />
+          {{ t('auth.login.oauth') }} Google
+        </a>
       </Button>
     </CardContent>
 
@@ -119,6 +108,7 @@ const onSubmit = handleSubmit(async data => {
 
       <Field class="mt-4 text-center text-xs">
         <span class="text-xs">{{ t('auth.login.noAccount') }}</span>
+
         <NuxtLink to="/auth/register" class="hover:underline">
           {{ t('auth.login.createAccount') }}
         </NuxtLink>

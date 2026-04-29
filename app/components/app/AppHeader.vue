@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const { status } = useAuth()
+const { user } = useUserSession()
 
 const isLoading = ref(false)
-const isAuth = computed(() => status.value === 'authenticated')
+const isAuth = computed(() => user.value)
 
 onMounted(() => {
   isLoading.value = true

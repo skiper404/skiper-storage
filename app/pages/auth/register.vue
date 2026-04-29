@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  auth: { unauthenticatedOnly: true, navigateAuthenticatedTo: '/' }
+  middleware: ['guest']
 })
 
 const { appName } = useAppConfig()

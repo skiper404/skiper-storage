@@ -4,7 +4,7 @@ const { t } = useI18n()
 
 <template>
   <div
-    class="absolute top-50 left-1/2 flex gap-2 flex-col items-center text-center -translate-x-1/2 text-gray-400 dark:text-gray-600"
+    class="absolute top-30 left-1/2 flex gap-2 w-full -translate-x-1/2 text-gray-400 dark:text-gray-600"
   >
     <Empty>
       <EmptyHeader>

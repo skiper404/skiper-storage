@@ -44,6 +44,7 @@ export type FileMinAggregateOutputType = {
   size: number | null
   category: string | null
   createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type FileMaxAggregateOutputType = {
@@ -56,6 +57,7 @@ export type FileMaxAggregateOutputType = {
   size: number | null
   category: string | null
   createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type FileCountAggregateOutputType = {
@@ -68,6 +70,7 @@ export type FileCountAggregateOutputType = {
   size: number
   category: number
   createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -90,6 +93,7 @@ export type FileMinAggregateInputType = {
   size?: true
   category?: true
   createdAt?: true
+  updatedAt?: true
 }
 
 export type FileMaxAggregateInputType = {
@@ -102,6 +106,7 @@ export type FileMaxAggregateInputType = {
   size?: true
   category?: true
   createdAt?: true
+  updatedAt?: true
 }
 
 export type FileCountAggregateInputType = {
@@ -114,6 +119,7 @@ export type FileCountAggregateInputType = {
   size?: true
   category?: true
   createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -213,6 +219,7 @@ export type FileGroupByOutputType = {
   size: number
   category: string
   createdAt: Date
+  updatedAt: Date
   _count: FileCountAggregateOutputType | null
   _avg: FileAvgAggregateOutputType | null
   _sum: FileSumAggregateOutputType | null
@@ -248,6 +255,7 @@ export type FileWhereInput = {
   size?: Prisma.IntFilter<"File"> | number
   category?: Prisma.StringFilter<"File"> | string
   createdAt?: Prisma.DateTimeFilter<"File"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"File"> | Date | string
 }
 
 export type FileOrderByWithRelationInput = {
@@ -260,6 +268,7 @@ export type FileOrderByWithRelationInput = {
   size?: Prisma.SortOrder
   category?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type FileWhereUniqueInput = Prisma.AtLeast<{
@@ -275,6 +284,7 @@ export type FileWhereUniqueInput = Prisma.AtLeast<{
   size?: Prisma.IntFilter<"File"> | number
   category?: Prisma.StringFilter<"File"> | string
   createdAt?: Prisma.DateTimeFilter<"File"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"File"> | Date | string
 }, "id">
 
 export type FileOrderByWithAggregationInput = {
@@ -287,6 +297,7 @@ export type FileOrderByWithAggregationInput = {
   size?: Prisma.SortOrder
   category?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.FileCountOrderByAggregateInput
   _avg?: Prisma.FileAvgOrderByAggregateInput
   _max?: Prisma.FileMaxOrderByAggregateInput
@@ -307,6 +318,7 @@ export type FileScalarWhereWithAggregatesInput = {
   size?: Prisma.IntWithAggregatesFilter<"File"> | number
   category?: Prisma.StringWithAggregatesFilter<"File"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"File"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"File"> | Date | string
 }
 
 export type FileCreateInput = {
@@ -319,6 +331,7 @@ export type FileCreateInput = {
   size: number
   category: string
   createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type FileUncheckedCreateInput = {
@@ -331,6 +344,7 @@ export type FileUncheckedCreateInput = {
   size: number
   category: string
   createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type FileUpdateInput = {
@@ -343,6 +357,7 @@ export type FileUpdateInput = {
   size?: Prisma.IntFieldUpdateOperationsInput | number
   category?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FileUncheckedUpdateInput = {
@@ -355,6 +370,7 @@ export type FileUncheckedUpdateInput = {
   size?: Prisma.IntFieldUpdateOperationsInput | number
   category?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FileCreateManyInput = {
@@ -367,6 +383,7 @@ export type FileCreateManyInput = {
   size: number
   category: string
   createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type FileUpdateManyMutationInput = {
@@ -379,6 +396,7 @@ export type FileUpdateManyMutationInput = {
   size?: Prisma.IntFieldUpdateOperationsInput | number
   category?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FileUncheckedUpdateManyInput = {
@@ -391,6 +409,7 @@ export type FileUncheckedUpdateManyInput = {
   size?: Prisma.IntFieldUpdateOperationsInput | number
   category?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FileCountOrderByAggregateInput = {
@@ -403,6 +422,7 @@ export type FileCountOrderByAggregateInput = {
   size?: Prisma.SortOrder
   category?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type FileAvgOrderByAggregateInput = {
@@ -419,6 +439,7 @@ export type FileMaxOrderByAggregateInput = {
   size?: Prisma.SortOrder
   category?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type FileMinOrderByAggregateInput = {
@@ -431,6 +452,7 @@ export type FileMinOrderByAggregateInput = {
   size?: Prisma.SortOrder
   category?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type FileSumOrderByAggregateInput = {
@@ -457,6 +479,7 @@ export type FileSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   size?: boolean
   category?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["file"]>
 
 export type FileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -469,6 +492,7 @@ export type FileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   size?: boolean
   category?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["file"]>
 
 export type FileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -481,6 +505,7 @@ export type FileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   size?: boolean
   category?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["file"]>
 
 export type FileSelectScalar = {
@@ -493,9 +518,10 @@ export type FileSelectScalar = {
   size?: boolean
   category?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type FileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "url" | "pathname" | "originalName" | "mimeType" | "size" | "category" | "createdAt", ExtArgs["result"]["file"]>
+export type FileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "url" | "pathname" | "originalName" | "mimeType" | "size" | "category" | "createdAt" | "updatedAt", ExtArgs["result"]["file"]>
 
 export type $FilePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "File"
@@ -510,6 +536,7 @@ export type $FilePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     size: number
     category: string
     createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["file"]>
   composites: {}
 }
@@ -942,6 +969,7 @@ export interface FileFieldRefs {
   readonly size: Prisma.FieldRef<"File", 'Int'>
   readonly category: Prisma.FieldRef<"File", 'String'>
   readonly createdAt: Prisma.FieldRef<"File", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"File", 'DateTime'>
 }
     
 

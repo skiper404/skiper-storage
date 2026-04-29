@@ -1,6 +1,7 @@
+import type { SelectedFile } from '~~/shared/types/selected-file.type'
+
 import { STORAGE_LIMIT } from '~/constants'
 import { getCategory } from '~/lib/getCategory'
-import type { SelectedFile } from '~/types/selected-file.type'
 
 STORAGE_LIMIT
 

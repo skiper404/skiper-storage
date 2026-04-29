@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { useInfoBar } from '~/composables/useInfoBar'
-import type { UploadedFile } from '~/types/uploaded-file.type'
+import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
-definePageMeta({ auth: true })
+import { useInfoBar } from '~/composables/useInfoBar'
+
 const { appName } = useAppConfig()
+definePageMeta({ middleware: ['auth'] })
 useHead({ title: `Dashboard | ${appName}` })
 
 const { data, refresh } = await useFetch<UploadedFile[]>('/api/files/files')
@@ -39,11 +40,7 @@ const { remainingSize } = useStorage(files)
       <Icon name="lucide:chevron-up" v-if="isInfoBarOpen" />
       <Icon name="lucide:chevron-down" v-else />
     </Button>
-    <UploadButton
-      v-if="!files.length"
-      :remainingSize="remainingSize"
-      @success="refresh"
-    />
+    <UploadButton :remainingSize="remainingSize" @success="refresh" />
     <FilesList v-if="files.length" :files="files ?? []" />
     <NoFiles v-else />
   </div>

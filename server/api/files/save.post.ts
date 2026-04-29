@@ -1,6 +1,5 @@
 import { getRequiredUser } from '~~/server/utils/getRequiredUser'
-
-import { UploadedFile } from '~/types/uploaded-file.type'
+import { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 export default defineEventHandler(async event => {
   const body = await readBody<UploadedFile>(event)

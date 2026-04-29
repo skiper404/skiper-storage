@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { filesize } from 'filesize'
 
-import type { UploadedFile } from '~/types/uploaded-file.type'
+import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 const { category, files } = defineProps<{
   category: string

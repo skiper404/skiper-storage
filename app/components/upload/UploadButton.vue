@@ -38,7 +38,7 @@ const startUploading = async () => {
 
 <template>
   <Dialog v-model:open="isDialogOpen">
-    <DialogTrigger>
+    <DialogTrigger as-child>
       <Button
         class="fixed bottom-10 left-1/2 z-10 w-60 -translate-x-1/2 bg-lime-500/80 text-indigo-100 shadow-lg backdrop-blur-2xl hover:bg-indigo-300"
         :disabled="selectedFiles.length > 10"

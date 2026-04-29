@@ -1,18 +1,19 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-const { signOut, data, status } = useAuth()
+const { user, clear } = useUserSession()
 
-const isAuth = computed(() => status.value === 'authenticated')
-
-const handleSignOut = () => signOut()
+const handleSignOut = async () => {
+  await clear()
+  await navigateTo('/auth/login')
+}
 </script>
 
 <template>
   <Tooltip>
     <TooltipTrigger as-child>
       <Button
-        v-if="isAuth"
+        v-if="user"
         size="icon-sm"
         variant="outline"
         @click="handleSignOut"

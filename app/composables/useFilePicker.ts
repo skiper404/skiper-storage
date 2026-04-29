@@ -1,5 +1,6 @@
+import type { SelectedFile } from '~~/shared/types/selected-file.type'
+
 import { generatePreview } from '~/lib/generatePreview'
-import type { SelectedFile } from '~/types/selected-file.type'
 
 export const useFilePicker = () => {
   const limit = 10

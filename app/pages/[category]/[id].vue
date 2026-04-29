@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { UploadedFile } from '~/types/uploaded-file.type'
+import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 definePageMeta({
-  pageTransition: { name: 'page', mode: 'default' }
+  middleware: ['auth']
 })
 
 const route = useRoute()

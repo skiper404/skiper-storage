@@ -4,7 +4,7 @@ import { useForm, Field as VeeField } from 'vee-validate'
 import { createSchema } from '~/schemas/createSchema'
 
 const { t } = useI18n()
-const { signIn, getSession } = useAuth()
+const {} = useUserSession()
 
 const { handleSubmit, setErrors } = useForm({
   validationSchema: createSchema,
@@ -16,28 +16,20 @@ const { handleSubmit, setErrors } = useForm({
 
 const onSubmit = handleSubmit(async data => {
   try {
-    await $fetch('/api/auth/register', {
+    await $fetch('/auth/register', {
       method: 'POST',
       body: data
     })
-
-    await signIn('credentials', {
-      email: data.email,
-      password: data.password,
-      redirect: false
-    })
-
-    await getSession()
     await navigateTo('/')
   } catch (error: any) {
-    setErrors({ email: error.data.message })
+    console.log(error)
   }
 })
 </script>
 
 <template>
   <Card
-    class="sm:w-100 sm:mt-20 h-full sm:h-fit rounded-none sm:rounded-xl mx-auto border-none"
+    class="sm:w-100 sm:mt-20 h-full sm:h-fit rounded-none sm:rounded-xl mx-auto border-none bg-secondary""
   >
     <CardHeader>
       <CardTitle class="text-center">{{ t('auth.create.title') }}</CardTitle>

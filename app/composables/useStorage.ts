@@ -1,5 +1,6 @@
+import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
+
 import { STORAGE_LIMIT } from '~/constants'
-import type { UploadedFile } from '~/types/uploaded-file.type'
 
 export const useStorage = (files: Ref<UploadedFile[]>) => {
   const totalSize = computed(() =>

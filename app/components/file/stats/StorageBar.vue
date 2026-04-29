@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { filesize } from 'filesize'
 
+import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
+
 import { STORAGE_LIMIT } from '~/constants'
-import type { UploadedFile } from '~/types/uploaded-file.type'
 
 const props = defineProps<{ files: UploadedFile[] }>()
 

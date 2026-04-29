@@ -1,4 +1,4 @@
-import type { UploadedFile } from '~/types/uploaded-file.type'
+import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 export const useFilesStats = (files: UploadedFile[]) => {
   const filesByCategory = (category: string) =>

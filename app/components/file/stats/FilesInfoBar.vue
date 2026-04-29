@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { UploadedFile } from '~/types/uploaded-file.type'
+import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 const { files } = defineProps<{ files: UploadedFile[] }>()
 const { t } = useI18n()
