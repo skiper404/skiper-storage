@@ -1,18 +1,13 @@
 import crypto from 'crypto'
 
 export default defineEventHandler(async event => {
-  console.log('Коллбек вызывается')
-
   const config = useRuntimeConfig()
   const body = await readBody(event)
 
-  // достаю data от LiqPay
   const rawData = Buffer.from(body.data, 'base64').toString()
   const data = JSON.parse(rawData)
 
-  console.log(data)
-
-  // проверка подписи (ОБЯЗАТЕЛЬНО)
+  // сравниваю сигнатуру
   const expectedSignature = crypto
     .createHash('sha1')
     .update(config.liqpayPrivateKey + body.data + config.liqpayPrivateKey)
@@ -25,15 +20,16 @@ export default defineEventHandler(async event => {
     })
   }
 
-  // проверка статуса платежа
   const successStatuses = ['success', 'sandbox']
 
   if (!successStatuses.includes(data.status)) {
     return { ok: true, status: data.status }
   }
 
-  // извлекаю данные заказа
-  const [userId, plan] = data.order_id.split('_')
+  // раскодирую
+  const { userId, plan, timestamp } = JSON.parse(
+    Buffer.from(data.order_id, 'base64').toString()
+  )
 
   if (!userId || !plan) {
     throw createError({
@@ -42,7 +38,6 @@ export default defineEventHandler(async event => {
     })
   }
 
-  // защита от повторного апдейта (idempotency)
   const user = await prisma.user.findUnique({
     where: { id: userId }
   })
@@ -64,8 +59,6 @@ export default defineEventHandler(async event => {
       plan
     }
   })
-
-  console.log('план поменялся: ', data.plan)
 
   return { ok: true }
 })
