@@ -18,11 +18,26 @@ model User {
   plan     Plan @default(FREE)
 
   accounts Account[]
+  tokens  Token[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@map("users")
+}
+
+model Token {
+  id        String   @id @default(uuid())
+  token     String
+  userId    String
+  user      User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      TokenType
+  expiresIn DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("tokens")
 }
 
 model Account {
@@ -67,4 +82,10 @@ enum Plan {
   FREE
   PRO
   PREMIUM
+}
+
+enum TokenType {
+  VERIFICATION_EMAIL
+  RESET_PASSWORD
+  DELETE_ACCOUNT
 }

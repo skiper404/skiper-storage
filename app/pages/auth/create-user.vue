@@ -4,9 +4,9 @@ definePageMeta({
 })
 
 const { appName } = useAppConfig()
-useHead({ title: `Register | ${appName}` })
+useHead({ title: `Create user | ${appName}` })
 </script>
 
 <template>
-  <RegisterForm />
+  <CreateUserForm />
 </template>

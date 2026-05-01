@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { toTypedSchema } from '@vee-validate/zod'
 import { useForm, Field as VeeField } from 'vee-validate'
 
-import { loginSchema } from '~/schemas/loginShema'
+import { loginUserSchema } from '~~/shared/schemas/loginUserSchema'
 
 const { handleSubmit, setErrors } = useForm({
-  validationSchema: loginSchema,
+  validationSchema: toTypedSchema(loginUserSchema),
   initialValues: {
     email: '',
     password: ''
@@ -15,27 +16,27 @@ const { t } = useI18n()
 
 const onSubmit = handleSubmit(async data => {
   try {
-    await $fetch('/auth/login', {
+    await $fetch('/api/auth/login-user', {
       method: 'POST',
       body: data
     })
     await navigateTo('/')
-  } catch (error: any) {
-    console.log(error)
+  } catch (e: any) {
+    setErrors({ email: e.data.message, password: e.data.message })
   }
 })
 </script>
 
 <template>
   <Card
-    class="sm:w-100 sm:mt-20 h-full sm:h-fit rounded-none sm:rounded-xl mx-auto border-none bg-secondary"
+    class="sm:w-100 pt-14 sm:pt-6 sm:mt-20 h-full sm:h-fit rounded-none sm:rounded-xl mx-auto border-none bg-secondary"
   >
     <CardHeader>
       <CardTitle class="text-center">{{ t('auth.login.title') }}</CardTitle>
     </CardHeader>
 
     <CardContent>
-      <form id="login-form" @submit.prevent="onSubmit">
+      <form id="login-user-form" @submit.prevent="onSubmit">
         <FieldGroup>
           <VeeField v-slot="{ field, errors }" name="email">
             <Field>
@@ -85,14 +86,14 @@ const onSubmit = handleSubmit(async data => {
       </div>
 
       <Button as-child class="w-full" variant="outline" size="lg">
-        <a href="/auth/github">
+        <a href="/api/auth/github">
           <Icon name="fa:github" size="20" class="text-primary" />
           {{ t('auth.login.oauth') }} GitHub
         </a>
       </Button>
 
       <Button as-child class="w-full mt-4" variant="outline" size="lg">
-        <a href="/auth/google">
+        <a href="/api/auth/google">
           <Icon name="logos:google-icon" size="20" />
           {{ t('auth.login.oauth') }} Google
         </a>
@@ -101,7 +102,7 @@ const onSubmit = handleSubmit(async data => {
 
     <CardFooter class="flex flex-col">
       <Field>
-        <Button type="submit" form="login-form">
+        <Button type="submit" form="login-user-form">
           {{ t('auth.login.submitButton') }}
         </Button>
       </Field>
@@ -109,8 +110,14 @@ const onSubmit = handleSubmit(async data => {
       <Field class="mt-4 text-center text-xs">
         <span class="text-xs">{{ t('auth.login.noAccount') }}</span>
 
-        <NuxtLink to="/auth/register" class="hover:underline">
+        <NuxtLink to="/auth/create-user" class="hover:underline text-gray-500">
           {{ t('auth.login.createAccount') }}
+        </NuxtLink>
+        <NuxtLink
+          to="/auth/forgot-password"
+          class="hover:underline text-gray-500"
+        >
+          {{ t('auth.forgotPassword.title') }}
         </NuxtLink>
       </Field>
     </CardFooter>

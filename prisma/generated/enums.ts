@@ -24,3 +24,12 @@ export const Plan = {
 } as const
 
 export type Plan = (typeof Plan)[keyof typeof Plan]
+
+
+export const TokenType = {
+  VERIFICATION_EMAIL: 'VERIFICATION_EMAIL',
+  RESET_PASSWORD: 'RESET_PASSWORD',
+  DELETE_ACCOUNT: 'DELETE_ACCOUNT'
+} as const
+
+export type TokenType = (typeof TokenType)[keyof typeof TokenType]

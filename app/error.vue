@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const localePath = useLocalePath()
+const { appName } = useAppConfig()
+
+useHead({ title: `Not found | ${appName}` })
 </script>
 
 <template>

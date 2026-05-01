@@ -10,6 +10,7 @@
       "separator": "or",
       "oauth": "Continue with"
     },
+
     "create": {
       "title": "Create user",
       "emailField": "Email",
@@ -19,6 +20,20 @@
       "haveAccount": "Already have an accont?",
       "loginAccount": "Login"
     },
+
+    "forgotPassword": {
+      "title": "Forgot password",
+      "emailField": "emailField",
+      "submitButton": "Send Code"
+    },
+
+    "resetPassword": {
+      "title": "Reset password",
+      "passwordField": "Password",
+      "repeatPasswordField": "Repeat Password",
+      "submitButton": "Reset Password"
+    },
+
     "errors": {
       "invalidEmail": "Please enter a valid email address",
       "conflictEmail": "This email is already registered",
@@ -28,7 +43,10 @@
       "uppercaseRequired": "Password must contain at least one uppercase letter",
       "lowercaseRequired": "Password must contain at least one lowercase letter",
       "digitRequired": "Password must contain at least one number",
-      "invalidCredentials": "Wrong email or password"
+      "invalidCredentials": "Wrong email or password",
+      "passwordsMustMatch": "Passwords must match",
+      "emailAlreadyExist": "User with this email already exist",
+      "notFoundEmail": "User with this email not exist"
     }
   },
   "ui": {

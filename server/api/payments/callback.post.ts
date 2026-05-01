@@ -27,7 +27,7 @@ export default defineEventHandler(async event => {
   }
 
   // раскодирую
-  const { userId, plan, timestamp } = JSON.parse(
+  const { userId, plan } = JSON.parse(
     Buffer.from(data.order_id, 'base64').toString()
   )
 

@@ -3,9 +3,9 @@ definePageMeta({
   middleware: ['guest']
 })
 const { appName } = useAppConfig()
-useHead({ title: `Login | ${appName}` })
+useHead({ title: `Forgot password | ${appName}` })
 </script>
 
 <template>
-  <LoginForm />
+  <ForgotPasswordForm />
 </template>

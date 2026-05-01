@@ -1,9 +1,7 @@
 import { blob } from '@nuxthub/blob'
 
-import { getRequiredUser } from '~~/server/utils/getRequiredUser'
-
 export default eventHandler(async event => {
-  const user = await getRequiredUser(event)
+  const session = await requireUserSession(event)
   const id = getRouterParam(event, 'id')
 
   if (!id) {
@@ -14,7 +12,7 @@ export default eventHandler(async event => {
   }
 
   const file = await prisma.file.findFirst({
-    where: { id, userId: user.id }
+    where: { id, userId: session.user.id }
   })
 
   if (!file) {

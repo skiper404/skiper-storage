@@ -1,9 +1,9 @@
-import { getRequiredUser } from '~~/server/utils/getRequiredUser'
-
 export default eventHandler(async event => {
-  const user = await getRequiredUser(event)
+  const session = await requireUserSession(event)
 
-  const files = await prisma.file.findMany({ where: { userId: user.id } })
+  const files = await prisma.file.findMany({
+    where: { userId: session.user.id }
+  })
 
   return files
 })

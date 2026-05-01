@@ -1,7 +1,7 @@
 export default defineEventHandler(async event => {
-  const session = await getUserSession(event)
+  const session = await requireUserSession(event)
 
-  const user = await prisma.user.findUnique({ where: { id: session.user?.id } })
+  const user = await prisma.user.findUnique({ where: { id: session.user.id } })
 
   if (!user) {
     throw createError({ statusCode: 401, statusMessage: 'User not found' })

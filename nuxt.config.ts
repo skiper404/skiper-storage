@@ -21,7 +21,8 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'nuxt-nodemailer'
   ],
 
   components: [
@@ -50,6 +51,14 @@ export default defineNuxtConfig({
     public: {
       appUrl: process.env.NUXT_PUBLIC_APP_URL
     }
+  },
+
+  nodemailer: {
+    from: process.env.MAIL_FROM,
+    host: process.env.MAIL_HOST,
+    port: Number(process.env.MAIL_PORT),
+    secure: false,
+    auth: { user: process.env.MAIL_LOGIN, pass: process.env.MAIL_PASSWORD }
   },
 
   dayjs: { defaultLocale: 'en' },
