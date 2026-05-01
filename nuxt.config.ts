@@ -54,10 +54,10 @@ export default defineNuxtConfig({
   },
 
   nodemailer: {
-    from: process.env.MAIL_FROM,
+    from: `Skiper Storage <no-reply@skiper.store>`,
     host: process.env.MAIL_HOST,
-    port: Number(process.env.MAIL_PORT),
-    secure: false,
+    port: 587, // 465 - Resend 587 - Brevo
+    secure: false, // true - Resend 587 - Brevo
     auth: { user: process.env.MAIL_LOGIN, pass: process.env.MAIL_PASSWORD }
   },
 
