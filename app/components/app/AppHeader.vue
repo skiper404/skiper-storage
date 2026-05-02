@@ -7,24 +7,23 @@ const isAuth = computed(() => user.value)
 onMounted(() => {
   isLoading.value = true
 })
+
+const route = useRoute()
 </script>
 
 <template>
   <header
-    class="flex items-center bg-blue-500/80 h-12 shrink-0 fixed w-full z-20 dark:bg-gray-800/50 backdrop-blur-2xl px-4 rounded-b-2xl"
+    class="flex items-center bg-accent/50 h-12 rounded-b-2xl w-full justify-between fixed z-20 backdrop-blur-xs px-4"
   >
-    <div class="flex justify-between container mx-auto">
-      <AppLogo />
-      <div class="flex items-center gap-2">
-        <LocaleButton v-if="isLoading" />
-        <ThemeButton />
-        <ButtonSkeleton v-if="!isLoading" />
-        <ButtonSkeleton v-if="!isLoading" />
-        <ButtonSkeleton v-if="!isLoading && isAuth" />
-        <SignOutButton v-if="isAuth" />
-        <AppAvatar v-if="isLoading" />
-        <AvatarSkeleton v-if="isAuth && !isLoading" />
-      </div>
+    <AppLogo />
+    <div class="flex items-center gap-2">
+      <SidebarToggleButton />
+      <LocaleButton v-if="isLoading" />
+      <ButtonSkeleton v-if="!isLoading" />
+      <ThemeButton />
+      <SignOutButton v-if="isAuth" />
+      <AppAvatar v-if="isLoading" />
+      <AvatarSkeleton v-if="isAuth && !isLoading" />
     </div>
   </header>
 </template>

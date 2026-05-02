@@ -29,7 +29,7 @@ const onSubmit = handleSubmit(async data => {
 
 <template>
   <Card
-    class="sm:w-100 pt-14 sm:pt-6 sm:mt-20 h-full sm:h-fit rounded-none sm:rounded-xl mx-auto border-none bg-secondary"
+    class="sm:w-100 sm:pt-6 sm:mt-20 h-full sm:h-fit rounded-none sm:rounded-xl mx-auto border-none bg-secondary"
   >
     <CardHeader>
       <CardTitle class="text-center">{{ t('auth.login.title') }}</CardTitle>

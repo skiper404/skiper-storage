@@ -12,13 +12,7 @@ const handleSignOut = async () => {
 <template>
   <Tooltip>
     <TooltipTrigger as-child>
-      <Button
-        v-if="user"
-        size="icon-sm"
-        variant="outline"
-        @click="handleSignOut"
-        class="bg-blue-400 border-sky-500 text-gray-200"
-      >
+      <Button v-if="user" size="icon-sm" variant="ghost" @click="handleSignOut">
         <Icon name="lucide:log-out" size="20" />
       </Button>
     </TooltipTrigger>

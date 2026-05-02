@@ -3,7 +3,7 @@ import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 const props = defineProps<{ file: UploadedFile }>()
 
-const fileUrl = computed(() => `/files/${props.file.pathname}`)
+const fileUrl = computed(() => `/api/files/${props.file.pathname}`)
 </script>
 
 <template>

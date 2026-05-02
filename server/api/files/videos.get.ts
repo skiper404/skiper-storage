@@ -1,8 +1,8 @@
-export default eventHandler(async event => {
+export default defineEventHandler(async event => {
   const session = await requireUserSession(event)
 
   const files = await prisma.file.findMany({
-    where: { userId: session.user.id }
+    where: { userId: session.user.id, category: 'video' }
   })
 
   return files

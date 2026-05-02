@@ -4,7 +4,7 @@ import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 const { file } = defineProps<{ file: UploadedFile }>()
 
 const isLoaded = ref(false)
-const fileUrl = computed(() => `/files/${file.pathname}`)
+const fileUrl = computed(() => `/api/files/${file.pathname}`)
 
 const handleLoaded = () => {
   isLoaded.value = true

@@ -4,6 +4,8 @@ const localePath = useLocalePath()
 const { appName } = useAppConfig()
 
 useHead({ title: `Not found | ${appName}` })
+
+const error = useError()
 </script>
 
 <template>
@@ -15,6 +17,7 @@ useHead({ title: `Not found | ${appName}` })
           {{ t('ui.notFound.description') }}
         </EmptyDescription>
       </EmptyHeader>
+      <div>{{ error }}</div>
       <EmptyContent>
         <NuxtLink :to="localePath('/')">
           <Button variant="secondary">{{ t('ui.notFound.button') }}</Button>

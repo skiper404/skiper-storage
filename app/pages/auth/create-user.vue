@@ -1,7 +1,5 @@
 <script setup lang="ts">
-definePageMeta({
-  middleware: ['guest']
-})
+definePageMeta({ layout: 'guest', middleware: 'guest' })
 
 const { appName } = useAppConfig()
 useHead({ title: `Create user | ${appName}` })
