@@ -28,17 +28,14 @@ const icon = computed(() => {
   <div
     v-if="stats.count"
     :class="[
-      'rounded-2xl flex w-full gap-2 text-xs p-1 justify-center  items-center text-gray-600 dark:text-gray-300',
+      'rounded-2xl flex w-full gap-2 px-1 text-xs p-1 justify-center items-center text-gray-200',
       {
-        'bg-blue-500/30': category === 'audio',
-        'bg-violet-500/30': category === 'video',
-        'bg-indigo-500/30': category === 'image'
+        'bg-blue-500/70': category === 'audio',
+        'bg-violet-500/70': category === 'video',
+        'bg-indigo-500/70': category === 'image'
       }
     ]"
   >
-    <span class="hidden sm:inline capitalize" variant="outline">
-      {{ categoryLabel }} :
-    </span>
     <Icon
       :name="icon"
       size="20"
@@ -50,6 +47,10 @@ const icon = computed(() => {
         }
       ]"
     />
+    <span class="hidden sm:inline capitalize" variant="outline">
+      {{ categoryLabel }} :
+    </span>
+
     <span class="font-bold">{{ stats.count }}</span>
     <span class="hidden sm:inline">|</span>
     <span class="hidden sm:inline">

@@ -33,6 +33,5 @@ const storagePlan = computed(() => user.value?.plan || 'FREE')
     <div class="text-[10px] text-gray-400 sm:text-xs">
       {{ filesize(totalSize) }} / {{ filesize(STORAGE_PLANS[storagePlan]) }}
     </div>
-    <UpgradeButton />
   </div>
 </template>

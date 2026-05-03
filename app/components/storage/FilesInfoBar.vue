@@ -7,12 +7,10 @@ const { t } = useI18n()
 
 <template>
   <div
-    class="flex gap-2 flex-col p-2 rounded-2xl backdrop-blur-xs dark:bg-gray-800/90 bg-blue-100/90"
+    class="flex gap-2 flex-col p-4 rounded-lg bg-secondary font-bold text-gray-500 dark:text-gray-300"
   >
     <div class="flex items-center gap-2">
-      <Badge
-        class="text-gray-500 dark:text-gray-300 bg-green-400 h-7 text-bold dark:bg-green-800"
-      >
+      <Badge class="h-7 bg-chart-2 text-gray-200">
         {{ t('ui.info.totalFiles') }}: {{ files.length }}
       </Badge>
       <CategoryInfo category="audio" :files="files" />

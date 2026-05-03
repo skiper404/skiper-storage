@@ -5,7 +5,6 @@ const { user, fetch } = useUserSession()
 
 onMounted(async () => {
   await $fetch('/user/refresh-user')
-  await fetch()
 })
 </script>
 <template>

@@ -4,7 +4,7 @@ export const MB = 1000 * KB
 export const GB = 1000 * MB
 
 export const STORAGE_PLANS = {
-  FREE: 200 * MB,
+  FREE: 300 * MB,
   PRO: 500 * MB,
   PREMIUM: 1 * GB
 }

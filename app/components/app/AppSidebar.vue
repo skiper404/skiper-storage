@@ -8,16 +8,6 @@ import {
   Settings
 } from 'lucide-vue-next'
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem
-} from '@/components/ui/sidebar'
-
 const items = [
   {
     title: 'Home',
@@ -50,6 +40,8 @@ const items = [
     icon: Settings
   }
 ]
+
+const route = useRoute()
 </script>
 
 <template>
@@ -59,7 +51,10 @@ const items = [
         <SidebarGroupContent>
           <SidebarMenu>
             <SidebarMenuItem v-for="item in items" :key="item.title">
-              <SidebarMenuButton as-child>
+              <SidebarMenuButton
+                as-child
+                :class="{ 'bg-secondary': route.path === item.url }"
+              >
                 <a :href="item.url">
                   <component
                     :is="item.icon"
