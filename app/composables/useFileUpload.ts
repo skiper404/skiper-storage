@@ -2,10 +2,10 @@ import type { SelectedFile } from '~~/shared/types/selected-file.type'
 
 import { getCategory } from '~/lib/getCategory'
 
-export const useFileUpload = (
-  selectedFiles: Ref<SelectedFile[]>,
-  remainingSize: Ref<number>
-) => {
+export const useFileUpload = (selectedFiles: Ref<SelectedFile[]>) => {
+  const { t } = useI18n()
+  const { remainingStorageSize } = useStorage()
+
   const isUploading = ref(false)
 
   const getFilesSize = (files: SelectedFile[]) =>
@@ -27,7 +27,7 @@ export const useFileUpload = (
     try {
       const blob = await completed
 
-      await $fetch('/api/files/save', {
+      await $fetch('/api/files/save-file', {
         method: 'POST',
         body: {
           url: blob?.url,
@@ -45,8 +45,8 @@ export const useFileUpload = (
   }
 
   const startUpload = async () => {
-    if (getFilesSize(selectedFiles.value) > remainingSize.value) {
-      throw new Error('Storage limit exceeded')
+    if (getFilesSize(selectedFiles.value) > remainingStorageSize.value) {
+      throw createError({ message: 'STORAGE_ERROR' })
     }
 
     isUploading.value = true

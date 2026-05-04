@@ -63,13 +63,23 @@
       "uploadButton": "Upload files",
       "addButton": "Add files",
       "title": "Upload files",
+
+      "errors": {
+        "maxFiles": "You can upload no more than 10 files at any time",
+        "storageLimit": "Storage limit exceeded"
+      },
+
+      "success": {
+        "uploaded": "Files successfully uploaded"
+      },
+
       "description": {
         "quantity": "Select 1–10 files to upload",
         "formats": "Supported formats"
       }
     },
     "messages": {
-      "fileDeleted": "Plik {name} został usunięty"
+      "fileDeleted": "File {name} successfully deleted"
     },
     "deleteForm": {
       "title": "Delete file",

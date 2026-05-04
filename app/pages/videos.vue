@@ -8,10 +8,13 @@ const { t } = useI18n()
 
 <template>
   <div class="flex flex-col text-zinc-500 dark:text-zinc-400 min-h-full">
-    <h2>
-      {{ t('pages.videos.title') }} | {{ videos.length }}
-      {{ t('ui.info.totalFiles') }}
-    </h2>
+    <div class="flex items-center justify-between sticky top-16 z-30">
+      <h2>
+        {{ t('pages.videos.title') }} | {{ videos.length }}
+        {{ t('ui.info.totalFiles') }}
+      </h2>
+      <UploadButton />
+    </div>
     <FilesList v-if="videos.length" :files="videos" />
     <NoFiles v-else />
   </div>

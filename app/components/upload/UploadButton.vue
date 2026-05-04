@@ -3,18 +3,12 @@ import { toast } from 'vue-sonner'
 
 import { ALLOWED_FORMATS } from '~~/shared/constants'
 
-const { remainingStorageSize } = useStorage()
-const { execute } = useFetchedFiles()
-const emit = defineEmits(['success'])
 const { t } = useI18n()
-
+const { execute } = useFetchedFiles()
 const { inputRef, selectedFiles, onSelectedFile, removeSelectedFile } =
   useFilePicker()
 
-const { isUploading, startUpload } = useFileUpload(
-  selectedFiles,
-  remainingStorageSize
-)
+const { isUploading, startUpload } = useFileUpload(selectedFiles)
 
 const isDialogOpen = ref(false)
 
@@ -25,15 +19,13 @@ const handleSelectFiles = () => {
 const startUploading = async () => {
   try {
     await startUpload()
-    emit('success')
 
     selectedFiles.value = []
     isDialogOpen.value = false
+    toast.success(t('ui.upload.success.uploaded'))
     await execute()
-
-    toast.success('Files successfully uploads.')
   } catch (e: any) {
-    toast.error('Not enough storage space')
+    toast.error(t('ui.upload.errors.storageLimit'))
   }
 }
 </script>
@@ -42,9 +34,8 @@ const startUploading = async () => {
   <Dialog v-model:open="isDialogOpen">
     <DialogTrigger as-child>
       <Button
-        class="bg-lime-500/80 w-full mt-4 text-indigo-100 shadow-lg backdrop-blur-2xl hover:bg-indigo-300"
+        class="bg-lime-500/80 text-indigo-100 shadow-lg backdrop-blur-2xl hover:bg-indigo-300"
         :disabled="selectedFiles.length > 10"
-        @click="handleSelectFiles"
         size="sm"
       >
         <Icon name="lucide:cloud-upload" size="20" />

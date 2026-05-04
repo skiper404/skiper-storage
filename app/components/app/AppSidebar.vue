@@ -11,7 +11,6 @@ import {
 const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
-const { user } = useUserSession()
 
 const items = computed(() => [
   {
@@ -79,8 +78,6 @@ const items = computed(() => [
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
-
-          <UploadButton class="mt-4" />
         </SidebarGroupContent>
       </SidebarGroup>
     </SidebarContent>
