@@ -9,6 +9,6 @@ useHead({ title: `Videos | ${appName}` })
   <div class="text-zinc-500 dark:text-zinc-400">
     <h2 class="text-lg font-semibold">Videos | {{ videos.length }} items</h2>
     <FilesList v-if="videos.length" :files="videos" />
-    <AppLoader v-else />
+    <NoFiles v-else />
   </div>
 </template>

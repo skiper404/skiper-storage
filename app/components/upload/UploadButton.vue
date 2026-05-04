@@ -3,7 +3,8 @@ import { toast } from 'vue-sonner'
 
 import { ALLOWED_FORMATS } from '~~/shared/constants'
 
-const props = defineProps<{ remainingSize: number }>()
+const { remainingStorageSize } = useStorage()
+const { execute } = useFetchedFiles()
 const emit = defineEmits(['success'])
 const { t } = useI18n()
 
@@ -12,7 +13,7 @@ const { inputRef, selectedFiles, onSelectedFile, removeSelectedFile } =
 
 const { isUploading, startUpload } = useFileUpload(
   selectedFiles,
-  toRef(props, 'remainingSize')
+  remainingStorageSize
 )
 
 const isDialogOpen = ref(false)
@@ -28,6 +29,7 @@ const startUploading = async () => {
 
     selectedFiles.value = []
     isDialogOpen.value = false
+    await execute()
 
     toast.success('Files successfully uploads.')
   } catch (e: any) {
@@ -40,7 +42,7 @@ const startUploading = async () => {
   <Dialog v-model:open="isDialogOpen">
     <DialogTrigger as-child>
       <Button
-        class="fixed bottom-10 left-1/2 z-10 w-60 -translate-x-1/2 bg-lime-500/80 text-indigo-100 shadow-lg backdrop-blur-2xl hover:bg-indigo-300"
+        class="bg-lime-500/80 w-full mt-4 text-indigo-100 shadow-lg backdrop-blur-2xl hover:bg-indigo-300"
         :disabled="selectedFiles.length > 10"
         @click="handleSelectFiles"
         size="sm"

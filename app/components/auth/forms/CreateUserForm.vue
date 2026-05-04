@@ -39,7 +39,7 @@ const onSubmit = handleSubmit(async data => {
         <FieldGroup>
           <VeeField v-slot="{ field, errors }" name="email">
             <Field>
-              <FieldLabel for="register">
+              <FieldLabel for="email">
                 {{ t('auth.create.emailField') }}
               </FieldLabel>
               <Input

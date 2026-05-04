@@ -6,6 +6,7 @@ import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 const { file } = defineProps<{ file: UploadedFile }>()
 const { t } = useI18n()
+const { execute } = useFetchedFiles()
 
 const downloadFile = () => {
   window.open(`/api/files/download/${file.id}`, '_blank')
@@ -13,6 +14,7 @@ const downloadFile = () => {
 
 const deleteFile = async () => {
   await $fetch(`/api/files/${file.id}`, { method: 'DELETE' })
+  await execute()
   toast.success(`Файл ${file.originalName} удален.`)
   return navigateTo('/')
 }

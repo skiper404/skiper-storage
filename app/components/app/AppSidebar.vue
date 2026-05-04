@@ -72,6 +72,7 @@ const route = useRoute()
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
+          <UploadButton />
         </SidebarGroupContent>
       </SidebarGroup>
     </SidebarContent>

@@ -10,6 +10,7 @@ import 'vue-sonner/style.css'
         <NuxtLayout>
           <NuxtPage />
         </NuxtLayout>
+        <Toaster />
       </SidebarProvider>
     </TooltipProvider>
   </div>
