@@ -18,7 +18,7 @@ export default defineOAuthGoogleEventHandler({
     })
 
     if (account) {
-      await setSession(event, user)
+      await setSession(event, account.user)
       return sendRedirect(event, '/')
     }
 

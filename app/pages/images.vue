@@ -8,7 +8,7 @@ useHead({ title: `Images | ${appName}` })
 
 <template>
   <div class="flex flex-col min-h-full text-zinc-500 dark:text-zinc-400">
-    <h2 class="self-start">
+    <h2>
       {{ t('pages.images.title') }} | {{ images.length }}
       {{ t('ui.info.totalFiles') }}
     </h2>

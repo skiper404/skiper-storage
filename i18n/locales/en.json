@@ -72,10 +72,10 @@
       "fileDeleted": "Plik {name} został usunięty"
     },
     "deleteForm": {
-      "title": "Usuń plik",
-      "description": "Czy na pewno chcesz usunąć",
-      "no": "Nie",
-      "yes": "Tak"
+      "title": "Delete file",
+      "description": "Are you sure you want to delete",
+      "no": "No",
+      "yes": "Yes"
     },
     "empty": {
       "title": "Storage is empty",

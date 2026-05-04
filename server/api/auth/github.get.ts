@@ -45,6 +45,8 @@ export default defineOAuthGitHubEventHandler({
         accounts: { create: { provider, providerAccountId } }
       }
     })
+    console.log('newUser', newUser)
+
     await setSession(event, newUser)
     return sendRedirect(event, '/')
   }

@@ -7,7 +7,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="text-zinc-500 dark:text-zinc-400">
+  <div class="flex flex-col text-zinc-500 dark:text-zinc-400 min-h-full">
     <h2>
       {{ t('pages.videos.title') }} | {{ videos.length }}
       {{ t('ui.info.totalFiles') }}

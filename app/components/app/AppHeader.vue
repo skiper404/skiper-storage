@@ -7,8 +7,6 @@ const isAuth = computed(() => user.value)
 onMounted(() => {
   isLoading.value = true
 })
-
-const route = useRoute()
 </script>
 
 <template>
@@ -16,8 +14,9 @@ const route = useRoute()
     class="flex items-center bg-secondary text-primary h-12 rounded-b-2xl w-full justify-between fixed z-20 backdrop-blur-xs px-4"
   >
     <AppLogo />
+
     <div class="flex items-center gap-2">
-      <SidebarToggleButton />
+      <SidebarToggleButton v-if="user" />
       <LocaleButton v-if="isLoading" />
       <ButtonSkeleton v-if="!isLoading" />
       <ThemeButton />

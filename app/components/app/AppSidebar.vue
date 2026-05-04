@@ -11,6 +11,7 @@ import {
 const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
+const { user } = useUserSession()
 
 const items = computed(() => [
   {

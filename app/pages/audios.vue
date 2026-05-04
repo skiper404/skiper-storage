@@ -7,10 +7,8 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div
-    class="flex flex-col min-h-full items-center text-zinc-500 dark:text-zinc-400"
-  >
-    <h2 class="self-start">
+  <div class="flex flex-col min-h-full text-zinc-500 dark:text-zinc-400">
+    <h2>
       {{ t('pages.audios.title') }} | {{ audios.length }}
       {{ t('ui.info.totalFiles') }}
     </h2>
