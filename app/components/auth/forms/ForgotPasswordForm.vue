@@ -41,7 +41,7 @@ const onSubmit = handleSubmit(async data => {
         <VeeField v-slot="{ field, errors }" name="email">
           <Field>
             <FieldLabel for="email">
-              {{ t('auth.login.emailField') }}
+              {{ t('auth.forgotPassword.emailField') }}
             </FieldLabel>
             <Input
               id="email"

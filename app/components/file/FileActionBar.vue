@@ -34,11 +34,14 @@ const deleteFile = async () => {
     >
       {{ file.mimeType }}
     </Badge>
+
     |
+
     <Button size="sm" class="rounded-2xl" @click="downloadFile">
       <span class="hidden sm:inline">{{ t('ui.download') }}</span>
       <Icon name="lucide:download" />
     </Button>
+
     <Dialog>
       <DialogTrigger as-child>
         <Button size="sm" class="rounded-2xl" variant="destructive">
@@ -46,30 +49,40 @@ const deleteFile = async () => {
           <Icon name="lucide:trash-2" />
         </Button>
       </DialogTrigger>
-      <DialogContent
-        class="space-y-4 bg-primary-foreground transition-all duration-300"
-      >
+
+      <DialogContent class="space-y-4 bg-primary-foreground">
         <DialogHeader class="space-y-2">
-          <DialogTitle>{{ t('ui.deleteForm.title') }}</DialogTitle>
-          <DialogDescription>
+          <DialogTitle>
+            {{ t('ui.deleteForm.title') }}
+          </DialogTitle>
+
+          <DialogDescription class="text-center">
             {{ t('ui.deleteForm.description') }}
-            <Badge variant="outline">
-              {{ file.originalName }}
-            </Badge>
+
+            {{ file.originalName }}
+
             ?
           </DialogDescription>
         </DialogHeader>
+
         <div class="flex items-center justify-center gap-4">
           <DialogClose as-child>
-            <Button variant="outline">{{ t('ui.deleteForm.no') }}</Button>
+            <Button variant="outline">
+              {{ t('ui.deleteForm.no') }}
+            </Button>
           </DialogClose>
-          <Button variant="destructive" @click="deleteFile">{{
-            t('ui.deleteForm.yes')
-          }}</Button>
+
+          <Button variant="destructive" @click="deleteFile">
+            {{ t('ui.deleteForm.yes') }}
+          </Button>
         </div>
       </DialogContent>
     </Dialog>
+
     |
-    <Badge variant="secondary">{{ filesize(file.size) }}</Badge>
+
+    <Badge variant="secondary">
+      {{ filesize(file.size) }}
+    </Badge>
   </div>
 </template>

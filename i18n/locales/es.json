@@ -2,48 +2,84 @@
   "auth": {
     "login": {
       "title": "Iniciar sesión",
-      "emailField": "Correo electrónico",
+      "emailField": "Email",
       "passwordField": "Contraseña",
       "submitButton": "Entrar",
-      "noAccount": "¿No tienes una cuenta?",
-      "createAccount": "Crear",
+      "noAccount": "¿No tienes cuenta?",
+      "createAccount": "Crear cuenta",
       "separator": "o",
-      "es": "Continuar con"
+      "oauth": "Continuar con",
+      "forgotPassword": "¿Olvidaste la contraseña?"
     },
     "create": {
-      "title": "Crear usuario",
-      "emailField": "Correo electrónico",
-      "usernameField": "Nombre de usuario",
+      "title": "Crear cuenta",
+      "emailField": "Email",
       "passwordField": "Contraseña",
-      "submitButton": "Crear",
-      "haveAccount": "¿Ya tienes una cuenta?",
+      "submitButton": "Crear cuenta",
+      "haveAccount": "¿Ya tienes cuenta?",
       "loginAccount": "Iniciar sesión"
     },
+    "forgotPassword": {
+      "title": "Recuperar contraseña",
+      "emailField": "Email",
+      "submitButton": "Enviar enlace",
+      "link": "¿Olvidaste la contraseña?"
+    },
+    "resetPassword": {
+      "title": "Restablecer contraseña",
+      "passwordField": "Nueva contraseña",
+      "repeatPasswordField": "Repetir contraseña",
+      "submitButton": "Restablecer"
+    },
+    "messages": {
+      "resetLinkSent": "Se ha enviado un enlace a tu email",
+      "passwordChanged": "La contraseña se ha cambiado correctamente",
+      "ok": "OK"
+    },
     "errors": {
-      "invalidEmail": "Introduce una dirección de correo válida",
-      "conflictEmail": "Este correo ya está registrado",
-      "emptyField": "Este campo no puede estar vacío",
-      "minLength": "La contraseña debe tener al menos 8 caracteres",
-      "maxLength": "La contraseña no debe tener más de 30 caracteres",
-      "uppercaseRequired": "La contraseña debe contener al menos una letra mayúscula",
-      "lowercaseRequired": "La contraseña debe contener al menos una letra minúscula",
-      "digitRequired": "La contraseña debe contener al menos un número",
-      "invalidCredentials": "Correo o contraseña incorrectos"
+      "invalidEmail": "Introduce un email válido",
+      "conflictEmail": "Este email ya está registrado",
+      "emptyField": "Este campo es obligatorio",
+      "minLength": "Mínimo 8 caracteres",
+      "maxLength": "Máximo 30 caracteres",
+      "uppercaseRequired": "Debe contener mayúscula",
+      "lowercaseRequired": "Debe contener minúscula",
+      "digitRequired": "Debe contener un número",
+      "invalidCredentials": "Email o contraseña incorrectos",
+      "passwordsMustMatch": "Las contraseñas no coinciden",
+      "emailAlreadyExist": "Este email ya existe",
+      "notFoundEmail": "Usuario no encontrado"
     }
+  },
+  "pages": {
+    "home": { "title": "Inicio" },
+    "images": { "title": "Imágenes" },
+    "videos": { "title": "Vídeos" },
+    "audios": { "title": "Audios" },
+    "plan": { "title": "Plan de almacenamiento" }
   },
   "ui": {
     "upload": {
       "uploadButton": "Subir archivos",
-      "addButton": "Agregar archivos",
+      "addButton": "Añadir archivos",
       "title": "Subir archivos",
       "description": {
-        "quantity": "Selecciona entre 1 y 10 archivos para subir.",
-        "formats": "Formatos compatibles:"
+        "quantity": "Selecciona 1–10 archivos",
+        "formats": "Formatos soportados"
       }
     },
+    "messages": {
+      "fileDeleted": "El archivo {name} ha sido eliminado"
+    },
+    "deleteForm": {
+      "title": "Eliminar archivo",
+      "description": "¿Estás seguro de que quieres eliminar",
+      "no": "No",
+      "yes": "Sí"
+    },
     "empty": {
-      "title": "No hay archivos todavía",
-      "description": "Aún no has subido ningún archivo. Empieza subiendo tu primer archivo."
+      "title": "Almacenamiento vacío",
+      "description": "Aún no has subido archivos"
     },
     "theme": "Tema",
     "locale": "Idioma",
@@ -51,27 +87,46 @@
     "close": "Cerrar",
     "download": "Descargar",
     "delete": "Eliminar",
-    "deleteForm": {
-      "title": "Eliminar archivo",
-      "description": "¿Realmente quieres eliminarlo?",
-      "no": "No",
-      "yes": "Sí"
-    },
     "info": {
-      "totalFiles": "Elementos",
-      "storage": "Almacenamiento",
+      "totalFiles": "archivos",
       "categories": {
         "audio": "audio",
         "video": "video",
-        "image": "imagen"
+        "image": "imágenes"
       }
     },
-    "es": {
-      "notFound": {
-        "title": "404 - No encontrado",
-        "description": "La página que buscas no existe. Intenta buscar lo que necesitas abajo.",
-        "button": "Volver"
-      }
+    "storage": {
+      "usage": "Uso de almacenamiento",
+      "used": "Usado",
+      "remaining": "Restante",
+      "usedPercent": "Usado %",
+      "freePercent": "Libre %"
     }
+  },
+  "plan": {
+    "confirmTitle": "Confirmar cambio de plan",
+    "confirmDescription": "Estás a punto de cambiar al plan {plan}",
+    "cancel": "Cancelar",
+    "change": "Cambiar plan",
+    "buy": "Comprar plan",
+    "free": "Gratis",
+    "labels": {
+      "plan": "Plan",
+      "storage": "Almacenamiento",
+      "price": "Precio"
+    },
+    "actions": {
+      "upgrade": "Mejorar",
+      "downgrade": "Reducir",
+      "current": "Plan actual"
+    }
+  },
+  "navigation": {
+    "home": "Inicio",
+    "images": "Imágenes",
+    "audios": "Audios",
+    "videos": "Vídeos",
+    "plan": "Plan de almacenamiento",
+    "settings": "Ajustes"
   }
 }

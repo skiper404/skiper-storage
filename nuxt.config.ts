@@ -65,6 +65,13 @@ export default defineNuxtConfig({
 
   i18n: {
     defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_locale',
+      fallbackLocale: 'en',
+      redirectOn: 'root'
+    },
     locales: [
       {
         code: 'en',
@@ -102,9 +109,7 @@ export default defineNuxtConfig({
         file: 'fr.json',
         name: '🇫🇷 Français'
       }
-    ],
-    strategy: 'prefix_except_default',
-    detectBrowserLanguage: false
+    ]
   },
 
   shadcn: { componentDir: '@/components/ui', prefix: '' }

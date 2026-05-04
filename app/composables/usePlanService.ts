@@ -1,11 +1,13 @@
+import { Plan } from '~~/prisma/generated/enums'
+
 export const usePlanService = () => {
   const { fetch } = useUserSession()
   const { openCheckout } = useLiqPay()
   const { storagePlan } = useStorage()
 
   const changePlan = async (plan: StoragePlan) => {
-    const upgrade =
-      planOrder.indexOf(plan.value) > planOrder.indexOf(storagePlan.value)
+    const order = [Plan.FREE, Plan.PRO, Plan.PREMIUM]
+    const upgrade = order.indexOf(plan.value) > order.indexOf(storagePlan.value)
 
     if (upgrade) {
       const payment = await $fetch('/api/payments/liqpay', {

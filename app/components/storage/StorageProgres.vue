@@ -16,6 +16,8 @@ const metrics = [
   { title: 'Used %', value: totalFileSizeInPercentage },
   { title: 'Free %', value: remainingStorageSizeInPercentage }
 ]
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -25,7 +27,7 @@ const metrics = [
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="text-sm text-zinc-500 dark:text-zinc-400">
-          Storage usage
+          <span>{{ t('ui.storage.usage') }}</span>
         </span>
 
         <Badge variant="secondary" class="capitalize text-xs">

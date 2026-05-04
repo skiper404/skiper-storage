@@ -6,34 +6,36 @@
       "passwordField": "Password",
       "submitButton": "Log in",
       "noAccount": "Don't have an account?",
-      "createAccount": "Create",
+      "createAccount": "Create account",
       "separator": "or",
-      "oauth": "Continue with"
+      "oauth": "Continue with",
+      "forgotPassword": "Forgot password?"
     },
-
     "create": {
-      "title": "Create user",
+      "title": "Create account",
       "emailField": "Email",
-      "usernameField": "Username",
       "passwordField": "Password",
-      "submitButton": "Create",
-      "haveAccount": "Already have an accont?",
-      "loginAccount": "Login"
+      "submitButton": "Create account",
+      "haveAccount": "Already have an account?",
+      "loginAccount": "Log in"
     },
-
     "forgotPassword": {
       "title": "Forgot password",
-      "emailField": "emailField",
-      "submitButton": "Send Code"
+      "emailField": "Email",
+      "submitButton": "Send reset link",
+      "link": "Forgot password?"
     },
-
     "resetPassword": {
       "title": "Reset password",
-      "passwordField": "Password",
-      "repeatPasswordField": "Repeat Password",
-      "submitButton": "Reset Password"
+      "passwordField": "New password",
+      "repeatPasswordField": "Repeat password",
+      "submitButton": "Reset password"
     },
-
+    "messages": {
+      "resetLinkSent": "Password reset link has been sent to your email",
+      "passwordChanged": "Password has been successfully changed",
+      "ok": "OK"
+    },
     "errors": {
       "invalidEmail": "Please enter a valid email address",
       "conflictEmail": "This email is already registered",
@@ -45,9 +47,16 @@
       "digitRequired": "Password must contain at least one number",
       "invalidCredentials": "Wrong email or password",
       "passwordsMustMatch": "Passwords must match",
-      "emailAlreadyExist": "User with this email already exist",
-      "notFoundEmail": "User with this email not exist"
+      "emailAlreadyExist": "User with this email already exists",
+      "notFoundEmail": "User with this email does not exist"
     }
+  },
+  "pages": {
+    "home": { "title": "Home" },
+    "images": { "title": "Images" },
+    "videos": { "title": "Videos" },
+    "audios": { "title": "Audios" },
+    "plan": { "title": "Storage plan" }
   },
   "ui": {
     "upload": {
@@ -55,39 +64,69 @@
       "addButton": "Add files",
       "title": "Upload files",
       "description": {
-        "quantity": "Select 1-10 files to upload.",
-        "formats": "Supported formats:"
+        "quantity": "Select 1–10 files to upload",
+        "formats": "Supported formats"
       }
     },
+    "messages": {
+      "fileDeleted": "Plik {name} został usunięty"
+    },
+    "deleteForm": {
+      "title": "Usuń plik",
+      "description": "Czy na pewno chcesz usunąć",
+      "no": "Nie",
+      "yes": "Tak"
+    },
     "empty": {
-      "title": "Cloud storage Empty",
-      "description": "You haven't uploaded any files yet. Get started by uploading your first file to access them anywhere."
+      "title": "Storage is empty",
+      "description": "You haven't uploaded any files yet"
     },
     "theme": "Theme",
-    "locale": "Locale",
-    "signOut": "Sign Out",
+    "locale": "Language",
+    "signOut": "Sign out",
     "close": "Close",
     "download": "Download",
     "delete": "Delete",
-    "deleteForm": {
-      "title": "Delete file",
-      "description": "Are you really want delete",
-      "no": "No",
-      "yes": "Yes"
-    },
     "info": {
-      "totalFiles": "Items",
-      "storage": "Storage",
+      "totalFiles": "items",
       "categories": {
         "audio": "audio",
         "video": "video",
-        "image": "image"
+        "image": "images"
       }
     },
-    "notFound": {
-      "title": "404 - Not Found",
-      "description": "The page you're looking for doesn't exist. Try searching for what you need below.",
-      "button": "Back"
+    "storage": {
+      "usage": "Storage usage",
+      "used": "Used",
+      "remaining": "Remaining",
+      "usedPercent": "Used %",
+      "freePercent": "Free %"
     }
+  },
+  "plan": {
+    "confirmTitle": "Confirm plan change",
+    "confirmDescription": "You are about to switch to the {plan} plan",
+    "cancel": "Cancel",
+    "change": "Change plan",
+    "buy": "Buy plan",
+    "free": "Free",
+    "labels": {
+      "plan": "Plan",
+      "storage": "Storage",
+      "price": "Price"
+    },
+    "actions": {
+      "upgrade": "Upgrade",
+      "downgrade": "Downgrade",
+      "current": "Current plan"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "images": "Images",
+    "audios": "Audios",
+    "videos": "Videos",
+    "plan": "Storage Plan",
+    "settings": "Settings"
   }
 }

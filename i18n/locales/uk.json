@@ -1,35 +1,62 @@
 {
   "auth": {
     "login": {
-      "title": "Увійти",
-      "emailField": "Електронна пошта",
+      "title": "Вхід",
+      "emailField": "Email",
       "passwordField": "Пароль",
       "submitButton": "Увійти",
-      "noAccount": "Ще не маєте акаунта?",
-      "createAccount": "Створити",
+      "noAccount": "Немає облікового запису?",
+      "createAccount": "Створити акаунт",
       "separator": "або",
-      "oauth": "Продовжити з"
+      "oauth": "Продовжити через",
+      "forgotPassword": "Забули пароль?"
     },
     "create": {
-      "title": "Створити користувача",
-      "emailField": "Електронна пошта",
-      "usernameField": "Ім’я користувача",
+      "title": "Створення акаунта",
+      "emailField": "Email",
       "passwordField": "Пароль",
-      "submitButton": "Створити",
-      "haveAccount": "Вже маєте акаунт?",
+      "submitButton": "Створити акаунт",
+      "haveAccount": "Вже є акаунт?",
       "loginAccount": "Увійти"
     },
+    "forgotPassword": {
+      "title": "Забули пароль",
+      "emailField": "Email",
+      "submitButton": "Надіслати посилання",
+      "link": "Забули пароль?"
+    },
+    "resetPassword": {
+      "title": "Скидання пароля",
+      "passwordField": "Новий пароль",
+      "repeatPasswordField": "Повторіть пароль",
+      "submitButton": "Скинути пароль"
+    },
+    "messages": {
+      "resetLinkSent": "Посилання для скидання пароля надіслано на вашу електронну пошту",
+      "passwordChanged": "Пароль успішно змінено",
+      "ok": "ОК"
+    },
     "errors": {
-      "invalidEmail": "Будь ласка, введіть коректну електронну адресу",
-      "conflictEmail": "Ця електронна адреса вже зареєстрована",
-      "emptyField": "Це поле не може бути порожнім",
+      "invalidEmail": "Введіть коректний email",
+      "conflictEmail": "Цей email вже зареєстрований",
+      "emptyField": "Поле не може бути порожнім",
       "minLength": "Пароль має містити щонайменше 8 символів",
       "maxLength": "Пароль має містити не більше 30 символів",
-      "uppercaseRequired": "Пароль має містити щонайменше одну велику літеру",
-      "lowercaseRequired": "Пароль має містити щонайменше одну малу літеру",
-      "digitRequired": "Пароль має містити щонайменше одну цифру",
-      "invalidCredentials": "Невірна електронна пошта або пароль"
+      "uppercaseRequired": "Пароль має містити хоча б одну велику літеру",
+      "lowercaseRequired": "Пароль має містити хоча б одну малу літеру",
+      "digitRequired": "Пароль має містити хоча б одну цифру",
+      "invalidCredentials": "Невірний email або пароль",
+      "passwordsMustMatch": "Паролі не співпадають",
+      "emailAlreadyExist": "Користувач з таким email вже існує",
+      "notFoundEmail": "Користувача з таким email не знайдено"
     }
+  },
+  "pages": {
+    "home": { "title": "Головна" },
+    "images": { "title": "Зображення" },
+    "videos": { "title": "Відео" },
+    "audios": { "title": "Аудіо" },
+    "plan": { "title": "Тариф" }
   },
   "ui": {
     "upload": {
@@ -37,13 +64,22 @@
       "addButton": "Додати файли",
       "title": "Завантаження файлів",
       "description": {
-        "quantity": "Виберіть від 1 до 10 файлів для завантаження.",
-        "formats": "Підтримувані формати:"
+        "quantity": "Виберіть від 1 до 10 файлів",
+        "formats": "Підтримувані формати"
       }
     },
+    "messages": {
+      "fileDeleted": "Файл {name} видалено"
+    },
+    "deleteForm": {
+      "title": "Видалити файл",
+      "description": "Ви впевнені, що хочете видалити",
+      "no": "Ні",
+      "yes": "Так"
+    },
     "empty": {
-      "title": "Файлів ще немає",
-      "description": "Ви ще не завантажили жодного файлу. Почніть із завантаження свого першого файлу."
+      "title": "Сховище порожнє",
+      "description": "Ви ще не завантажили жодного файлу"
     },
     "theme": "Тема",
     "locale": "Мова",
@@ -51,27 +87,46 @@
     "close": "Закрити",
     "download": "Завантажити",
     "delete": "Видалити",
-    "deleteForm": {
-      "title": "Видалити файл",
-      "description": "Ви дійсно хочете видалити файл?",
-      "no": "Ні",
-      "yes": "Так"
-    },
     "info": {
-      "totalFiles": "Елементів",
-      "storage": "Сховище",
+      "totalFiles": "файлів",
       "categories": {
-        "audio": "aудіо",
+        "audio": "аудіо",
         "video": "відео",
         "image": "зображення"
       }
     },
-    "uk": {
-      "notFound": {
-        "title": "404 - Не знайдено",
-        "description": "Сторінка, яку ви шукаєте, не існує. Спробуйте знайти те, що вам потрібно, нижче.",
-        "button": "Назад"
-      }
+    "storage": {
+      "usage": "Використання сховища",
+      "used": "Використано",
+      "remaining": "Залишилось",
+      "usedPercent": "Використано %",
+      "freePercent": "Вільно %"
     }
+  },
+  "plan": {
+    "confirmTitle": "Підтвердження зміни тарифу",
+    "confirmDescription": "Ви збираєтесь перейти на тариф {plan}",
+    "cancel": "Скасувати",
+    "change": "Змінити тариф",
+    "buy": "Купити тариф",
+    "free": "Безкоштовно",
+    "labels": {
+      "plan": "Тариф",
+      "storage": "Сховище",
+      "price": "Ціна"
+    },
+    "actions": {
+      "upgrade": "Покращити",
+      "downgrade": "Понизити",
+      "current": "Поточний тариф"
+    }
+  },
+  "navigation": {
+    "home": "Головна",
+    "images": "Зображення",
+    "audios": "Аудіо",
+    "videos": "Відео",
+    "plan": "План зберігання",
+    "settings": "Налаштування"
   }
 }

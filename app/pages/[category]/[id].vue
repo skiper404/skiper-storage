@@ -9,11 +9,12 @@ const route = useRoute()
 const { data: file } = await useFetch<UploadedFile>(
   () => `/api/files/${route.params.id}`
 )
+const localePath = useLocalePath()
 </script>
 
 <template>
   <div v-if="file" class="flex flex-col items-center h-full p-4 space-y-4">
-    <NuxtLink to="/" class="cursor-pointer mr-auto">
+    <NuxtLink :to="localePath('/')" class="cursor-pointer mr-auto">
       <Button variant="outline">
         <Icon name="lucide:arrow-left" size="20" />
       </Button>

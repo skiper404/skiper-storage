@@ -117,7 +117,7 @@ const onSubmit = handleSubmit(async data => {
           to="/auth/forgot-password"
           class="hover:underline text-gray-500"
         >
-          {{ t('auth.forgotPassword.title') }}
+          {{ t('auth.forgotPassword.link') }}
         </NuxtLink>
       </Field>
     </CardFooter>

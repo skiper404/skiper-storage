@@ -7,9 +7,9 @@ export const usePlanLogic = () => {
     order.indexOf(target) > order.indexOf(current)
 
   const getAction = (current: Plan, target: Plan) => {
-    if (current === target) return 'Current plan'
+    if (current === target) return 'current'
 
-    return isUpgrade(current, target) ? '↑ Upgrade' : '↓ Downgrade'
+    return isUpgrade(current, target) ? 'upgrade' : 'downgrade'
   }
 
   return { order, isUpgrade, getAction }

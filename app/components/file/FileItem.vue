@@ -2,11 +2,12 @@
 import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
 
 const { file } = defineProps<{ file: UploadedFile }>()
+const localePath = useLocalePath()
 </script>
 
 <template>
   <NuxtLink
-    :to="`/${file.category}/${file.id}`"
+    :to="localePath(`/${file.category}/${file.id}`)"
     class="flex flex-col items-center gap-2 mx-auto"
   >
     <FilePreview :file="file" />

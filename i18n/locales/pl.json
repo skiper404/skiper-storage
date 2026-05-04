@@ -1,35 +1,62 @@
 {
   "auth": {
     "login": {
-      "title": "Zaloguj się",
+      "title": "Logowanie",
       "emailField": "Email",
       "passwordField": "Hasło",
-      "submitButton": "Zaloguj",
+      "submitButton": "Zaloguj się",
       "noAccount": "Nie masz konta?",
-      "createAccount": "Utwórz",
+      "createAccount": "Utwórz konto",
       "separator": "lub",
-      "oauth": "Kontynuuj z"
+      "oauth": "Kontynuuj przez",
+      "forgotPassword": "Zapomniałeś hasła?"
     },
     "create": {
-      "title": "Utwórz użytkownika",
+      "title": "Utwórz konto",
       "emailField": "Email",
-      "usernameField": "Nazwa użytkownika",
       "passwordField": "Hasło",
-      "submitButton": "Utwórz",
+      "submitButton": "Utwórz konto",
       "haveAccount": "Masz już konto?",
       "loginAccount": "Zaloguj się"
     },
+    "forgotPassword": {
+      "title": "Zapomniałeś hasła",
+      "emailField": "Email",
+      "submitButton": "Wyślij link",
+      "link": "Zapomniałeś hasła?"
+    },
+    "resetPassword": {
+      "title": "Reset hasła",
+      "passwordField": "Nowe hasło",
+      "repeatPasswordField": "Powtórz hasło",
+      "submitButton": "Zresetuj hasło"
+    },
+    "messages": {
+      "resetLinkSent": "Link do resetu hasła został wysłany",
+      "passwordChanged": "Hasło zostało zmienione",
+      "ok": "OK"
+    },
     "errors": {
-      "invalidEmail": "Wprowadź prawidłowy adres email",
-      "conflictEmail": "Ten adres email jest już zarejestrowany",
-      "emptyField": "To pole nie może być puste",
-      "minLength": "Hasło musi mieć co najmniej 8 znaków",
-      "maxLength": "Hasło może mieć maksymalnie 30 znaków",
-      "uppercaseRequired": "Hasło musi zawierać co najmniej jedną wielką literę",
-      "lowercaseRequired": "Hasło musi zawierać co najmniej jedną małą literę",
-      "digitRequired": "Hasło musi zawierać co najmniej jedną cyfrę",
-      "invalidCredentials": "Nieprawidłowy email lub hasło"
+      "invalidEmail": "Podaj poprawny email",
+      "conflictEmail": "Email już istnieje",
+      "emptyField": "Pole nie może być puste",
+      "minLength": "Minimum 8 znaków",
+      "maxLength": "Maksimum 30 znaków",
+      "uppercaseRequired": "Wymagana wielka litera",
+      "lowercaseRequired": "Wymagana mała litera",
+      "digitRequired": "Wymagana cyfra",
+      "invalidCredentials": "Nieprawidłowy email lub hasło",
+      "passwordsMustMatch": "Hasła nie są zgodne",
+      "emailAlreadyExist": "Użytkownik już istnieje",
+      "notFoundEmail": "Użytkownik nie istnieje"
     }
+  },
+  "pages": {
+    "home": { "title": "Strona główna" },
+    "images": { "title": "Obrazy" },
+    "videos": { "title": "Wideo" },
+    "audios": { "title": "Audio" },
+    "plan": { "title": "Plan" }
   },
   "ui": {
     "upload": {
@@ -37,13 +64,22 @@
       "addButton": "Dodaj pliki",
       "title": "Przesyłanie plików",
       "description": {
-        "quantity": "Wybierz od 1 do 10 plików do przesłania.",
-        "formats": "Obsługiwane formaty:"
+        "quantity": "Wybierz od 1 do 10 plików",
+        "formats": "Obsługiwane formaty"
       }
     },
+    "messages": {
+      "fileDeleted": "Plik {name} został usunięty"
+    },
+    "deleteForm": {
+      "title": "Usuń plik",
+      "description": "Czy na pewno chcesz usunąć",
+      "no": "Nie",
+      "yes": "Tak"
+    },
     "empty": {
-      "title": "Brak plików",
-      "description": "Nie przesłałeś jeszcze żadnych plików. Zacznij od przesłania swojego pierwszego pliku."
+      "title": "Puste miejsce",
+      "description": "Nie przesłałeś jeszcze żadnych plików"
     },
     "theme": "Motyw",
     "locale": "Język",
@@ -51,27 +87,46 @@
     "close": "Zamknij",
     "download": "Pobierz",
     "delete": "Usuń",
-    "deleteForm": {
-      "title": "Usuń plik",
-      "description": "Czy na pewno chcesz usunąć plik?",
-      "no": "Nie",
-      "yes": "Tak"
-    },
     "info": {
-      "totalFiles": "Elementów",
-      "storage": "Pamięć",
+      "totalFiles": "plików",
       "categories": {
         "audio": "audio",
         "video": "wideo",
-        "image": "obraz"
+        "image": "obrazy"
       }
     },
-    "pl": {
-      "notFound": {
-        "title": "404 - Nie znaleziono",
-        "description": "Strona, której szukasz, nie istnieje. Spróbuj wyszukać to, czego potrzebujesz poniżej.",
-        "button": "Powrót"
-      }
+    "storage": {
+      "usage": "Użycie pamięci",
+      "used": "Użyte",
+      "remaining": "Pozostało",
+      "usedPercent": "Użyte %",
+      "freePercent": "Wolne %"
     }
+  },
+  "plan": {
+    "confirmTitle": "Potwierdzenie zmiany planu",
+    "confirmDescription": "Zamierzasz przejść na plan {plan}",
+    "cancel": "Anuluj",
+    "change": "Zmień plan",
+    "buy": "Kup plan",
+    "free": "Darmowy",
+    "labels": {
+      "plan": "Plan",
+      "storage": "Pamięć",
+      "price": "Cena"
+    },
+    "actions": {
+      "upgrade": "Ulepsz",
+      "downgrade": "Obniż",
+      "current": "Aktualny plan"
+    }
+  },
+  "navigation": {
+    "home": "Strona główna",
+    "images": "Obrazy",
+    "audios": "Audio",
+    "videos": "Wideo",
+    "plan": "Plan",
+    "settings": "Ustawienia"
   }
 }

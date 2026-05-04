@@ -8,40 +8,48 @@ import {
   Settings
 } from 'lucide-vue-next'
 
-const items = [
-  {
-    title: 'Home',
-    url: '/',
-    icon: Home
-  },
-  {
-    title: 'Images',
-    url: '/images',
-    icon: FileImageIcon
-  },
-  {
-    title: 'Audios',
-    url: '/audios',
-    icon: FileMusic
-  },
-  {
-    title: 'Videos',
-    url: '/videos',
-    icon: FileVideo2Icon
-  },
-  {
-    title: 'Storage Plan',
-    url: '/plan',
-    icon: BadgeDollarSign
-  },
-  {
-    title: 'Settings',
-    url: '/settings',
-    icon: Settings
-  }
-]
-
+const { t } = useI18n()
+const localePath = useLocalePath()
 const route = useRoute()
+
+const items = computed(() => [
+  {
+    key: 'home',
+    path: '/',
+    icon: Home,
+    color: 'text-violet-500'
+  },
+  {
+    key: 'images',
+    path: '/images',
+    icon: FileImageIcon,
+    color: 'text-indigo-500'
+  },
+  {
+    key: 'audios',
+    path: '/audios',
+    icon: FileMusic,
+    color: 'text-blue-500'
+  },
+  {
+    key: 'videos',
+    path: '/videos',
+    icon: FileVideo2Icon,
+    color: 'text-sky-500'
+  },
+  {
+    key: 'plan',
+    path: '/plan',
+    icon: BadgeDollarSign,
+    color: 'text-blue-400'
+  },
+  {
+    key: 'settings',
+    path: '/settings',
+    icon: Settings,
+    color: 'text-indigo-400'
+  }
+])
 </script>
 
 <template>
@@ -50,29 +58,28 @@ const route = useRoute()
       <SidebarGroup>
         <SidebarGroupContent>
           <SidebarMenu>
-            <SidebarMenuItem v-for="item in items" :key="item.title">
+            <SidebarMenuItem v-for="item in items" :key="item.key">
               <SidebarMenuButton
                 as-child
-                :class="{ 'bg-secondary': route.path === item.url }"
+                :class="{
+                  'bg-secondary': route.path === localePath(item.path)
+                }"
               >
-                <a :href="item.url">
-                  <component
-                    :is="item.icon"
-                    :class="{
-                      'text-violet-500': item.title === 'Home',
-                      'text-indigo-500': item.title === 'Images',
-                      'text-blue-500': item.title === 'Audios',
-                      'text-sky-500': item.title === 'Videos',
-                      'text-blue-400': item.title === 'Storage Plan',
-                      'text-indigo-400': item.title === 'Settings'
-                    }"
-                  />
-                  <span>{{ item.title }}</span>
-                </a>
+                <NuxtLink
+                  :to="localePath(item.path)"
+                  class="flex items-center gap-2"
+                >
+                  <component :is="item.icon" :class="item.color" />
+
+                  <span>
+                    {{ t(`navigation.${item.key}`) }}
+                  </span>
+                </NuxtLink>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
-          <UploadButton />
+
+          <UploadButton class="mt-4" />
         </SidebarGroupContent>
       </SidebarGroup>
     </SidebarContent>

@@ -5,73 +5,128 @@
       "emailField": "Email",
       "passwordField": "Mot de passe",
       "submitButton": "Se connecter",
-      "noAccount": "Vous n'avez pas de compte ?",
-      "createAccount": "Créer",
+      "noAccount": "Pas de compte ?",
+      "createAccount": "Créer un compte",
       "separator": "ou",
-      "oauth": "Continuer avec"
+      "oauth": "Continuer avec",
+      "forgotPassword": "Mot de passe oublié ?"
     },
     "create": {
-      "title": "Créer un utilisateur",
+      "title": "Créer un compte",
       "emailField": "Email",
-      "usernameField": "Nom d'utilisateur",
       "passwordField": "Mot de passe",
-      "submitButton": "Créer",
-      "haveAccount": "Vous avez déjà un compte ?",
-      "loginAccount": "Connexion"
+      "submitButton": "Créer un compte",
+      "haveAccount": "Déjà un compte ?",
+      "loginAccount": "Se connecter"
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié",
+      "emailField": "Email",
+      "submitButton": "Envoyer le lien",
+      "link": "Mot de passe oublié ?"
+    },
+    "resetPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "passwordField": "Nouveau mot de passe",
+      "repeatPasswordField": "Répéter le mot de passe",
+      "submitButton": "Réinitialiser"
+    },
+    "messages": {
+      "resetLinkSent": "Un lien a été envoyé à votre email",
+      "passwordChanged": "Mot de passe modifié avec succès",
+      "ok": "OK"
     },
     "errors": {
-      "invalidEmail": "Veuillez saisir une adresse email valide",
-      "conflictEmail": "Cet email est déjà enregistré",
-      "emptyField": "Ce champ ne peut pas être vide",
-      "minLength": "Le mot de passe doit contenir au moins 8 caractères",
-      "maxLength": "Le mot de passe ne doit pas dépasser 30 caractères",
-      "uppercaseRequired": "Le mot de passe doit contenir au moins une lettre majuscule",
-      "lowercaseRequired": "Le mot de passe doit contenir au moins une lettre minuscule",
-      "digitRequired": "Le mot de passe doit contenir au moins un chiffre",
-      "invalidCredentials": "Email ou mot de passe incorrect"
+      "invalidEmail": "Email invalide",
+      "conflictEmail": "Cet email existe déjà",
+      "emptyField": "Champ obligatoire",
+      "minLength": "Minimum 8 caractères",
+      "maxLength": "Maximum 30 caractères",
+      "uppercaseRequired": "Une majuscule requise",
+      "lowercaseRequired": "Une minuscule requise",
+      "digitRequired": "Un chiffre requis",
+      "invalidCredentials": "Email ou mot de passe incorrect",
+      "passwordsMustMatch": "Les mots de passe ne correspondent pas",
+      "emailAlreadyExist": "Cet email existe déjà",
+      "notFoundEmail": "Utilisateur introuvable"
     }
+  },
+  "pages": {
+    "home": { "title": "Accueil" },
+    "images": { "title": "Images" },
+    "videos": { "title": "Vidéos" },
+    "audios": { "title": "Audios" },
+    "plan": { "title": "Plan de stockage" }
   },
   "ui": {
     "upload": {
-      "uploadButton": "Téléverser des fichiers",
+      "uploadButton": "Télécharger des fichiers",
       "addButton": "Ajouter des fichiers",
-      "title": "Téléversement de fichiers",
+      "title": "Téléversement",
       "description": {
-        "quantity": "Sélectionnez 1 à 10 fichiers à téléverser.",
-        "formats": "Formats pris en charge :"
+        "quantity": "Sélectionnez 1–10 fichiers",
+        "formats": "Formats supportés"
       }
     },
-    "empty": {
-      "title": "Aucun fichier pour le moment",
-      "description": "Vous n'avez pas encore téléchargé de fichiers. Commencez par télécharger votre premier fichier."
+    "messages": {
+      "fileDeleted": "Le fichier {name} a été supprimé"
     },
-    "theme": "Thème",
-    "locale": "Langue",
-    "signOut": "Se déconnecter",
-    "close": "Fermer",
-    "download": "Télécharger",
-    "delete": "Supprimer",
     "deleteForm": {
       "title": "Supprimer le fichier",
-      "description": "Voulez-vous vraiment supprimer ce fichier ?",
+      "description": "Voulez-vous vraiment supprimer",
       "no": "Non",
       "yes": "Oui"
     },
+    "empty": {
+      "title": "Stockage vide",
+      "description": "Vous n'avez encore rien uploadé"
+    },
+    "theme": "Thème",
+    "locale": "Langue",
+    "signOut": "Déconnexion",
+    "close": "Fermer",
+    "download": "Télécharger",
+    "delete": "Supprimer",
     "info": {
-      "totalFiles": "Eléments",
-      "storage": "Stockage",
+      "totalFiles": "fichiers",
       "categories": {
         "audio": "audio",
         "video": "vidéo",
-        "image": "image"
+        "image": "images"
       }
     },
-    "fr": {
-      "notFound": {
-        "title": "404 - Introuvable",
-        "description": "La page que vous recherchez n'existe pas. Essayez de rechercher ce dont vous avez besoin ci-dessous.",
-        "button": "Retour"
-      }
+    "storage": {
+      "usage": "Utilisation",
+      "used": "Utilisé",
+      "remaining": "Restant",
+      "usedPercent": "Utilisé %",
+      "freePercent": "Libre %"
     }
+  },
+  "plan": {
+    "confirmTitle": "Confirmer le changement de plan",
+    "confirmDescription": "Vous allez passer au plan {plan}",
+    "cancel": "Annuler",
+    "change": "Changer de plan",
+    "buy": "Acheter",
+    "free": "Gratuit",
+    "labels": {
+      "plan": "Plan",
+      "storage": "Stockage",
+      "price": "Prix"
+    },
+    "actions": {
+      "upgrade": "Améliorer",
+      "downgrade": "Rétrograder",
+      "current": "Plan actuel"
+    }
+  },
+  "navigation": {
+    "home": "Accueil",
+    "images": "Images",
+    "audios": "Audios",
+    "videos": "Vidéos",
+    "plan": "Plan de stockage",
+    "settings": "Paramètres"
   }
 }

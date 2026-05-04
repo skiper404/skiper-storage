@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const { appName } = useAppConfig()
 const { files: images } = useFetchedFiles('image')
 definePageMeta({ middleware: 'auth', layout: 'default' })
@@ -6,9 +7,12 @@ useHead({ title: `Images | ${appName}` })
 </script>
 
 <template>
-  <div class="text-zinc-500 dark:text-zinc-400">
-    <h2 class="text-lg font-semibold">Images | {{ images.length }} items</h2>
+  <div class="flex flex-col min-h-full text-zinc-500 dark:text-zinc-400">
+    <h2 class="self-start">
+      {{ t('pages.images.title') }} | {{ images.length }}
+      {{ t('ui.info.totalFiles') }}
+    </h2>
     <FilesList v-if="images.length" :files="images" />
-    <AppLoader v-else />
+    <NoFiles v-else />
   </div>
 </template>

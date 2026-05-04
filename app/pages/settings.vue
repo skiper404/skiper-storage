@@ -6,6 +6,6 @@ useHead({ title: `Settings | ${appName}` })
 
 <template>
   <div class="text-zinc-500 dark:text-zinc-400">
-    <h2 class="text-lg font-semibold">Settings</h2>
+    <h2 class="">Settings</h2>
   </div>
 </template>

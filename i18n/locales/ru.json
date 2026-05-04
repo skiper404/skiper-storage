@@ -1,35 +1,62 @@
 {
   "auth": {
     "login": {
-      "title": "Логин",
-      "emailField": "Почта",
+      "title": "Вход",
+      "emailField": "Email",
       "passwordField": "Пароль",
       "submitButton": "Войти",
-      "noAccount": "У вас нет аккаунта?",
+      "noAccount": "Нет аккаунта?",
       "createAccount": "Создать аккаунт",
       "separator": "или",
-      "oauth": "Продолжить с"
+      "oauth": "Продолжить через",
+      "forgotPassword": "Забыли пароль?"
     },
     "create": {
-      "title": "Регистрация",
-      "emailField": "Почта",
-      "usernameField": "Имя пользователя",
+      "title": "Создание аккаунта",
+      "emailField": "Email",
       "passwordField": "Пароль",
-      "submitButton": "Создать",
-      "haveAccount": "У вас уже есть аккаунт?",
+      "submitButton": "Создать аккаунт",
+      "haveAccount": "Уже есть аккаунт?",
       "loginAccount": "Войти"
     },
+    "forgotPassword": {
+      "title": "Забыли пароль",
+      "emailField": "Email",
+      "submitButton": "Отправить ссылку",
+      "link": "Забыли пароль?"
+    },
+    "resetPassword": {
+      "title": "Сброс пароля",
+      "passwordField": "Новый пароль",
+      "repeatPasswordField": "Повторите пароль",
+      "submitButton": "Сбросить пароль"
+    },
+    "messages": {
+      "resetLinkSent": "Ссылка для сброса пароля отправлена на вашу почту",
+      "passwordChanged": "Пароль успешно изменён",
+      "ok": "ОК"
+    },
     "errors": {
-      "invalidEmail": "Введите корректный email адрес",
+      "invalidEmail": "Введите корректный email",
       "conflictEmail": "Этот email уже зарегистрирован",
       "emptyField": "Поле не может быть пустым",
-      "minLength": "Пароль должен содержать минимум 8 символов",
-      "maxLength": "Пароль должен содержать не более 30 символов",
-      "uppercaseRequired": "Пароль должен содержать хотя бы одну заглавную букву",
-      "lowercaseRequired": "Пароль должен содержать хотя бы одну строчную букву",
-      "digitRequired": "Пароль должен содержать хотя бы одну цифру",
-      "invalidCredentials": "Не верный логин или пароль"
+      "minLength": "Минимум 8 символов",
+      "maxLength": "Максимум 30 символов",
+      "uppercaseRequired": "Нужна заглавная буква",
+      "lowercaseRequired": "Нужна строчная буква",
+      "digitRequired": "Нужна цифра",
+      "invalidCredentials": "Неверный email или пароль",
+      "passwordsMustMatch": "Пароли не совпадают",
+      "emailAlreadyExist": "Пользователь уже существует",
+      "notFoundEmail": "Пользователь не найден"
     }
+  },
+  "pages": {
+    "home": { "title": "Главная" },
+    "images": { "title": "Изображения" },
+    "videos": { "title": "Видео" },
+    "audios": { "title": "Аудио" },
+    "plan": { "title": "Тариф" }
   },
   "ui": {
     "upload": {
@@ -37,13 +64,22 @@
       "addButton": "Добавить файлы",
       "title": "Загрузка файлов",
       "description": {
-        "quantity": "Выберите от 1 до 10 файлов для загрузки.",
-        "formats": "Поддерживаемые форматы:"
+        "quantity": "Выберите от 1 до 10 файлов",
+        "formats": "Поддерживаемые форматы"
       }
     },
+    "messages": {
+      "fileDeleted": "Файл {name} удалён"
+    },
+    "deleteForm": {
+      "title": "Удалить файл",
+      "description": "Вы уверены, что хотите удалить",
+      "no": "Нет",
+      "yes": "Да"
+    },
     "empty": {
-      "title": "Файлов пока нет",
-      "description": "Вы ещё не загрузили ни одного файла. Начните с загрузки своего первого файла."
+      "title": "Хранилище пусто",
+      "description": "Вы ещё не загрузили ни одного файла"
     },
     "theme": "Тема",
     "locale": "Язык",
@@ -51,27 +87,46 @@
     "close": "Закрыть",
     "download": "Скачать",
     "delete": "Удалить",
-    "deleteForm": {
-      "title": "Удалить файл",
-      "description": "Вы действительно хотите удалить файл?",
-      "no": "Нет",
-      "yes": "Да"
-    },
     "info": {
-      "totalFiles": "Элементов",
-      "storage": "Хранилище",
+      "totalFiles": "файлов",
       "categories": {
         "audio": "аудио",
         "video": "видео",
-        "image": "изображение"
+        "image": "изображения"
       }
     },
-    "ru": {
-      "notFound": {
-        "title": "404 - Не найдено",
-        "description": "Страница, которую вы ищете, не существует. Попробуйте найти то, что вам нужно, ниже.",
-        "button": "Назад"
-      }
+    "storage": {
+      "usage": "Использование хранилища",
+      "used": "Использовано",
+      "remaining": "Осталось",
+      "usedPercent": "Использовано %",
+      "freePercent": "Свободно %"
     }
+  },
+  "plan": {
+    "confirmTitle": "Подтверждение смены тарифа",
+    "confirmDescription": "Вы собираетесь перейти на тариф {plan}",
+    "cancel": "Отмена",
+    "change": "Сменить тариф",
+    "buy": "Купить тариф",
+    "free": "Бесплатно",
+    "labels": {
+      "plan": "Тариф",
+      "storage": "Хранилище",
+      "price": "Цена"
+    },
+    "actions": {
+      "upgrade": "Повысить",
+      "downgrade": "Понизить",
+      "current": "Текущий тариф"
+    }
+  },
+  "navigation": {
+    "home": "Главная",
+    "images": "Изображения",
+    "audios": "Аудио",
+    "videos": "Видео",
+    "plan": "Тариф",
+    "settings": "Настройки"
   }
 }
