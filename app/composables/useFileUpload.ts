@@ -12,7 +12,7 @@ export const useFileUpload = (selectedFiles: Ref<SelectedFile[]>) => {
     files.reduce((acc, f) => acc + f.file.size, 0)
 
   const upload = useMultipartUpload(`/api/files/multipart`, {
-    partSize: 5 * 1024 * 1024,
+    partSize: 1 * 1024 * 1024,
     maxRetry: 3
   })
 

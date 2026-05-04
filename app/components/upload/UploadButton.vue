@@ -24,6 +24,7 @@ const startUploading = async () => {
     isDialogOpen.value = false
     toast.success(t('ui.upload.success.uploaded'))
     await execute()
+    return navigateTo('/')
   } catch (e: any) {
     toast.error(t('ui.upload.errors.storageLimit'))
   }
