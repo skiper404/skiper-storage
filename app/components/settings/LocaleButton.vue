@@ -1,16 +1,12 @@
 <script setup lang="ts">
 const { locale, locales, setLocale } = useI18n()
-
-const currentLocale = computed(
-  () => locales.value.find(l => l.code === locale.value)?.name?.split(' ')[0]
-)
 </script>
 
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="ghost" size="icon-sm">
-        {{ currentLocale }}
+      <Button variant="ghost" size="icon-sm" class="uppercase">
+        {{ locale }}
       </Button>
     </DropdownMenuTrigger>
 

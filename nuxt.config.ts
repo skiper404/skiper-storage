@@ -77,37 +77,37 @@ export default defineNuxtConfig({
         code: 'en',
         language: 'en-US',
         file: 'en.json',
-        name: '🇺🇸 English'
+        name: 'English'
       },
       {
         code: 'ru',
         language: 'ru-RU',
         file: 'ru.json',
-        name: '🇷🇺 Русский'
+        name: 'Русский'
       },
       {
         code: 'pl',
         language: 'pl-Pl',
         file: 'pl.json',
-        name: '🇵🇱 Polski'
+        name: 'Polski'
       },
       {
         code: 'uk',
         language: 'uk-UK',
         file: 'uk.json',
-        name: '🇺🇦 Українська'
+        name: 'Українська'
       },
       {
         code: 'es',
         language: 'es-ES',
         file: 'es.json',
-        name: '🇪🇸 Español'
+        name: 'Español'
       },
       {
         code: 'fr',
         language: 'fr-FR',
         file: 'fr.json',
-        name: '🇫🇷 Français'
+        name: 'Français'
       }
     ]
   },
