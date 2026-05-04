@@ -3,7 +3,6 @@ import type { SelectedFile } from '~~/shared/types/selected-file.type'
 import { getCategory } from '~/lib/getCategory'
 
 export const useFileUpload = (selectedFiles: Ref<SelectedFile[]>) => {
-  const { t } = useI18n()
   const { remainingStorageSize } = useStorage()
 
   const isUploading = ref(false)
@@ -12,7 +11,7 @@ export const useFileUpload = (selectedFiles: Ref<SelectedFile[]>) => {
     files.reduce((acc, f) => acc + f.file.size, 0)
 
   const upload = useMultipartUpload(`/api/files/multipart`, {
-    partSize: 10 * 1024 * 1024,
+    partSize: 5 * 1024 * 1024,
     maxRetry: 3
   })
 
