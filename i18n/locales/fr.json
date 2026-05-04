@@ -121,6 +121,21 @@
       "current": "Plan actuel"
     }
   },
+
+  "plans": {
+    "free": {
+      "title": "Gratuit",
+      "description": "Idéal pour commencer et tester la plateforme"
+    },
+    "pro": {
+      "title": "Pro",
+      "description": "Parfait pour une utilisation quotidienne et le stockage personnel"
+    },
+    "premium": {
+      "title": "Premium",
+      "description": "Pour les utilisateurs ayant besoin de plus d’espace et de flexibilité"
+    }
+  },
   "navigation": {
     "home": "Accueil",
     "images": "Images",

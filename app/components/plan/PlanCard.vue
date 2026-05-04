@@ -10,6 +10,10 @@ const { storagePlan, totalFileSizeInBytes } = useStorage()
 const { isUpgrade, getAction } = usePlanLogic()
 const { t } = useI18n()
 
+const title = computed(() => t(`plans.${props.plan.key}.title`))
+
+const description = computed(() => t(`plans.${props.plan.key}.description`))
+
 const changePlan = async (plan: StoragePlan) => {
   const upgrade = isUpgrade(storagePlan.value, plan.value)
 
@@ -48,9 +52,9 @@ const changePlan = async (plan: StoragePlan) => {
     ]"
   >
     <div>
-      <h3 class="text-lg font-semibold">{{ plan.title }}</h3>
+      <h3 class="text-lg font-semibold">{{ title }}</h3>
       <p class="text-sm mt-2 min-h-20">
-        {{ plan.description }}
+        {{ description }}
       </p>
 
       <div class="mt-6 text-accent-foreground font-bold">
@@ -91,7 +95,7 @@ const changePlan = async (plan: StoragePlan) => {
           </DialogTitle>
 
           <DialogDescription class="mt-2 text-sm text-muted-foreground">
-            {{ t('plan.confirmDescription', { plan: plan.title }) }}
+            {{ t('plan.confirmDescription', { plan: title }) }}
           </DialogDescription>
         </DialogHeader>
 
@@ -102,7 +106,7 @@ const changePlan = async (plan: StoragePlan) => {
             <span class="text-sm text-muted-foreground">
               {{ t('plan.labels.plan') }}
             </span>
-            <span class="font-medium">{{ plan.title }}</span>
+            <span class="font-medium">{{ title }}</span>
           </div>
 
           <div class="flex items-center justify-between">
@@ -128,7 +132,7 @@ const changePlan = async (plan: StoragePlan) => {
         </div>
 
         <p class="mt-4 text-sm text-muted-foreground text-center">
-          {{ plan.description }}
+          {{ description }}
         </p>
 
         <div class="mt-6 flex gap-3 justify-center">

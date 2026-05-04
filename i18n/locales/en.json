@@ -121,6 +121,22 @@
       "current": "Current plan"
     }
   },
+
+  "plans": {
+    "free": {
+      "title": "Free",
+      "description": "Good for getting started and testing the platform"
+    },
+    "pro": {
+      "title": "Pro",
+      "description": "Perfect for everyday usage and personal storage"
+    },
+    "premium": {
+      "title": "Premium",
+      "description": "For power users who need more space and flexibility"
+    }
+  },
+
   "navigation": {
     "home": "Home",
     "images": "Images",

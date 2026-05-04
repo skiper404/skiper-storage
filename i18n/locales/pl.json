@@ -121,6 +121,20 @@
       "current": "Aktualny plan"
     }
   },
+  "plans": {
+    "free": {
+      "title": "Darmowy",
+      "description": "Dobry na start i do testowania platformy"
+    },
+    "pro": {
+      "title": "Pro",
+      "description": "Idealny do codziennego użytku i przechowywania danych"
+    },
+    "premium": {
+      "title": "Premium",
+      "description": "Dla wymagających użytkowników potrzebujących więcej miejsca"
+    }
+  },
   "navigation": {
     "home": "Strona główna",
     "images": "Obrazy",

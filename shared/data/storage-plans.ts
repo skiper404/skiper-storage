@@ -4,24 +4,27 @@ import { Plan } from '~~/prisma/generated/enums'
 
 export const plans: StoragePlan[] = [
   {
+    key: 'free',
     title: 'Free',
-    description: 'Good for getting started and testing the platform',
+    description: 'description',
     price: 0,
     currency: 'UAH',
     storage: 300 * MB,
     value: Plan.FREE
   },
   {
-    title: 'Pro',
-    description: 'Perfect for everyday usage and personal storage',
+    key: 'pro',
+    title: 'pro',
+    description: 'description',
     price: 99,
     currency: 'UAH',
     storage: 500 * MB,
     value: Plan.PRO
   },
   {
+    key: 'premium',
     title: 'Premium',
-    description: 'For power users who need more space and flexibility',
+    description: 'description',
     price: 199,
     currency: 'UAH',
     storage: 1 * GB,
