@@ -1,7 +1,7 @@
 import { hash } from 'argon2'
 
 import { prisma } from '~~/server/utils/db'
-import { setSession } from '~~/server/utils/setUserSession'
+import { setSession } from '~~/server/utils/setSession'
 import { createUserSchema } from '~~/shared/schemas/createUserSchema'
 
 export default defineEventHandler(async event => {
@@ -16,7 +16,7 @@ export default defineEventHandler(async event => {
     })
   }
 
-  const { email, password } = validatedBody.data
+  const { email } = validatedBody.data
 
   const existingUser = await prisma.user.findUnique({
     where: { email }
@@ -38,17 +38,6 @@ export default defineEventHandler(async event => {
   })
 
   await setSession(event, newUser)
-
-  await setUserSession(event, {
-    user: {
-      id: newUser.id,
-      email: newUser.email,
-      name: newUser.name,
-      image: newUser.image,
-      role: newUser.role,
-      plan: newUser.plan
-    }
-  })
 
   return true
 })

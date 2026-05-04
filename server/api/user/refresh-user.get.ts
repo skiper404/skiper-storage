@@ -7,7 +7,7 @@ export default defineEventHandler(async event => {
     throw createError({ statusCode: 401, statusMessage: 'User not found' })
   }
 
-  await setUserSession(event, { user })
+  await setSession(event, user)
 
   return user
 })

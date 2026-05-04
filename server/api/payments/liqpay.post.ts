@@ -9,21 +9,19 @@ export default defineEventHandler(async event => {
   const validatedBody = paymentSchema.safeParse(body)
 
   if (!validatedBody.success) {
-    console.log(validatedBody.error.flatten().fieldErrors)
-
     throw createError({
       statusCode: 400,
       data: validatedBody.error.flatten().fieldErrors
     })
   }
 
-  const { action, amount, currency, description } = validatedBody.data
+  const { action, amount, currency, description, plan } = validatedBody.data
 
   // декодирую для удобства потом буду через базу
   const order_id = Buffer.from(
     JSON.stringify({
       userId: session.user.id,
-      plan: body.plan,
+      plan: plan,
       timestamp: Date.now()
     })
   ).toString('base64')

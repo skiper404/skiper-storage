@@ -1,6 +1,6 @@
 import { verify } from 'argon2'
 
-import { setSession } from '~~/server/utils/setUserSession'
+import { setSession } from '~~/server/utils/setSession'
 import { loginUserSchema } from '~~/shared/schemas/loginUserSchema'
 
 export default defineEventHandler(async event => {

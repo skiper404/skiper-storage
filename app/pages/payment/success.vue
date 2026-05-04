@@ -1,15 +1,16 @@
 <script setup lang="ts">
-definePageMeta({ middleware: ['auth'] })
+definePageMeta({ middleware: 'auth' })
 
 const { user, fetch } = useUserSession()
 
 onMounted(async () => {
-  await $fetch('/user/refresh-user')
+  await $fetch('/api/user/refresh-user')
+  await fetch()
 })
 </script>
 <template>
   <div class="flex flex-col items-center justify-center mt-20">
-    <NuxtLink to="/">
+    <NuxtLink to="/plan">
       <Button variant="secondary">Back</Button>
     </NuxtLink>
     <div>Congratulation!!!</div>

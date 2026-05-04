@@ -1,4 +1,4 @@
-import { setSession } from '~~/server/utils/setUserSession'
+import { setSession } from '~~/server/utils/setSession'
 
 export default defineOAuthGoogleEventHandler({
   async onSuccess(event, { user, tokens }) {

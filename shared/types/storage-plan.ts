@@ -1,14 +1,10 @@
-export enum PlanEnum {
-  FREE = 'FREE',
-  PRO = 'PRO',
-  PREMIUM = 'PREMIUM'
-}
+import type { Plan } from '~~/prisma/generated/enums'
 
 export interface StoragePlan {
   title: string
   description: String
   price: number
   currency: string
-  storage: string
-  value: PlanEnum
+  storage: number
+  value: Plan
 }

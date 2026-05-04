@@ -1,20 +1,16 @@
 <script setup lang="ts">
 import { filesize } from 'filesize'
 
-import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
-
-const { category, files } = defineProps<{
+const { category } = defineProps<{
   category: string
-  files: UploadedFile[]
 }>()
 
 const { t } = useI18n()
+const { getFileSizeByCategory, getFilesByCategory } = useStorage()
 
+const files = computed(() => getFilesByCategory(category))
+const fileSize = computed(() => getFileSizeByCategory(category))
 const categoryLabel = computed(() => t(`ui.info.categories.${category}`))
-
-const { categoryStats } = useFilesStats(files)
-
-const stats = computed(() => categoryStats(category))
 
 const icon = computed(() => {
   if (category === 'audio') return 'lucide:file-audio'
@@ -26,9 +22,8 @@ const icon = computed(() => {
 
 <template>
   <div
-    v-if="stats.count"
     :class="[
-      'rounded-2xl flex w-full gap-2 px-1 text-xs p-1 justify-center items-center text-gray-200',
+      'rounded-lg flex w-full gap-2 px-1 text-xs p-1 justify-center items-center text-gray-200',
       {
         'bg-blue-500/70': category === 'audio',
         'bg-violet-500/70': category === 'video',
@@ -50,11 +45,10 @@ const icon = computed(() => {
     <span class="hidden sm:inline capitalize" variant="outline">
       {{ categoryLabel }} :
     </span>
-
-    <span class="font-bold">{{ stats.count }}</span>
+    <span class="font-bold">{{ files.length }}</span>
     <span class="hidden sm:inline">|</span>
     <span class="hidden sm:inline">
-      {{ filesize(stats.size) }}
+      {{ filesize(fileSize) }}
     </span>
   </div>
 </template>

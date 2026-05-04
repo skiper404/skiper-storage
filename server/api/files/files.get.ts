@@ -18,7 +18,7 @@ export default defineEventHandler(async event => {
       pathname: 'pathmame-1',
       originalName: 'audio-file-1',
       mimeType: 'audio',
-      size: 50 * 1000 * 1000,
+      size: 15 * 1000 * 1000,
       category: 'audio'
     },
     {
@@ -58,7 +58,7 @@ export default defineEventHandler(async event => {
       pathname: 'pathmame-1',
       originalName: 'video-file-1',
       mimeType: 'video',
-      size: 100 * 1000 * 1000,
+      size: 50 * 1000 * 1000,
       category: 'video'
     },
     {
@@ -68,7 +68,7 @@ export default defineEventHandler(async event => {
       pathname: 'pathmame-1',
       originalName: 'video-file-2',
       mimeType: 'video',
-      size: 100 * 1000 * 1000,
+      size: 50 * 1000 * 1000,
       category: 'video'
     }
   ]

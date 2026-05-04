@@ -1,8 +1,9 @@
 import z from 'zod'
 
 export const paymentSchema = z.object({
-  action: z.string(),
+  plan: z.string().nonempty(),
+  action: z.string().nonempty(),
   amount: z.number(),
-  currency: z.string(),
-  description: z.string()
+  currency: z.string().nonempty(),
+  description: z.string().nonempty()
 })
