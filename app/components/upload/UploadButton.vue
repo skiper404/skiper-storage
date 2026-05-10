@@ -27,10 +27,6 @@ const handleAddFilesButton = () => {
   inputRef.value?.click()
 }
 
-const isFilesAbove30Mb = computed(() =>
-  selectedFiles.value.some(file => file.size > 30 * 1024 * 1024)
-)
-
 const isEnougthFreeSpace = computed(
   () => selectedFilesSize.value < remainingStorageSize.value
 )
@@ -63,17 +59,28 @@ const startUpload = async () => {
 
   try {
     for (const file of selectedFiles.value) {
-      const formData = new FormData()
+      const { uploadUrl, key } = await $fetch('/api/files/sign', {
+        method: 'POST',
+        body: { file }
+      })
 
-      formData.append('file', file.raw)
-
-      await axios.post('/api/files/files', formData, {
+      await axios.put(uploadUrl, file.raw, {
+        headers: { 'Content-Type': file.type },
         onUploadProgress(progressEvent) {
           if (!progressEvent.total) return
-
-          file.progress = Math.round(
+          file.progress = Math.floor(
             (progressEvent.loaded * 100) / progressEvent.total
           )
+        }
+      })
+
+      await $fetch('/api/files/save', {
+        method: 'POST',
+        body: {
+          key,
+          fileName: file.name,
+          type: file.type,
+          size: file.size
         }
       })
     }
@@ -207,9 +214,7 @@ const startUpload = async () => {
         <Button
           variant="default"
           @click="startUpload"
-          :disabled="
-            selectedFiles.length === 0 || isUploading || isFilesAbove30Mb
-          "
+          :disabled="selectedFiles.length === 0 || isUploading"
         >
           <Icon name="lucide:cloud-upload" size="20" />
           {{ t('ui.upload.uploadButton') }}

@@ -8,10 +8,10 @@ export const useStorage = () => {
   const STORAGE_PLANS = {
     FREE: 286.1 * MB,
     PRO: 476.84 * MB,
-    PREMIUM: 955 * GB
+    PREMIUM: 95 * MB
   }
 
-  const storagePlan = computed<Plan>(() => user.value?.plan || 'FREE')
+  const storagePlan = computed<Plan>(() => 'PREMIUM')
 
   const storagePlanLimit = computed(() => STORAGE_PLANS[storagePlan.value])
 
