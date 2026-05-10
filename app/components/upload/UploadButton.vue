@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import axios from 'axios'
 import { toast } from 'vue-sonner'
 
 import { ALLOWED_FORMATS } from '~~/shared/constants'
@@ -29,6 +30,7 @@ const onChangeFileInput = () => {
     name: file.name,
     size: file.size,
     type: file.type,
+    progress: 0,
     preview: generatePreview(file)
   }))
 
@@ -38,15 +40,23 @@ const onChangeFileInput = () => {
 const startUpload = async () => {
   isUploading.value = true
 
-  const formData = new FormData()
-
-  selectedFiles.value.forEach(file => formData.append('file', file.raw))
-
   try {
-    await $fetch('/api/files/files', {
-      method: 'POST',
-      body: formData
-    })
+    for (const file of selectedFiles.value) {
+      const formData = new FormData()
+
+      formData.append('file', file.raw)
+
+      await axios.post('/api/files/files', formData, {
+        onUploadProgress(progressEvent) {
+          if (!progressEvent.total) return
+
+          file.progress = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          )
+        }
+      })
+    }
+
     await execute()
   } catch (e: any) {
     toast.error(e.message)
@@ -137,10 +147,10 @@ const clearSelectedFiles = () => {
           <span class="text-primary mt-auto w-18 truncate text-center text-xs">
             {{ file.name }}
           </span>
-          <!-- <Progress :model-value="file.progress" /> -->
+          <Progress :model-value="file.progress" />
           <span class="absolute top-6 left-6 flex rounded-full bg-black/50">
             <Icon
-              v-if="file"
+              v-if="file.progress === 100"
               name="lucide:circle-check"
               size="24"
               class="text-green-500"
@@ -149,7 +159,7 @@ const clearSelectedFiles = () => {
 
           <Button
             size="icon-sm"
-            v-if="true"
+            v-if="!isUploading"
             class="pointer-events-auto absolute -top-2 -right-2 z-10 size-fit cursor-pointer rounded-2xl bg-black text-gray-400 transition-colors hover:bg-black hover:text-red-300"
             @click="removeFile(file)"
           >

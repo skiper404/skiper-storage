@@ -10,7 +10,7 @@ import 'vue-sonner/style.css'
         <NuxtLayout>
           <NuxtPage />
         </NuxtLayout>
-        <Toaster />
+        <Toaster close-button />
       </SidebarProvider>
     </TooltipProvider>
   </div>

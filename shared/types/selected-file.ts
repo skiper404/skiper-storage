@@ -4,5 +4,6 @@ export interface SelectedFile {
   name: string
   type: string
   size: number
+  progress: number
   preview: string
 }

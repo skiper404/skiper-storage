@@ -73,7 +73,9 @@ const deleteFile = async () => {
           </Button>
         </DialogTrigger>
 
-        <DialogContent class="border-white/10 bg-zinc-950/95 backdrop-blur-2xl">
+        <DialogContent
+          class="border-white/10 bg-primary-foreground/20 backdrop-blur-2xl"
+        >
           <DialogHeader class="space-y-3">
             <DialogTitle class="text-center text-xl">
               {{ t('ui.deleteForm.title') }}
@@ -96,7 +98,7 @@ const deleteFile = async () => {
             <DialogClose as-child>
               <Button
                 variant="outline"
-                class="rounded-xl border-white/10 bg-transparent hover:bg-white/5"
+                class="rounded-xl border-white/10 text-zinc-100 hover:bg-white/5"
               >
                 {{ t('ui.deleteForm.no') }}
               </Button>
