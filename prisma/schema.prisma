@@ -56,20 +56,18 @@ model Account {
 }
 
 model File {
-  id           String   @id @default(cuid())
+  id           String   @id @default(uuid())
   userId       String
-  url          String
-  pathname     String
-  originalName String
-  mimeType     String
-  size         Int
+  key          String
+  fileName      String
+  type         String
   category     String
+  size         Int
 
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
   @@index([userId])
-  @@index([category])
   @@map("files")
 }
 

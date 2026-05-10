@@ -116,12 +116,11 @@ export type AccountScalarFieldEnum = (typeof AccountScalarFieldEnum)[keyof typeo
 export const FileScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
-  url: 'url',
-  pathname: 'pathname',
-  originalName: 'originalName',
-  mimeType: 'mimeType',
-  size: 'size',
+  key: 'key',
+  fileName: 'fileName',
+  type: 'type',
   category: 'category',
+  size: 'size',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

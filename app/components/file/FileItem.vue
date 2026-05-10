@@ -1,21 +1,22 @@
 <script setup lang="ts">
-import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
+import type { File } from '~~/prisma/generated/client'
 
-const { file } = defineProps<{ file: UploadedFile }>()
+const { file } = defineProps<{ file: File }>()
 const localePath = useLocalePath()
 </script>
 
 <template>
   <NuxtLink
+    v-if="file.id && file.category"
     :to="localePath(`/${file.category}/${file.id}`)"
     class="flex flex-col items-center gap-2 mx-auto"
   >
     <FilePreview :file="file" />
     <span
       class="text-xs text-center w-28 truncate text-gray-400"
-      :title="file.originalName"
+      :title="file.fileName"
     >
-      {{ file.originalName }}
+      {{ file.fileName }}
     </span>
   </NuxtLink>
 </template>

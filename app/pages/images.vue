@@ -13,7 +13,6 @@ useHead({ title: `Images | ${appName}` })
         {{ t('pages.images.title') }} | {{ images.length }}
         {{ t('ui.info.totalFiles') }}
       </h2>
-      <UploadButton />
     </div>
     <FilesList v-if="images.length" :files="images" />
     <NoFiles v-else />

@@ -2,87 +2,116 @@
 import { filesize } from 'filesize'
 import { toast } from 'vue-sonner'
 
-import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
+import type { File } from '~~/prisma/generated/client'
 
-const { file } = defineProps<{ file: UploadedFile }>()
+const { file } = defineProps<{ file: File }>()
 const { t } = useI18n()
 const { execute } = useFetchedFiles()
 
-const downloadFile = () => {
-  window.open(`/api/files/download/${file.id}`, '_blank')
-}
-
 const deleteFile = async () => {
-  await $fetch(`/api/files/${file.id}`, { method: 'DELETE' })
-  await execute()
-  toast.success(`Файл ${file.originalName} удален.`)
-  return navigateTo('/')
+  try {
+    await $fetch(`/api/files/${file.id}` as string, { method: 'DELETE' })
+    await execute()
+    toast.success(`Файл ${file.fileName} удален.`)
+    return navigateTo('/')
+  } catch (e: any) {
+    toast.error(e.message)
+  }
 }
 </script>
 
 <template>
-  <div class="mt-auto flex gap-2 items-center justify-center">
-    <Badge
-      :class="[
-        'text-gray-100',
-        {
-          'bg-violet-500': file.category === 'image',
-          'bg-indigo-500': file.category === 'audio',
-          'bg-sky-500': file.category === 'video'
-        }
-      ]"
-    >
-      {{ file.mimeType }}
-    </Badge>
+  <div
+    class="mt-auto flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-black/30 p-3 backdrop-blur-xl"
+  >
+    <div class="flex items-center gap-2">
+      <Badge
+        class="rounded-full px-3 py-1 text-xs font-medium text-white"
+        :class="{
+          'bg-violet-500/90': file.category === 'image',
+          'bg-sky-500/90': file.category === 'video',
+          'bg-indigo-500/90': file.category === 'audio'
+        }"
+      >
+        <Icon v-if="file.category === 'image'" name="lucide:image" size="14" />
+        <Icon v-if="file.category === 'video'" name="lucide:video" size="14" />
+        <Icon v-if="file.category === 'audio'" name="lucide:music" size="14" />
 
-    |
+        <span class="capitalize">
+          {{ file.category }}
+        </span>
+      </Badge>
 
-    <Button size="sm" class="rounded-2xl" @click="downloadFile">
-      <span class="hidden sm:inline">{{ t('ui.download') }}</span>
-      <Icon name="lucide:download" />
-    </Button>
+      <Badge
+        variant="secondary"
+        class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300"
+      >
+        {{ filesize(file.size) }}
+      </Badge>
+    </div>
 
-    <Dialog>
-      <DialogTrigger as-child>
-        <Button size="sm" class="rounded-2xl" variant="destructive">
-          <span class="hidden sm:inline">{{ t('ui.delete') }}</span>
-          <Icon name="lucide:trash-2" />
-        </Button>
-      </DialogTrigger>
+    <div class="flex items-center gap-2">
+      <Button
+        as-child
+        size="icon-sm"
+        variant="secondary"
+        class="rounded-full border border-white/10 bg-white/5 text-gray-200 transition-all hover:scale-105 hover:bg-white/10"
+      >
+        <a :href="`/api/files/download/${file.id}`">
+          <Icon name="lucide:download" size="16" />
+        </a>
+      </Button>
 
-      <DialogContent class="space-y-4 bg-primary-foreground">
-        <DialogHeader class="space-y-2">
-          <DialogTitle>
-            {{ t('ui.deleteForm.title') }}
-          </DialogTitle>
-
-          <DialogDescription class="text-center">
-            {{ t('ui.deleteForm.description') }}
-
-            {{ file.originalName }}
-
-            ?
-          </DialogDescription>
-        </DialogHeader>
-
-        <div class="flex items-center justify-center gap-4">
-          <DialogClose as-child>
-            <Button variant="outline">
-              {{ t('ui.deleteForm.no') }}
-            </Button>
-          </DialogClose>
-
-          <Button variant="destructive" @click="deleteFile">
-            {{ t('ui.deleteForm.yes') }}
+      <Dialog>
+        <DialogTrigger as-child>
+          <Button
+            size="icon-sm"
+            variant="destructive"
+            class="rounded-full transition-all hover:scale-105"
+          >
+            <Icon name="lucide:trash-2" size="16" />
           </Button>
-        </div>
-      </DialogContent>
-    </Dialog>
+        </DialogTrigger>
 
-    |
+        <DialogContent class="border-white/10 bg-zinc-950/95 backdrop-blur-2xl">
+          <DialogHeader class="space-y-3">
+            <DialogTitle class="text-center text-xl">
+              {{ t('ui.deleteForm.title') }}
+            </DialogTitle>
 
-    <Badge variant="secondary">
-      {{ filesize(file.size) }}
-    </Badge>
+            <DialogDescription
+              class="text-center text-sm leading-relaxed text-gray-400"
+            >
+              {{ t('ui.deleteForm.description') }}
+
+              <span class="break-all font-semibold text-white">
+                {{ file.fileName }}
+              </span>
+
+              ?
+            </DialogDescription>
+          </DialogHeader>
+
+          <div class="flex items-center justify-center gap-3 pt-2">
+            <DialogClose as-child>
+              <Button
+                variant="outline"
+                class="rounded-xl border-white/10 bg-transparent hover:bg-white/5"
+              >
+                {{ t('ui.deleteForm.no') }}
+              </Button>
+            </DialogClose>
+
+            <Button
+              variant="destructive"
+              class="rounded-xl"
+              @click="deleteFile"
+            >
+              {{ t('ui.deleteForm.yes') }}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </div>
   </div>
 </template>

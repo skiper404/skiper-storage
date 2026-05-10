@@ -1,7 +1,7 @@
 import { TokenType } from '~~/prisma/generated/enums'
 import { resetPasswordTemplate } from '~~/server/utils/email/templates/resetPassword'
-import { generateToken } from '~~/server/utils/generateToken'
-import { forgotPasswordSchema } from '~~/shared/schemas/forgotPasswordSchema'
+import { generateToken } from '~~/server/utils/generate-token'
+import { forgotPasswordSchema } from '~~/shared/schemas/forgot-password-schema'
 
 export default defineEventHandler(async event => {
   const { sendMail } = useNodeMailer()

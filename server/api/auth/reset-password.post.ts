@@ -1,6 +1,6 @@
 import { hash } from 'argon2'
 
-import { resetPasswordSchema } from '~~/shared/schemas/resetPasswordSchema'
+import { resetPasswordSchema } from '~~/shared/schemas/reset-password-schema'
 
 export default defineEventHandler(async event => {
   const body = await readBody(event)

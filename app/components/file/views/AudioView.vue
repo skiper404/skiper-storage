@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
+import type { File } from '~~/prisma/generated/client'
 
-const props = defineProps<{ file: UploadedFile }>()
+const props = defineProps<{ file: File }>()
+const config = useAppConfig()
 
-const fileUrl = computed(() => `/api/files/${props.file.pathname}`)
+const fileUrl = computed(() => `${config.S3_PUB_URL}/${props.file.key}`)
 </script>
 
 <template>
@@ -11,6 +12,12 @@ const fileUrl = computed(() => `/api/files/${props.file.pathname}`)
     v-if="file.category === 'audio'"
     class="flex flex-col items-center gap-8"
   >
+    <div
+      class="text-indigo-500 absolute inset-0 blur-2xl opacity-50 -z-10 bg-gray-200 dark:bg-gray-800 rounded-2xl flex flex-col items-center justify-center"
+    >
+      <Icon name="lucide:file-music" size="500" />
+    </div>
+
     <div
       class="text-indigo-500 bg-gray-200 dark:bg-gray-800 rounded-2xl flex flex-col items-center justify-center border"
     >

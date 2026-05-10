@@ -1,8 +1,8 @@
 import { hash } from 'argon2'
 
-import { prisma } from '~~/server/utils/db'
-import { setSession } from '~~/server/utils/setSession'
-import { createUserSchema } from '~~/shared/schemas/createUserSchema'
+import { prisma } from '~~/server/utils/db-client'
+import { setSession } from '~~/server/utils/set-session'
+import { createUserSchema } from '~~/shared/schemas/create-users-schema'
 
 export default defineEventHandler(async event => {
   const body = await readBody(event)

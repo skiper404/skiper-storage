@@ -1,4 +1,4 @@
-import { setSession } from '~~/server/utils/setSession'
+import { setSession } from '~~/server/utils/set-session'
 
 export default defineOAuthGitHubEventHandler({
   async onSuccess(event, { user }) {

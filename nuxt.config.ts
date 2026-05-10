@@ -13,7 +13,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    '@nuxthub/core',
     '@nuxt/image',
     'nuxt-auth-utils',
     'nuxt-authorization',
@@ -32,17 +31,6 @@ export default defineNuxtConfig({
       global: true
     }
   ],
-
-  hub: {
-    blob: {
-      driver: 's3',
-      accessKeyId: process.env.R2_ACCESS_KEY_ID as string,
-      secretAccessKey: process.env.R2_SECRET_ACCESS_KEY as string,
-      bucket: process.env.R2_BUCKET_NAME as string,
-      endpoint: process.env.R2_ENDPOINT as string,
-      region: 'auto'
-    }
-  },
 
   runtimeConfig: {
     liqpayPublicKey: process.env.LIQPAY_PUBLIC_KEY as string,

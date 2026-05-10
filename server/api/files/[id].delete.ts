@@ -1,30 +1,16 @@
-import { blob } from '@nuxthub/blob'
+import { DeleteObjectCommand } from '@aws-sdk/client-s3'
 
-export default eventHandler(async event => {
+export default defineEventHandler(async event => {
   const session = await requireUserSession(event)
   const id = getRouterParam(event, 'id')
 
-  if (!id) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: 'Missing file id'
-    })
-  }
-
-  const file = await prisma.file.findFirst({
+  const file = await prisma.file.delete({
     where: { id, userId: session.user.id }
   })
 
-  if (!file) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: 'File not found'
-    })
-  }
-
-  await blob.del(file.pathname)
-
-  await prisma.file.delete({ where: { id } })
+  await s3.send(
+    new DeleteObjectCommand({ Bucket: 'image-storage', Key: file.key })
+  )
 
   return true
 })

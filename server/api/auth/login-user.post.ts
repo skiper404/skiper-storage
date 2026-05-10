@@ -1,7 +1,7 @@
 import { verify } from 'argon2'
 
-import { setSession } from '~~/server/utils/setSession'
-import { loginUserSchema } from '~~/shared/schemas/loginUserSchema'
+import { setSession } from '~~/server/utils/set-session'
+import { loginUserSchema } from '~~/shared/schemas/login-user-schema'
 
 export default defineEventHandler(async event => {
   const body = await readBody(event)

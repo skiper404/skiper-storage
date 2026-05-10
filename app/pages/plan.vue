@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { plans } from '~~/shared/data/storage-plans'
 
+const { t } = useI18n()
 const { appName } = useAppConfig()
 
 definePageMeta({ middleware: 'auth', layout: 'default' })
 useHead({ title: `Storage Plan | ${appName}` })
-const { t } = useI18n()
 </script>
 
 <template>

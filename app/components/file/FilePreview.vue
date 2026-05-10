@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
+import type { File } from '~~/prisma/generated/client'
 
-const { file } = defineProps<{ file: UploadedFile }>()
-
+const { file } = defineProps<{ file: File }>()
+const config = useAppConfig()
 const isLoaded = ref(false)
-const fileUrl = computed(() => `/api/files/${file.pathname}`)
 
-const handleLoaded = () => {
+const onLoad = () => {
   isLoaded.value = true
 }
 </script>
@@ -14,30 +13,29 @@ const handleLoaded = () => {
 <template>
   <div class="relative h-20 w-20">
     <FileItemSkeleton v-if="!isLoaded" class="absolute inset-0" />
-
     <img
       v-if="file.category === 'image'"
-      :src="fileUrl"
-      :alt="file.originalName"
-      @load="handleLoaded"
-      class="h-full w-full object-cover rounded-lg"
-      :class="{ 'opacity-0': !isLoaded }"
+      :src="`${config.S3_PUB_URL}/${file.key}`"
+      :alt="file.fileName"
+      @load="onLoad"
+      loading="lazy"
+      decoding="async"
+      :class="['h-full w-full object-cover rounded-lg']"
     />
 
     <video
-      v-else-if="file.category === 'video'"
-      :src="fileUrl"
+      v-if="file.category === 'video'"
+      :src="`${config.S3_PUB_URL}/${file.key}`"
       muted
       preload="metadata"
       playsinline
-      @loadeddata="handleLoaded"
-      class="h-full w-full object-cover rounded-xl"
-      :class="{ 'opacity-0': !isLoaded }"
+      @loadeddata="onLoad"
+      :class="['h-full w-full object-cover rounded-xl']"
     ></video>
 
     <div
-      v-else-if="file.category === 'audio'"
-      @vue:mounted="handleLoaded"
+      v-if="file.category === 'audio'"
+      @vue:mounted="onLoad"
       class="text-indigo-500 size-20 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center border"
     >
       <Icon name="lucide:file-music" size="50" />

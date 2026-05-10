@@ -2,7 +2,7 @@
 import { toTypedSchema } from '@vee-validate/zod'
 import { useForm, Field as VeeField } from 'vee-validate'
 
-import { resetPasswordSchema } from '~~/shared/schemas/resetPasswordSchemaFrontend'
+import { resetPasswordSchema } from '~~/shared/schemas/reset-password-schema-frontend'
 
 const { handleSubmit, setErrors } = useForm({
   validationSchema: toTypedSchema(resetPasswordSchema),

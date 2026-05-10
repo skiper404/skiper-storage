@@ -1,11 +1,13 @@
 import z from 'zod'
 
-import { passwordSchema } from './passwordSchema'
+import { passwordSchema } from './password-schema'
+import { tokenSchema } from './tokenSchema'
 
 export const resetPasswordSchema = z
   .object({
     password: passwordSchema,
-    repeatPassword: passwordSchema
+    repeatPassword: passwordSchema,
+    token: tokenSchema
   })
   .refine(data => data.password === data.repeatPassword, {
     message: 'passwordMustMatch',

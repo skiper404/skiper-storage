@@ -1,6 +1,6 @@
 import crypto from 'crypto'
 
-import { paymentSchema } from '~~/shared/schemas/paymentSchema'
+import { paymentSchema } from '~~/shared/schemas/payment-schema'
 
 export default defineEventHandler(async event => {
   const session = await requireUserSession(event)

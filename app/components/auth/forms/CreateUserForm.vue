@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/zod';
 import { useForm, Field as VeeField } from 'vee-validate'
-import {createUserSchema} from '~~/shared/schemas/createUserSchema'
+import {createUserSchema} from '~~/shared/schemas/create-users-schema'
 
 const { t } = useI18n()
 const {} = useUserSession()

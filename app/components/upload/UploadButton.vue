@@ -2,41 +2,75 @@
 import { toast } from 'vue-sonner'
 
 import { ALLOWED_FORMATS } from '~~/shared/constants'
+import type { SelectedFile } from '~~/shared/types/selected-file'
+
+import { generatePreview } from '~/utils/generatePreview'
 
 const { t } = useI18n()
 const { execute } = useFetchedFiles()
-const { inputRef, selectedFiles, onSelectedFile, removeSelectedFile } =
-  useFilePicker()
 
-const { isUploading, startUpload } = useFileUpload(selectedFiles)
+const isOpen = ref(false)
+const isUploading = ref(false)
+const selectedFiles = ref<SelectedFile[]>([])
+const inputRef = ref<HTMLInputElement | null>(null)
 
-const isDialogOpen = ref(false)
-
-const handleSelectFiles = () => {
+const handleAddFilesButton = () => {
   inputRef.value?.click()
 }
 
-const startUploading = async () => {
-  try {
-    await startUpload()
+const onChangeFileInput = () => {
+  const files = inputRef.value?.files
 
-    selectedFiles.value = []
-    isDialogOpen.value = false
-    toast.success(t('ui.upload.success.uploaded'))
+  if (!files?.length) return
+
+  const newFiles: SelectedFile[] = Array.from(files).map(file => ({
+    id: crypto.randomUUID(),
+    raw: file,
+    name: file.name,
+    size: file.size,
+    type: file.type,
+    preview: generatePreview(file)
+  }))
+
+  selectedFiles.value.push(...newFiles)
+}
+
+const startUpload = async () => {
+  isUploading.value = true
+
+  const formData = new FormData()
+
+  selectedFiles.value.forEach(file => formData.append('file', file.raw))
+
+  try {
+    await $fetch('/api/files/files', {
+      method: 'POST',
+      body: formData
+    })
     await execute()
-    return navigateTo('/')
   } catch (e: any) {
-    toast.error(t('ui.upload.errors.storageLimit'))
+    toast.error(e.message)
+  } finally {
+    isUploading.value = false
+    clearSelectedFiles()
+    isOpen.value = false
   }
+}
+
+const removeFile = (file: SelectedFile) => {
+  selectedFiles.value = selectedFiles.value.filter(f => f.id !== file.id)
+}
+
+const clearSelectedFiles = () => {
+  selectedFiles.value = []
 }
 </script>
 
 <template>
-  <Dialog v-model:open="isDialogOpen">
+  <Dialog v-model:open="isOpen">
     <DialogTrigger as-child>
       <Button
         class="bg-lime-500/80 text-indigo-100 shadow-lg backdrop-blur-2xl hover:bg-indigo-300"
-        :disabled="selectedFiles.length > 10"
         size="sm"
       >
         <Icon name="lucide:cloud-upload" size="20" />
@@ -52,7 +86,7 @@ const startUploading = async () => {
         <DialogTitle class="flex items-center gap-2">
           {{ t('ui.upload.title') }}
           <Icon
-            v-if="isUploading"
+            v-if="false"
             name="lucide:loader-circle"
             size="20"
             class="animate-spin"
@@ -76,28 +110,37 @@ const startUploading = async () => {
       <div class="flex flex-wrap justify-center gap-3">
         <div
           v-for="(file, id) in selectedFiles"
+          :key="id"
           class="pointer-events-none relative flex flex-col items-center gap-2 select-none"
         >
           <div
-            v-if="file.file.type.includes('audio')"
+            v-if="isMatchType(file, FileType.AUDIO)"
             class="flex size-18 items-center justify-center rounded-2xl border bg-gray-200 text-indigo-500 dark:bg-gray-800"
           >
             <Icon name="lucide:file-music" size="50" />
           </div>
 
           <img
-            v-else
+            v-if="isMatchType(file, FileType.IMAGE)"
             :src="file.preview"
-            alt="alt"
             class="size-18 rounded-2xl object-cover"
           />
+
+          <video
+            v-if="isMatchType(file, FileType.VIDEO)"
+            :src="file.preview"
+            class="size-18 rounded-2xl object-cover"
+            muted
+            preload="metadata"
+          />
+
           <span class="text-primary mt-auto w-18 truncate text-center text-xs">
-            {{ file.file.name }}
+            {{ file.name }}
           </span>
-          <Progress :model-value="file.progress" />
+          <!-- <Progress :model-value="file.progress" /> -->
           <span class="absolute top-6 left-6 flex rounded-full bg-black/50">
             <Icon
-              v-if="file.uploaded"
+              v-if="file"
               name="lucide:circle-check"
               size="24"
               class="text-green-500"
@@ -106,27 +149,23 @@ const startUploading = async () => {
 
           <Button
             size="icon-sm"
-            v-if="!isUploading"
+            v-if="true"
             class="pointer-events-auto absolute -top-2 -right-2 z-10 size-fit cursor-pointer rounded-2xl bg-black text-gray-400 transition-colors hover:bg-black hover:text-red-300"
-            @click="removeSelectedFile(id)"
+            @click="removeFile(file)"
           >
             <Icon name="lucide:circle-x" size="24" />
           </Button>
         </div>
       </div>
       <div class="flex w-full items-center justify-center gap-8">
-        <Button
-          variant="secondary"
-          :disabled="selectedFiles.length >= 10 || isUploading"
-          @click="handleSelectFiles"
-        >
+        <Button variant="secondary" @click="handleAddFilesButton">
           <Icon size="20" name="lucide:plus" />
           {{ t('ui.upload.addButton') }}
         </Button>
         <Button
-          :disabled="selectedFiles.length === 0 || isUploading"
           variant="default"
-          @click="startUploading"
+          @click="startUpload"
+          :disabled="selectedFiles.length === 0 || isUploading"
         >
           <Icon name="lucide:cloud-upload" size="20" />
           {{ t('ui.upload.uploadButton') }}
@@ -141,6 +180,6 @@ const startUploading = async () => {
     type="file"
     multiple
     accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,audio/mpeg"
-    @change="onSelectedFile"
+    @change="onChangeFileInput"
   />
 </template>

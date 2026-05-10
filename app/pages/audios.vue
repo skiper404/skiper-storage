@@ -13,7 +13,6 @@ const { t } = useI18n()
         {{ t('pages.audios.title') }} | {{ audios.length }}
         {{ t('ui.info.totalFiles') }}
       </h2>
-      <UploadButton />
     </div>
     <FilesList v-if="audios.length" :files="audios" />
     <NoFiles v-else />

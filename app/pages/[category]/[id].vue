@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { UploadedFile } from '~~/shared/types/uploaded-file.type'
+import type { File } from '~~/prisma/generated/client'
 
 definePageMeta({
   middleware: ['auth']
 })
 
 const route = useRoute()
-const { data: file } = await useFetch<UploadedFile>(
+const { data: file } = await useFetch<File>(
   () => `/api/files/${route.params.id}`
 )
 const localePath = useLocalePath()
@@ -19,8 +19,7 @@ const localePath = useLocalePath()
         <Icon name="lucide:arrow-left" size="20" />
       </Button>
     </NuxtLink>
-
-    <FileHeader :name="file.originalName" :category="file.category" />
+    <FileHeader :name="file.fileName" :category="file.category" />
     <div class="flex items-center h-full max-w-2xl">
       <ImageView v-if="file.category === 'image'" :file="file" />
       <VideoView v-if="file.category === 'video'" :file="file" />
