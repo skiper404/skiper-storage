@@ -9,7 +9,7 @@ export default defineEventHandler(async event => {
   if (!files || !files.length) throw createError({})
 
   for (const file of files) {
-    const key = `${session.user.id}/${crypto.randomUUID()}`
+    const key = `${session.user.id}/${crypto.randomUUID()}-${file.filename}`
 
     if (!file.filename)
       throw createError({ status: 400, message: 'Filename not provided' })

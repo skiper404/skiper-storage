@@ -60,14 +60,26 @@
   },
   "ui": {
     "upload": {
-      "uploadButton": "Télécharger des fichiers",
+      "uploadButton": "Téléverser des fichiers",
       "addButton": "Ajouter des fichiers",
-      "title": "Téléversement",
+      "title": "Téléversement de fichiers",
+
+      "errors": {
+        "storageLimit": "Limite de stockage dépassée"
+      },
+
+      "success": {
+        "uploaded": "Fichiers téléversés avec succès"
+      },
+
       "description": {
-        "quantity": "Sélectionnez 1–10 fichiers",
-        "formats": "Formats supportés"
+        "quantity": "Sélectionnez 1 à 10 fichiers à téléverser (1 fichier — 30 Mo max)",
+        "formats": "Formats pris en charge",
+        "remainingSpace": "Espace restant",
+        "selectedFiles": "Fichiers sélectionnés"
       }
     },
+
     "messages": {
       "fileDeleted": "Le fichier {name} a été supprimé"
     },

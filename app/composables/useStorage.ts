@@ -6,9 +6,9 @@ export const useStorage = () => {
   const { files } = useFetchedFiles()
 
   const STORAGE_PLANS = {
-    FREE: 300 * MB,
-    PRO: 500 * MB,
-    PREMIUM: 1 * GB
+    FREE: 286.1 * MB,
+    PRO: 476.84 * MB,
+    PREMIUM: 955 * GB
   }
 
   const storagePlan = computed<Plan>(() => user.value?.plan || 'FREE')

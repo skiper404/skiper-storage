@@ -10,7 +10,7 @@ const fileUrl = computed(() => `${config.S3_PUB_URL}/${props.file.key}`)
 <template>
   <video
     :src="fileUrl"
-    class="aspect-video absolute rounded-2xl inset-0 h-full w-full -z-10 blur-2xl opacity-30"
+    class="aspect-video absolute rounded-2xl inset-0 h-full w-full -z-10 blur-2xl opacity-40"
   ></video>
 
   <video :src="fileUrl" controls class="aspect-video"></video>

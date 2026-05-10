@@ -63,11 +63,23 @@
       "uploadButton": "Subir archivos",
       "addButton": "Añadir archivos",
       "title": "Subir archivos",
+
+      "errors": {
+        "storageLimit": "Se ha superado el límite de almacenamiento"
+      },
+
+      "success": {
+        "uploaded": "Archivos subidos correctamente"
+      },
+
       "description": {
-        "quantity": "Selecciona 1–10 archivos",
-        "formats": "Formatos soportados"
+        "quantity": "Selecciona de 1 a 10 archivos para subir (1 archivo — máximo 30 MB)",
+        "formats": "Formatos compatibles",
+        "remainingSpace": "Espacio restante",
+        "selectedFiles": "Archivos seleccionados"
       }
     },
+
     "messages": {
       "fileDeleted": "El archivo {name} ha sido eliminado"
     },

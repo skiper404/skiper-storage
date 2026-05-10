@@ -9,7 +9,7 @@ export const plans: StoragePlan[] = [
     description: 'description',
     price: 0,
     currency: 'UAH',
-    storage: 300 * MB,
+    storage: 286.1 * MB,
     value: Plan.FREE
   },
   {
@@ -18,7 +18,7 @@ export const plans: StoragePlan[] = [
     description: 'description',
     price: 99,
     currency: 'UAH',
-    storage: 500 * MB,
+    storage: 476.84 * MB,
     value: Plan.PRO
   },
   {
@@ -27,7 +27,7 @@ export const plans: StoragePlan[] = [
     description: 'description',
     price: 199,
     currency: 'UAH',
-    storage: 1 * GB,
+    storage: 955 * MB,
     value: Plan.PREMIUM
   }
 ]

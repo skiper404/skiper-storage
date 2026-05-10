@@ -13,6 +13,7 @@ const { t } = useI18n()
         {{ t('pages.videos.title') }} | {{ videos.length }}
         {{ t('ui.info.totalFiles') }}
       </h2>
+      <UploadButton />
     </div>
     <FilesList v-if="videos.length" :files="videos" />
     <NoFiles v-else />

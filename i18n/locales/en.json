@@ -65,7 +65,6 @@
       "title": "Upload files",
 
       "errors": {
-        "maxFiles": "You can upload no more than 10 files at any time",
         "storageLimit": "Storage limit exceeded"
       },
 
@@ -74,8 +73,10 @@
       },
 
       "description": {
-        "quantity": "Select 1–10 files to upload",
-        "formats": "Supported formats"
+        "quantity": "Select 1–10 files to upload (1 file - max 30 MB)",
+        "formats": "Supported formats",
+        "remainingSpace": "Remaining Space",
+        "selectedFiles": "Selected Files"
       }
     },
     "messages": {

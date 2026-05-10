@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import axios from 'axios'
+import { filesize } from 'filesize'
 import { toast } from 'vue-sonner'
 
 import { ALLOWED_FORMATS } from '~~/shared/constants'
@@ -9,17 +10,32 @@ import { generatePreview } from '~/utils/generatePreview'
 
 const { t } = useI18n()
 const { execute } = useFetchedFiles()
+const localePath = useLocalePath()
+const { remainingStorageSize } = useStorage()
+const {
+  isUploading,
+  selectedFiles,
+  selectedFilesSize,
+  clearSelectedFiles,
+  removeFile
+} = useUpload()
 
 const isOpen = ref(false)
-const isUploading = ref(false)
-const selectedFiles = ref<SelectedFile[]>([])
 const inputRef = ref<HTMLInputElement | null>(null)
 
 const handleAddFilesButton = () => {
   inputRef.value?.click()
 }
 
-const onChangeFileInput = () => {
+const isFilesAbove30Mb = computed(() =>
+  selectedFiles.value.some(file => file.size > 30 * 1024 * 1024)
+)
+
+const isEnougthFreeSpace = computed(
+  () => selectedFilesSize.value < remainingStorageSize.value
+)
+
+const addFiles = () => {
   const files = inputRef.value?.files
 
   if (!files?.length) return
@@ -38,6 +54,11 @@ const onChangeFileInput = () => {
 }
 
 const startUpload = async () => {
+  if (!isEnougthFreeSpace.value) {
+    toast.error(t('ui.upload.errors.storageLimit'))
+    return
+  }
+
   isUploading.value = true
 
   try {
@@ -58,21 +79,14 @@ const startUpload = async () => {
     }
 
     await execute()
+    await navigateTo(localePath('/'))
   } catch (e: any) {
     toast.error(e.message)
   } finally {
     isUploading.value = false
-    clearSelectedFiles()
     isOpen.value = false
+    clearSelectedFiles()
   }
-}
-
-const removeFile = (file: SelectedFile) => {
-  selectedFiles.value = selectedFiles.value.filter(f => f.id !== file.id)
-}
-
-const clearSelectedFiles = () => {
-  selectedFiles.value = []
 }
 </script>
 
@@ -96,28 +110,42 @@ const clearSelectedFiles = () => {
         <DialogTitle class="flex items-center gap-2">
           {{ t('ui.upload.title') }}
           <Icon
-            v-if="false"
+            v-if="isUploading"
             name="lucide:loader-circle"
             size="20"
             class="animate-spin"
           />
         </DialogTitle>
-        <DialogDescription class="mt-4 space-y-2 space-x-2 text-left">
-          {{ t('ui.upload.description.quantity') }}
-          <br />
-          {{ t('ui.upload.description.formats') }}
-          <br />
-          <Badge
-            variant="secondary"
-            class="text-gray-400"
-            v-for="(format, id) in ALLOWED_FORMATS"
-            :key="id"
-          >
-            {{ format }}
-          </Badge>
+
+        <DialogDescription
+          class="mt-4 space-y-2 space-x-2 text-left flex flex-col"
+        >
+          <span> {{ t('ui.upload.description.quantity') }} </span>
+          <span>
+            {{ t('ui.upload.description.remainingSpace') }}:
+            {{ filesize(remainingStorageSize) }}
+          </span>
+
+          <span>
+            {{ t('ui.upload.description.selectedFiles') }}:
+            {{ filesize(selectedFilesSize) }}
+          </span>
+          <span>{{ t('ui.upload.description.formats') }} </span>
+          <div class="space-x-2">
+            <Badge
+              variant="secondary"
+              class="text-gray-400"
+              v-for="(format, id) in ALLOWED_FORMATS"
+              :key="id"
+            >
+              {{ format }}
+            </Badge>
+          </div>
         </DialogDescription>
       </DialogHeader>
-      <div class="flex flex-wrap justify-center gap-3">
+      <div
+        class="flex flex-wrap justify-center gap-3 max-h-100 overflow-auto p-2"
+      >
         <div
           v-for="(file, id) in selectedFiles"
           :key="id"
@@ -147,6 +175,10 @@ const clearSelectedFiles = () => {
           <span class="text-primary mt-auto w-18 truncate text-center text-xs">
             {{ file.name }}
           </span>
+          <span
+            class="text-primary mt-auto w-18 truncate text-center text-xs"
+            >{{ filesize(file.size) }}</span
+          >
           <Progress :model-value="file.progress" />
           <span class="absolute top-6 left-6 flex rounded-full bg-black/50">
             <Icon
@@ -175,7 +207,9 @@ const clearSelectedFiles = () => {
         <Button
           variant="default"
           @click="startUpload"
-          :disabled="selectedFiles.length === 0 || isUploading"
+          :disabled="
+            selectedFiles.length === 0 || isUploading || isFilesAbove30Mb
+          "
         >
           <Icon name="lucide:cloud-upload" size="20" />
           {{ t('ui.upload.uploadButton') }}
@@ -190,6 +224,6 @@ const clearSelectedFiles = () => {
     type="file"
     multiple
     accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,audio/mpeg"
-    @change="onChangeFileInput"
+    @change="addFiles"
   />
 </template>

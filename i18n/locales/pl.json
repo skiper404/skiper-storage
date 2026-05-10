@@ -63,11 +63,23 @@
       "uploadButton": "Prześlij pliki",
       "addButton": "Dodaj pliki",
       "title": "Przesyłanie plików",
+
+      "errors": {
+        "storageLimit": "Przekroczono limit przestrzeni"
+      },
+
+      "success": {
+        "uploaded": "Pliki zostały przesłane"
+      },
+
       "description": {
-        "quantity": "Wybierz od 1 do 10 plików",
-        "formats": "Obsługiwane formaty"
+        "quantity": "Wybierz 1–10 plików do przesłania (1 plik — maks. 30 MB)",
+        "formats": "Obsługiwane formaty",
+        "remainingSpace": "Pozostałe miejsce",
+        "selectedFiles": "Wybrane pliki"
       }
     },
+
     "messages": {
       "fileDeleted": "Plik {name} został usunięty"
     },

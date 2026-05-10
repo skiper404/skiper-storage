@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1045.0",
+    "@aws-sdk/s3-request-presigner": "^3.1045.0",
     "@lucide/vue": "^1.8.0",
     "@nuxt/icon": "^2.2.1",
     "@nuxt/image": "^2.0.0",

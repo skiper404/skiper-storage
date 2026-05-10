@@ -13,7 +13,7 @@ const fileUrl = computed(() => `${config.S3_PUB_URL}/${props.file.key}`)
     class="flex flex-col items-center gap-8"
   >
     <div
-      class="text-indigo-500 absolute inset-0 blur-2xl opacity-50 -z-10 bg-gray-200 dark:bg-gray-800 rounded-2xl flex flex-col items-center justify-center"
+      class="text-indigo-500 absolute inset-0 blur-2xl opacity-40 -z-10 bg-gray-200 dark:bg-gray-800 rounded-2xl flex flex-col items-center justify-center"
     >
       <Icon name="lucide:file-music" size="500" />
     </div>

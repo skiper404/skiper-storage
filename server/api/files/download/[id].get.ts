@@ -33,7 +33,7 @@ export default defineEventHandler(async event => {
   setHeader(
     event,
     'Content-Disposition',
-    `attachment: filename=${encodeURIComponent(file.fileName)}`
+    `attachment; filename=${encodeURIComponent(file.fileName)}`
   )
 
   return sendStream(event, response.Body as any)

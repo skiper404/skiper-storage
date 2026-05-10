@@ -12,7 +12,7 @@ const fileUrl = computed(() => `${config.S3_PUB_URL}/${props.file.key}`)
     <img
       :src="fileUrl"
       :alt="file.fileName"
-      class="h-full w-full -z-10 blur-2xl opacity-30 object-cover rounded-2xl absolute inset-0"
+      class="h-full w-full -z-10 blur-2xl opacity-40 object-cover rounded-2xl absolute inset-0"
     />
 
     <img
