@@ -29,7 +29,7 @@ const onSubmit = handleSubmit(async data => {
 
 <template>
   <Card
-    class="sm:w-100 sm:pt-6 sm:mt-20 h-full sm:h-fit rounded-none sm:rounded-xl mx-auto border-none bg-secondary"
+    class="bg-secondary mx-auto h-full rounded-none border-none pt-14 sm:mt-20 sm:h-fit sm:w-100 sm:rounded-xl sm:pt-6"
   >
     <CardHeader>
       <CardTitle class="text-center">{{ t('auth.login.title') }}</CardTitle>
@@ -50,10 +50,7 @@ const onSubmit = handleSubmit(async data => {
                 autocomplete="off"
                 :aria-invalid="!!errors.length"
               />
-              <FieldError
-                v-if="errors.length"
-                :errors="errors.map(e => t(`auth.errors.${e}`))"
-              />
+              <FieldError v-if="errors.length" :errors="errors.map(e => t(`auth.errors.${e}`))" />
             </Field>
           </VeeField>
 
@@ -70,29 +67,19 @@ const onSubmit = handleSubmit(async data => {
                 autocomplete="off"
                 :aria-invalid="!!errors.length"
               />
-              <FieldError
-                v-if="errors.length"
-                :errors="errors.map(e => t(`auth.errors.${e}`))"
-              />
+              <FieldError v-if="errors.length" :errors="errors.map(e => t(`auth.errors.${e}`))" />
             </Field>
           </VeeField>
         </FieldGroup>
       </form>
 
-      <div class="flex items-center gap-4 justify-center p-4">
-        <div class="h-0.5 bg-secondary-foreground w-full"></div>
+      <div class="flex items-center justify-center gap-4 p-4">
+        <div class="bg-secondary-foreground h-0.5 w-full"></div>
         <span class="text-primary">{{ t('auth.login.separator') }}</span>
-        <div class="h-0.5 bg-secondary-foreground w-full"></div>
+        <div class="bg-secondary-foreground h-0.5 w-full"></div>
       </div>
 
-      <Button as-child class="w-full" variant="outline" size="lg">
-        <a href="/api/auth/github">
-          <Icon name="fa:github" size="20" class="text-primary" />
-          {{ t('auth.login.oauth') }} GitHub
-        </a>
-      </Button>
-
-      <Button as-child class="w-full mt-4" variant="outline" size="lg">
+      <Button as-child class="mt-4 w-full" variant="outline" size="lg">
         <a href="/api/auth/google">
           <Icon name="logos:google-icon" size="20" />
           {{ t('auth.login.oauth') }} Google
@@ -110,13 +97,10 @@ const onSubmit = handleSubmit(async data => {
       <Field class="mt-4 text-center text-xs">
         <span class="text-xs">{{ t('auth.login.noAccount') }}</span>
 
-        <NuxtLink to="/auth/create-user" class="hover:underline text-gray-500">
+        <NuxtLink to="/auth/create-user" class="text-gray-500 hover:underline">
           {{ t('auth.login.createAccount') }}
         </NuxtLink>
-        <NuxtLink
-          to="/auth/forgot-password"
-          class="hover:underline text-gray-500"
-        >
+        <NuxtLink to="/auth/forgot-password" class="text-gray-500 hover:underline">
           {{ t('auth.forgotPassword.link') }}
         </NuxtLink>
       </Field>

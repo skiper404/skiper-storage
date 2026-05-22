@@ -9,6 +9,7 @@ const {} = useUserSession()
 const { handleSubmit, setErrors } = useForm({
   validationSchema: toTypedSchema(createUserSchema),
   initialValues: {
+    username: '',
     email: '',
     password: ''
   }
@@ -37,6 +38,25 @@ const onSubmit = handleSubmit(async data => {
     <CardContent>
       <form id="create-user-form" @submit.prevent="onSubmit">
         <FieldGroup>
+        <VeeField v-slot="{ field, errors }" name="username">
+            <Field>
+              <FieldLabel for="username">
+                {{ t('auth.create.usernameField') }}
+              </FieldLabel>
+              <Input
+                id="username"
+                v-bind="field"
+                placeholder="skiper"
+                autocomplete="off"
+                :aria-invalid="!!errors.length"
+              />
+              <FieldError
+                v-if="errors.length"
+                :errors="errors.map(e => t(`auth.errors.${e}`))"
+              />
+            </Field>
+          </VeeField>
+
           <VeeField v-slot="{ field, errors }" name="email">
             <Field>
               <FieldLabel for="email">

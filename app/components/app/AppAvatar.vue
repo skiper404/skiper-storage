@@ -1,19 +1,22 @@
 <script setup lang="ts">
 const { user } = useUserSession()
+const localePath = useLocalePath()
 </script>
 
 <template>
   <Tooltip>
-    <TooltipTrigger as-child>
-      <Avatar v-if="user">
-        <AvatarImage v-if="user.image" :src="user.image" />
-        <AvatarFallback v-else class="bg-indigo-500 capitalize">
-          {{ (user.email ?? user.name)?.[0] }}
-        </AvatarFallback>
-      </Avatar>
-    </TooltipTrigger>
+    <NuxtLink :to="localePath('/settings')">
+      <TooltipTrigger as-child>
+        <Avatar v-if="user">
+          <AvatarImage v-if="user.image" :src="user.image" />
+          <AvatarFallback v-else class="bg-indigo-500 capitalize">
+            {{ user.username?.[0] }}
+          </AvatarFallback>
+        </Avatar>
+      </TooltipTrigger>
+    </NuxtLink>
     <TooltipContent>
-      <p>{{ user?.name ?? user?.email }}</p>
+      <p>{{ user?.username }}</p>
     </TooltipContent>
   </Tooltip>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ middleware: 'auth' })
+definePageMeta({ middleware: ['auth', 'blocked'] })
 
 const { user, fetch } = useUserSession()
 
@@ -9,7 +9,7 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <div class="flex flex-col items-center justify-center mt-20">
+  <div class="mt-20 flex flex-col items-center justify-center">
     <NuxtLink to="/plan">
       <Button variant="secondary">Back</Button>
     </NuxtLink>

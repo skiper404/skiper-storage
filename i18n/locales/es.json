@@ -41,6 +41,7 @@
       "conflictEmail": "Este email ya está registrado",
       "emptyField": "Este campo es obligatorio",
       "minLength": "Mínimo 8 caracteres",
+      "maxUsernameLength": "El nombre de usuario no debe tener más de 30 caracteres",
       "maxLength": "Máximo 30 caracteres",
       "uppercaseRequired": "Debe contener mayúscula",
       "lowercaseRequired": "Debe contener minúscula",
@@ -83,12 +84,20 @@
     "messages": {
       "fileDeleted": "El archivo {name} ha sido eliminado"
     },
-    "deleteForm": {
-      "title": "Eliminar archivo",
-      "description": "¿Estás seguro de que quieres eliminar",
+
+    "dialog": {
+      "block": {
+        "title": "Bloquear usuario",
+        "description": "¿Estás seguro de que quieres bloquear"
+      },
+      "delete": {
+        "title": "Eliminar archivo",
+        "description": "¿Estás seguro de que quieres eliminar"
+      },
       "no": "No",
       "yes": "Sí"
     },
+
     "empty": {
       "title": "Almacenamiento vacío",
       "description": "Aún no has subido archivos"
@@ -147,12 +156,84 @@
       "description": "Para usuarios que necesitan más espacio y flexibilidad"
     }
   },
+
+  "blockReasons": {
+    "malware": "archivos maliciosos o dañinos",
+    "nsfw_content": "contenido adulto o explícito",
+    "copyright_violation": "contenido pirateado o robado",
+    "phishing_or_scam": "archivos o enlaces engañosos o fraudulentos",
+    "illegal_content": "contenido que viola las leyes o regulaciones",
+    "storage_abuse": "abuso de subidas o límites de almacenamiento",
+    "upload_spam": "subidas masivas o automatizadas de archivos",
+    "suspicious_activity": "comportamiento de usuario inusual o riesgoso"
+  },
+
+  "settings": {
+    "title": "Configuración",
+    "description": "Administra la configuración y preferencias de tu cuenta.",
+
+    "account": {
+      "title": "Cuenta",
+      "description": "Información básica de la cuenta",
+      "userId": "ID de usuario",
+      "role": "Rol",
+      "email": "Correo electrónico"
+    },
+
+    "subscription": {
+      "title": "Suscripción",
+      "description": "Administra tu plan y almacenamiento",
+      "currentPlan": "Plan actual",
+      "freePlan": "Actualmente estás usando el plan gratuito.",
+      "storage": "Almacenamiento",
+      "upgrade": "Mejorar plan"
+    }
+  },
+
   "navigation": {
-    "home": "Inicio",
+    "allFiles": "Todos los archivos",
     "images": "Imágenes",
     "audios": "Audios",
     "videos": "Vídeos",
     "plan": "Plan de almacenamiento",
-    "settings": "Ajustes"
+    "settings": "Ajustes",
+    "admin": "Admin Panel"
+  },
+
+  "headings": {
+    "allFiles": {
+      "title": "Todos los archivos",
+      "description": "Administra y organiza todo tu contenido subido en un solo lugar."
+    },
+
+    "images": {
+      "title": "Imágenes",
+      "description": "Explora, sube y administra tus archivos de imágenes."
+    },
+
+    "audios": {
+      "title": "Audios",
+      "description": "Guarda y organiza tus grabaciones de audio y archivos de música."
+    },
+
+    "videos": {
+      "title": "Videos",
+      "description": "Administra tu biblioteca de videos y contenido multimedia."
+    },
+
+    "plan": {
+      "title": "Plan",
+      "description": "Consulta tu suscripción actual y los límites de almacenamiento."
+    },
+
+    "settings": {
+      "title": "Configuración",
+      "description": "Personaliza las preferencias de tu cuenta y la aplicación."
+    },
+
+    "admin": {
+      "title": "Admin panel",
+      "description": "Supervisa la actividad de la plataforma y administra los recursos del sistema."
+    }
   }
 }

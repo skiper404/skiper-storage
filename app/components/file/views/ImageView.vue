@@ -2,23 +2,18 @@
 import type { File } from '~~/prisma/generated/client'
 
 const props = defineProps<{ file: File }>()
-const config = useAppConfig()
 
-const fileUrl = computed(() => `${config.S3_PUB_URL}/${props.file.key}`)
+const { data } = await useFetch<{ url: string }>(`/api/files/${props.file.id}/url`)
 </script>
 
 <template>
   <div class="h-100">
     <img
-      :src="fileUrl"
+      :src="data?.url"
       :alt="file.fileName"
-      class="h-full w-full -z-10 blur-2xl opacity-40 object-cover rounded-2xl absolute inset-0"
+      class="absolute inset-0 -z-10 h-full w-full rounded-2xl object-cover opacity-40 blur-2xl"
     />
 
-    <img
-      :src="fileUrl"
-      :alt="file.fileName"
-      class="h-full w-full object-contain rounded-2xl"
-    />
+    <img :src="data?.url" :alt="file.fileName" class="h-full w-full rounded-2xl object-contain" />
   </div>
 </template>

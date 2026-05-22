@@ -1,24 +1,14 @@
 <script setup lang="ts">
-import axios from 'axios'
 import { filesize } from 'filesize'
 import { toast } from 'vue-sonner'
 
 import { ALLOWED_FORMATS } from '~~/shared/constants'
-import type { SelectedFile } from '~~/shared/types/selected-file'
-
-import { generatePreview } from '~/utils/generatePreview'
 
 const { t } = useI18n()
 const { execute } = useFetchedFiles()
 const localePath = useLocalePath()
 const { remainingStorageSize } = useStorage()
-const {
-  isUploading,
-  selectedFiles,
-  selectedFilesSize,
-  clearSelectedFiles,
-  removeFile
-} = useUpload()
+const { isUploading, selectedFiles, selectedFilesSize, clearSelectedFiles, removeFile, addFiles, upload } = useUpload()
 
 const isOpen = ref(false)
 const inputRef = ref<HTMLInputElement | null>(null)
@@ -27,26 +17,12 @@ const handleAddFilesButton = () => {
   inputRef.value?.click()
 }
 
-const isEnougthFreeSpace = computed(
-  () => selectedFilesSize.value < remainingStorageSize.value
-)
+const isEnougthFreeSpace = computed(() => selectedFilesSize.value < remainingStorageSize.value)
 
-const addFiles = () => {
+const onChangeInput = () => {
   const files = inputRef.value?.files
-
   if (!files?.length) return
-
-  const newFiles: SelectedFile[] = Array.from(files).map(file => ({
-    id: crypto.randomUUID(),
-    raw: file,
-    name: file.name,
-    size: file.size,
-    type: file.type,
-    progress: 0,
-    preview: generatePreview(file)
-  }))
-
-  selectedFiles.value.push(...newFiles)
+  addFiles(files)
 }
 
 const startUpload = async () => {
@@ -54,43 +30,13 @@ const startUpload = async () => {
     toast.error(t('ui.upload.errors.storageLimit'))
     return
   }
-
-  isUploading.value = true
-
   try {
-    for (const file of selectedFiles.value) {
-      const { uploadUrl, key } = await $fetch('/api/files/sign', {
-        method: 'POST',
-        body: { file }
-      })
-
-      await axios.put(uploadUrl, file.raw, {
-        headers: { 'Content-Type': file.type },
-        onUploadProgress(progressEvent) {
-          if (!progressEvent.total) return
-          file.progress = Math.floor(
-            (progressEvent.loaded * 100) / progressEvent.total
-          )
-        }
-      })
-
-      await $fetch('/api/files/save', {
-        method: 'POST',
-        body: {
-          key,
-          fileName: file.name,
-          type: file.type,
-          size: file.size
-        }
-      })
-    }
-
+    await upload()
     await execute()
     await navigateTo(localePath('/'))
   } catch (e: any) {
     toast.error(e.message)
   } finally {
-    isUploading.value = false
     isOpen.value = false
     clearSelectedFiles()
   }
@@ -100,34 +46,22 @@ const startUpload = async () => {
 <template>
   <Dialog v-model:open="isOpen">
     <DialogTrigger as-child>
-      <Button
-        class="bg-lime-500/80 text-indigo-100 shadow-lg backdrop-blur-2xl hover:bg-indigo-300"
-        size="sm"
-      >
+      <Button class="bg-lime-500/80 text-indigo-100 shadow-lg backdrop-blur-2xl hover:bg-indigo-300" size="sm">
         <Icon name="lucide:cloud-upload" size="20" />
         <span>
           {{ t('ui.upload.uploadButton') }}
         </span>
       </Button>
     </DialogTrigger>
-    <DialogContent
-      class="bg-primary-foreground space-y-4 transition-all duration-300"
-    >
+
+    <DialogContent class="bg-primary-foreground space-y-4 transition-all duration-300">
       <DialogHeader>
         <DialogTitle class="flex items-center gap-2">
           {{ t('ui.upload.title') }}
-          <Icon
-            v-if="isUploading"
-            name="lucide:loader-circle"
-            size="20"
-            class="animate-spin"
-          />
+          <Icon v-if="isUploading" name="lucide:loader-circle" size="20" class="animate-spin" />
         </DialogTitle>
 
-        <DialogDescription
-          class="mt-4 space-y-2 space-x-2 text-left flex flex-col"
-        >
-          <span> {{ t('ui.upload.description.quantity') }} </span>
+        <DialogDescription class="mt-4 flex flex-col space-y-2 space-x-2 text-left">
           <span>
             {{ t('ui.upload.description.remainingSpace') }}:
             {{ filesize(remainingStorageSize) }}
@@ -137,22 +71,15 @@ const startUpload = async () => {
             {{ t('ui.upload.description.selectedFiles') }}:
             {{ filesize(selectedFilesSize) }}
           </span>
-          <span>{{ t('ui.upload.description.formats') }} </span>
-          <div class="space-x-2">
-            <Badge
-              variant="secondary"
-              class="text-gray-400"
-              v-for="(format, id) in ALLOWED_FORMATS"
-              :key="id"
-            >
+          <span>{{ t('ui.upload.description.formats') }}: </span>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="secondary" class="text-gray-400" v-for="(format, id) in ALLOWED_FORMATS" :key="id">
               {{ format }}
             </Badge>
           </div>
         </DialogDescription>
       </DialogHeader>
-      <div
-        class="flex flex-wrap justify-center gap-3 max-h-100 overflow-auto p-2"
-      >
+      <div class="flex max-h-100 flex-wrap justify-center gap-3 overflow-auto p-2">
         <div
           v-for="(file, id) in selectedFiles"
           :key="id"
@@ -165,11 +92,7 @@ const startUpload = async () => {
             <Icon name="lucide:file-music" size="50" />
           </div>
 
-          <img
-            v-if="isMatchType(file, FileType.IMAGE)"
-            :src="file.preview"
-            class="size-18 rounded-2xl object-cover"
-          />
+          <img v-if="isMatchType(file, FileType.IMAGE)" :src="file.preview" class="size-18 rounded-2xl object-cover" />
 
           <video
             v-if="isMatchType(file, FileType.VIDEO)"
@@ -182,18 +105,10 @@ const startUpload = async () => {
           <span class="text-primary mt-auto w-18 truncate text-center text-xs">
             {{ file.name }}
           </span>
-          <span
-            class="text-primary mt-auto w-18 truncate text-center text-xs"
-            >{{ filesize(file.size) }}</span
-          >
+          <span class="text-primary mt-auto w-18 truncate text-center text-xs">{{ filesize(file.size) }}</span>
           <Progress :model-value="file.progress" />
           <span class="absolute top-6 left-6 flex rounded-full bg-black/50">
-            <Icon
-              v-if="file.progress === 100"
-              name="lucide:circle-check"
-              size="24"
-              class="text-green-500"
-            />
+            <Icon v-if="file.progress === 100" name="lucide:circle-check" size="24" class="text-green-500" />
           </span>
 
           <Button
@@ -214,7 +129,7 @@ const startUpload = async () => {
         <Button
           variant="default"
           @click="startUpload"
-          :disabled="selectedFiles.length === 0 || isUploading"
+          :disabled="selectedFiles.length === 0 || isUploading || !isEnougthFreeSpace"
         >
           <Icon name="lucide:cloud-upload" size="20" />
           {{ t('ui.upload.uploadButton') }}
@@ -228,7 +143,7 @@ const startUpload = async () => {
     class="hidden"
     type="file"
     multiple
-    accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,audio/mpeg"
-    @change="addFiles"
+    :accept="ALLOWED_FORMATS.join(', ')"
+    @change="onChangeInput"
   />
 </template>

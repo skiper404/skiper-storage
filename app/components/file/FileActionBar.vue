@@ -42,10 +42,7 @@ const deleteFile = async () => {
         </span>
       </Badge>
 
-      <Badge
-        variant="secondary"
-        class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300"
-      >
+      <Badge variant="secondary" class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300">
         {{ filesize(file.size) }}
       </Badge>
     </div>
@@ -64,29 +61,21 @@ const deleteFile = async () => {
 
       <Dialog>
         <DialogTrigger as-child>
-          <Button
-            size="icon-sm"
-            variant="destructive"
-            class="rounded-full transition-all hover:scale-105"
-          >
+          <Button size="icon-sm" variant="destructive" class="rounded-full transition-all hover:scale-105">
             <Icon name="lucide:trash-2" size="16" />
           </Button>
         </DialogTrigger>
 
-        <DialogContent
-          class="border-white/10 bg-primary-foreground/20 backdrop-blur-2xl"
-        >
+        <DialogContent class="bg-primary-foreground/20 border-white/10 backdrop-blur-2xl">
           <DialogHeader class="space-y-3">
             <DialogTitle class="text-center text-xl">
               {{ t('ui.deleteForm.title') }}
             </DialogTitle>
 
-            <DialogDescription
-              class="text-center text-sm leading-relaxed text-gray-400"
-            >
+            <DialogDescription class="text-center text-sm leading-relaxed text-gray-400">
               {{ t('ui.deleteForm.description') }}
 
-              <span class="break-all font-semibold text-white">
+              <span class="font-semibold break-all text-white">
                 {{ file.fileName }}
               </span>
 
@@ -96,19 +85,12 @@ const deleteFile = async () => {
 
           <div class="flex items-center justify-center gap-3 pt-2">
             <DialogClose as-child>
-              <Button
-                variant="outline"
-                class="rounded-xl border-white/10 text-zinc-100 hover:bg-white/5"
-              >
+              <Button variant="outline" class="rounded-xl border-white/10 text-zinc-100 hover:bg-white/5">
                 {{ t('ui.deleteForm.no') }}
               </Button>
             </DialogClose>
 
-            <Button
-              variant="destructive"
-              class="rounded-xl"
-              @click="deleteFile"
-            >
+            <Button variant="destructive" class="rounded-xl" @click="deleteFile">
               {{ t('ui.deleteForm.yes') }}
             </Button>
           </div>

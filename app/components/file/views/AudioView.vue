@@ -2,32 +2,24 @@
 import type { File } from '~~/prisma/generated/client'
 
 const props = defineProps<{ file: File }>()
-const config = useAppConfig()
 
-const fileUrl = computed(() => `${config.S3_PUB_URL}/${props.file.key}`)
+const { data } = await useFetch<{ url: string }>(`/api/files/${props.file.id}/url`)
 </script>
 
 <template>
-  <div
-    v-if="file.category === 'audio'"
-    class="flex flex-col items-center gap-8"
-  >
+  <div v-if="file.category === 'audio'" class="flex flex-col items-center gap-8">
     <div
-      class="text-indigo-500 absolute inset-0 blur-2xl opacity-40 -z-10 bg-gray-200 dark:bg-gray-800 rounded-2xl flex flex-col items-center justify-center"
+      class="absolute inset-0 -z-10 flex flex-col items-center justify-center rounded-2xl bg-gray-200 text-indigo-500 opacity-40 blur-2xl dark:bg-gray-800"
     >
       <Icon name="lucide:file-music" size="500" />
     </div>
 
     <div
-      class="text-indigo-500 bg-gray-200 dark:bg-gray-800 rounded-2xl flex flex-col items-center justify-center border"
+      class="flex flex-col items-center justify-center rounded-2xl border bg-gray-200 text-indigo-500 dark:bg-gray-800"
     >
       <Icon name="lucide:file-music" size="300" />
     </div>
 
-    <audio
-      :src="fileUrl"
-      controls
-      class="w-full bg-gray-500 rounded-2xl overflow-hidden"
-    ></audio>
+    <audio :src="data?.url" controls class="w-full overflow-hidden rounded-2xl bg-gray-500"></audio>
   </div>
 </template>

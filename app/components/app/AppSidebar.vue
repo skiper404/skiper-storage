@@ -1,59 +1,66 @@
 <script setup lang="ts">
-import {
-  BadgeDollarSign,
-  FileImageIcon,
-  FileMusic,
-  FileVideo2Icon,
-  Home,
-  Settings
-} from 'lucide-vue-next'
+import { BadgeDollarSign, FileImageIcon, FileMusic, FileVideo2Icon, Home, Settings, Shield } from 'lucide-vue-next'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
+const { user } = useUserSession()
 
-const items = computed(() => [
-  {
-    key: 'home',
-    path: '/',
-    icon: Home,
-    color: 'text-violet-500'
-  },
-  {
-    key: 'images',
-    path: '/images',
-    icon: FileImageIcon,
-    color: 'text-indigo-500'
-  },
-  {
-    key: 'audios',
-    path: '/audios',
-    icon: FileMusic,
-    color: 'text-blue-500'
-  },
-  {
-    key: 'videos',
-    path: '/videos',
-    icon: FileVideo2Icon,
-    color: 'text-sky-500'
-  },
-  {
-    key: 'plan',
-    path: '/plan',
-    icon: BadgeDollarSign,
-    color: 'text-blue-400'
-  },
-  {
-    key: 'settings',
-    path: '/settings',
-    icon: Settings,
-    color: 'text-indigo-400'
+const items = computed(() => {
+  const baseItems = [
+    {
+      key: 'allFiles',
+      path: '/',
+      icon: Home,
+      color: 'text-violet-500'
+    },
+    {
+      key: 'images',
+      path: '/images',
+      icon: FileImageIcon,
+      color: 'text-indigo-500'
+    },
+    {
+      key: 'audios',
+      path: '/audios',
+      icon: FileMusic,
+      color: 'text-blue-500'
+    },
+    {
+      key: 'videos',
+      path: '/videos',
+      icon: FileVideo2Icon,
+      color: 'text-sky-500'
+    },
+    {
+      key: 'plan',
+      path: '/plan',
+      icon: BadgeDollarSign,
+      color: 'text-blue-400'
+    },
+    {
+      key: 'settings',
+      path: '/settings',
+      icon: Settings,
+      color: 'text-indigo-400'
+    }
+  ]
+
+  if (user.value?.role === 'ADMIN') {
+    baseItems.push({
+      key: 'admin',
+      path: '/admin',
+      icon: Shield,
+      color: 'text-indigo-400'
+    })
   }
-])
+
+  return baseItems
+})
 </script>
 
 <template>
-  <Sidebar variant="floating" class="pb-14">
+  <Sidebar variant="floating" class="pb-16">
     <SidebarContent>
       <SidebarGroup>
         <SidebarGroupContent>
@@ -65,10 +72,7 @@ const items = computed(() => [
                   'bg-secondary': route.path === localePath(item.path)
                 }"
               >
-                <NuxtLink
-                  :to="localePath(item.path)"
-                  class="flex items-center gap-2"
-                >
+                <NuxtLink :to="localePath(item.path)" class="flex items-center gap-2">
                   <component :is="item.icon" :class="item.color" />
 
                   <span>

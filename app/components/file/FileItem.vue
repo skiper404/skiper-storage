@@ -1,22 +1,25 @@
 <script setup lang="ts">
-import type { File } from '~~/prisma/generated/client'
+import type { File } from '~~/shared/types/file'
 
 const { file } = defineProps<{ file: File }>()
 const localePath = useLocalePath()
 </script>
 
 <template>
-  <NuxtLink
-    v-if="file.id && file.category"
-    :to="localePath(`/${file.category}/${file.id}`)"
-    class="flex flex-col items-center gap-2 mx-auto"
-  >
-    <FilePreview :file="file" />
-    <span
-      class="text-xs text-center w-28 truncate text-gray-400"
-      :title="file.fileName"
+  <div class="relative">
+    <NuxtLink
+      v-if="file.id && file.category"
+      :to="localePath(`/${file.category}/${file.id}`)"
+      :class="[
+        'mx-auto flex flex-col items-center gap-2',
+        { 'pointer-events-none blur-xs select-none': file.isBlocked }
+      ]"
     >
-      {{ file.fileName }}
-    </span>
-  </NuxtLink>
+      <FilePreview :file="file" size="md" />
+      <span class="w-28 truncate text-center text-xs text-gray-400" :title="file.fileName">
+        {{ file.fileName }}
+      </span>
+    </NuxtLink>
+    <FileBlocked v-if="file.isBlocked" class="-translate-y-2/3" />
+  </div>
 </template>

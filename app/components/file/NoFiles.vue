@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="flex-1 flex gap-2 w-full text-gray-400 dark:text-gray-600">
+  <div class="flex w-full flex-1 gap-2 text-gray-400 dark:text-gray-600">
     <Empty>
       <EmptyHeader>
         <EmptyMedia variant="icon">
@@ -14,6 +14,7 @@ const { t } = useI18n()
           {{ t('ui.empty.description') }}
         </EmptyDescription>
       </EmptyHeader>
+      <UploadButton />
     </Empty>
   </div>
 </template>

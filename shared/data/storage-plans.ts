@@ -1,4 +1,4 @@
-import { GB, MB } from '../constants'
+import { MB } from '../constants'
 import type { StoragePlan } from '../types/storage-plan'
 import { Plan } from '~~/prisma/generated/enums'
 

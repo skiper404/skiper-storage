@@ -5,14 +5,16 @@ export default defineEventHandler(async event => {
   const category =
     typeof query.category === 'string' ? query.category : undefined
 
-  const list = await prisma.file.findMany({
+  return prisma.file.findMany({
     where: category
       ? {
           userId: session.user.id,
-          category: category ?? undefined
+          category
         }
-      : { userId: session.user.id }
-  })
+      : { userId: session.user.id },
 
-  return list
+    orderBy: {
+      createdAt: 'desc'
+    }
+  })
 })

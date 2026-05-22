@@ -41,6 +41,7 @@
       "conflictEmail": "Cet email existe déjà",
       "emptyField": "Champ obligatoire",
       "minLength": "Minimum 8 caractères",
+      "maxUsernameLength": "Le nom d'utilisateur ne doit pas dépasser 30 caractères",
       "maxLength": "Maximum 30 caractères",
       "uppercaseRequired": "Une majuscule requise",
       "lowercaseRequired": "Une minuscule requise",
@@ -83,9 +84,15 @@
     "messages": {
       "fileDeleted": "Le fichier {name} a été supprimé"
     },
-    "deleteForm": {
-      "title": "Supprimer le fichier",
-      "description": "Voulez-vous vraiment supprimer",
+    "dialog": {
+      "block": {
+        "title": "Bloquer l'utilisateur",
+        "description": "Êtes-vous sûr de vouloir bloquer"
+      },
+      "delete": {
+        "title": "Supprimer le fichier",
+        "description": "Êtes-vous sûr de vouloir supprimer"
+      },
       "no": "Non",
       "yes": "Oui"
     },
@@ -148,12 +155,84 @@
       "description": "Pour les utilisateurs ayant besoin de plus d’espace et de flexibilité"
     }
   },
+
+  "blockReasons": {
+    "malware": "fichiers malveillants ou dangereux",
+    "nsfw_content": "contenu adulte ou explicite",
+    "copyright_violation": "contenu piraté ou volé",
+    "phishing_or_scam": "fichiers ou liens frauduleux",
+    "illegal_content": "contenu violant les lois ou réglementations",
+    "storage_abuse": "abus des téléchargements ou du stockage",
+    "upload_spam": "téléversements massifs ou automatisés",
+    "suspicious_activity": "comportement utilisateur inhabituel ou risqué"
+  },
+
+  "settings": {
+    "title": "Paramètres",
+    "description": "Gérez les paramètres et préférences de votre compte.",
+
+    "account": {
+      "title": "Compte",
+      "description": "Informations de base du compte",
+      "userId": "ID utilisateur",
+      "role": "Rôle",
+      "email": "Email"
+    },
+
+    "subscription": {
+      "title": "Abonnement",
+      "description": "Gérez votre forfait et votre stockage",
+      "currentPlan": "Forfait actuel",
+      "freePlan": "Vous utilisez actuellement le forfait gratuit.",
+      "storage": "Stockage",
+      "upgrade": "Passer au Pro"
+    }
+  },
+
   "navigation": {
-    "home": "Accueil",
+    "allFiles": "Tous les fichiers",
     "images": "Images",
     "audios": "Audios",
     "videos": "Vidéos",
     "plan": "Plan de stockage",
-    "settings": "Paramètres"
+    "settings": "Paramètres",
+    "admin": "Admin panél"
+  },
+
+  "headings": {
+    "allFiles": {
+      "title": "Tous les fichiers",
+      "description": "Gérez et organisez tout votre contenu téléchargé en un seul endroit."
+    },
+
+    "images": {
+      "title": "Images",
+      "description": "Parcourez, téléchargez et gérez vos fichiers image."
+    },
+
+    "audios": {
+      "title": "Audios",
+      "description": "Stockez et organisez vos enregistrements audio et fichiers musicaux."
+    },
+
+    "videos": {
+      "title": "Vidéos",
+      "description": "Gérez votre bibliothèque vidéo et votre contenu multimédia."
+    },
+
+    "plan": {
+      "title": "Abonnement",
+      "description": "Consultez votre abonnement actuel et vos limites de stockage."
+    },
+
+    "settings": {
+      "title": "Paramètres",
+      "description": "Personnalisez les préférences de votre compte et de l'application."
+    },
+
+    "admin": {
+      "title": "Admin panel",
+      "description": "Surveillez l’activité de la plateforme et gérez les ressources système."
+    }
   }
 }

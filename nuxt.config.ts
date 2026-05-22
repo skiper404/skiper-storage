@@ -37,7 +37,8 @@ export default defineNuxtConfig({
     liqpayPrivateKey: process.env.LIQPAY_PRIVATE_KEY as string,
 
     public: {
-      appUrl: process.env.NUXT_PUBLIC_APP_URL
+      appUrl: process.env.NUXT_PUBLIC_APP_URL,
+      appName: 'Skiper Storage'
     }
   },
 

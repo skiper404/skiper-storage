@@ -7,4 +7,6 @@ export type AuthUser = {
   image?: string | null
   role: Role
   plan: Plan
+  isBlocked: boolean
+  isDeleted: boolean
 }

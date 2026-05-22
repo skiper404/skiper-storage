@@ -9,7 +9,7 @@ const error = useError()
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center h-dvh">
+  <div class="flex h-dvh flex-col items-center justify-center">
     <Empty class="h-screen">
       <EmptyHeader>
         <EmptyTitle>{{ t('ui.notFound.title') }}</EmptyTitle>
@@ -17,7 +17,6 @@ const error = useError()
           {{ t('ui.notFound.description') }}
         </EmptyDescription>
       </EmptyHeader>
-      <div>{{ error }}</div>
       <EmptyContent>
         <NuxtLink :to="localePath('/')">
           <Button variant="secondary">{{ t('ui.notFound.button') }}</Button>

@@ -30,7 +30,7 @@ export default defineEventHandler(async event => {
 
   const token = await generateToken(TokenType.RESET_PASSWORD, user)
 
-  sendMail({
+  await sendMail({
     subject: 'Skiper Storage | Reset password',
     html: resetPasswordTemplate(token),
     to: user.email

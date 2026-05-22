@@ -13,6 +13,7 @@
     },
     "create": {
       "title": "Create account",
+      "usernameField": "Username",
       "emailField": "Email",
       "passwordField": "Password",
       "submitButton": "Create account",
@@ -41,6 +42,7 @@
       "conflictEmail": "This email is already registered",
       "emptyField": "This field cannot be empty",
       "minLength": "Password must be at least 8 characters",
+      "maxUsernameLength": "Username must no more than 30 characters",
       "maxLength": "Password must be no more than 30 characters",
       "uppercaseRequired": "Password must contain at least one uppercase letter",
       "lowercaseRequired": "Password must contain at least one lowercase letter",
@@ -79,19 +81,53 @@
         "selectedFiles": "Selected Files"
       }
     },
+
     "messages": {
       "fileDeleted": "File {name} successfully deleted"
     },
-    "deleteForm": {
-      "title": "Delete file",
-      "description": "Are you sure you want to delete",
+
+    "dialog": {
+      "unblock": {
+        "user": {
+          "title": "Unblock user",
+          "description": "Are you sure you want to unblock"
+        },
+        "file": {
+          "title": "Unblock file",
+          "description": "Are you sure you want to unblock"
+        }
+      },
+
+      "block": {
+        "user": {
+          "title": "Block user",
+          "description": "Are you sure you want to block"
+        },
+        "file": {
+          "title": "Block file",
+          "description": "Are you sure you want to block"
+        }
+      },
+      "delete": {
+        "user": {
+          "title": "Delete user",
+          "description": "Are you sure you want to delete"
+        },
+        "file": {
+          "title": "Delete file",
+          "description": "Are you sure you want to delete"
+        }
+      },
+
       "no": "No",
       "yes": "Yes"
     },
+
     "empty": {
       "title": "Storage is empty",
       "description": "You haven't uploaded any files yet"
     },
+
     "theme": "Theme",
     "locale": "Language",
     "signOut": "Sign out",
@@ -148,12 +184,88 @@
     }
   },
 
+  "blockReasons": {
+    "malware": "malicious or harmful files",
+    "nsfw_content": "adult or explicit content",
+    "copyright_violation": "pirated or stolen content",
+    "phishing_or_scam": "deceptive or fraudulent files or links",
+    "illegal_content": "content that violates laws or regulations",
+    "storage_abuse": "abusing uploads or storage limits",
+    "upload_spam": "mass or automated file uploads",
+    "suspicious_activity": "unusual or risky user behavior"
+  },
+
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your account settings and preferences.",
+
+    "account": {
+      "title": "Account",
+      "description": "Basic account information",
+      "userId": "User ID",
+      "role": "Role",
+      "email": "Email"
+    },
+
+    "subscription": {
+      "title": "Subscription",
+      "description": "Manage your storage plan and billing",
+      "currentPlan": "Current plan",
+      "freePlan": "You are currently on the free plan.",
+      "storage": "Storage",
+      "upgrade": "Upgrade Plan"
+    }
+  },
+
+  "admin": {
+    "title": "Admin Panel",
+    "description": "Manage your apps, users and contents"
+  },
+
   "navigation": {
-    "home": "Home",
+    "allFiles": "All Files",
     "images": "Images",
     "audios": "Audios",
     "videos": "Videos",
     "plan": "Storage Plan",
-    "settings": "Settings"
+    "settings": "Settings",
+    "admin": "Admin Panel"
+  },
+
+  "headings": {
+    "allFiles": {
+      "title": "All Files",
+      "description": "Manage and organize all your uploaded content in one place."
+    },
+
+    "images": {
+      "title": "Images",
+      "description": "Browse, upload, and manage your image files."
+    },
+
+    "audios": {
+      "title": "Audios",
+      "description": "Store and organize your audio recordings and music files."
+    },
+
+    "videos": {
+      "title": "Videos",
+      "description": "Manage your video library and uploaded media content."
+    },
+
+    "plan": {
+      "title": "Plan",
+      "description": "View your current subscription and storage limits."
+    },
+
+    "settings": {
+      "title": "Settings",
+      "description": "Customize your account preferences and application settings."
+    },
+
+    "admin": {
+      "title": "Admin panel",
+      "description": "Monitor platform activity and manage system resources."
+    }
   }
 }

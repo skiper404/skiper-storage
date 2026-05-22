@@ -11,7 +11,7 @@ onMounted(() => {
 
 <template>
   <header
-    class="flex items-center bg-secondary/50 text-primary h-12 rounded-b-2xl w-full justify-between fixed z-20 backdrop-blur-xs px-4"
+    class="bg-secondary/50 text-primary fixed z-20 flex h-12 w-full items-center justify-between rounded-b-2xl px-4 backdrop-blur-xs"
   >
     <AppLogo />
 

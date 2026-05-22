@@ -4,11 +4,9 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div
-    class="flex gap-4 flex-col p-4 rounded-lg bg-secondary font-bold text-gray-500 dark:text-gray-300"
-  >
+  <div class="bg-secondary flex flex-col gap-4 rounded-lg p-4 font-bold text-gray-500 dark:text-gray-300">
     <div class="flex items-center gap-2">
-      <Badge class="h-7 bg-chart-2 text-gray-200 rounded-lg">
+      <Badge class="bg-chart-2 h-7 rounded-lg text-gray-200 capitalize">
         {{ t('ui.info.totalFiles') }}: {{ files.length }}
       </Badge>
       <CategoryInfo category="audio" />

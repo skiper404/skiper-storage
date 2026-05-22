@@ -1,3 +1,3 @@
 <template>
-  <Skeleton class="rounded-full size-8" />
+  <Skeleton class="size-8 rounded-full" />
 </template>

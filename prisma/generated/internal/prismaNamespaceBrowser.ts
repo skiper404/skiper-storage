@@ -77,8 +77,10 @@ export const UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
   password: 'password',
-  name: 'name',
+  username: 'username',
   image: 'image',
+  isBlocked: 'isBlocked',
+  isDeleted: 'isDeleted',
   role: 'role',
   plan: 'plan',
   createdAt: 'createdAt',
@@ -121,6 +123,8 @@ export const FileScalarFieldEnum = {
   type: 'type',
   category: 'category',
   size: 'size',
+  isBlocked: 'isBlocked',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

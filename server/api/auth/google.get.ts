@@ -41,7 +41,7 @@ export default defineOAuthGoogleEventHandler({
       data: {
         email: user.email,
         image: user.picture,
-        name: user.name,
+        username: user.name,
         accounts: { create: { provider, providerAccountId } }
       }
     })

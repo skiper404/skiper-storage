@@ -28,12 +28,10 @@ const onSubmit = handleSubmit(async data => {
 
 <template>
   <Card
-    class="sm:w-100 sm:mt-20 pt-14 sm:pt-6 h-full sm:h-fit rounded-none sm:rounded-xl mx-auto border-none bg-secondary"
+    class="bg-secondary mx-auto h-full rounded-none border-none pt-14 sm:mt-20 sm:h-fit sm:w-100 sm:rounded-xl sm:pt-6"
   >
     <CardHeader>
-      <CardTitle class="text-center">{{
-        t('auth.forgotPassword.title')
-      }}</CardTitle>
+      <CardTitle class="text-center">{{ t('auth.forgotPassword.title') }}</CardTitle>
     </CardHeader>
 
     <CardContent>
@@ -50,10 +48,7 @@ const onSubmit = handleSubmit(async data => {
               autocomplete="off"
               :aria-invalid="!!errors.length"
             />
-            <FieldError
-              v-if="errors.length"
-              :errors="errors.map(e => t(`auth.errors.${e}`))"
-            />
+            <FieldError v-if="errors.length" :errors="errors.map(e => t(`auth.errors.${e}`))" />
           </Field>
         </VeeField>
       </form>
@@ -69,7 +64,7 @@ const onSubmit = handleSubmit(async data => {
       <Field class="mt-4 text-center text-xs">
         <span class="text-xs">{{ t('auth.login.noAccount') }}</span>
 
-        <NuxtLink to="/auth/create-user" class="hover:underline text-gray-500">
+        <NuxtLink to="/auth/create-user" class="text-gray-500 hover:underline">
           {{ t('auth.login.createAccount') }}
         </NuxtLink>
       </Field>

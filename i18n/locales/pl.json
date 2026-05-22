@@ -41,6 +41,7 @@
       "conflictEmail": "Email już istnieje",
       "emptyField": "Pole nie może być puste",
       "minLength": "Minimum 8 znaków",
+      "maxUsernameLength": "Nazwa użytkownika nie może mieć więcej niż 30 znaków",
       "maxLength": "Maksimum 30 znaków",
       "uppercaseRequired": "Wymagana wielka litera",
       "lowercaseRequired": "Wymagana mała litera",
@@ -83,9 +84,15 @@
     "messages": {
       "fileDeleted": "Plik {name} został usunięty"
     },
-    "deleteForm": {
-      "title": "Usuń plik",
-      "description": "Czy na pewno chcesz usunąć",
+    "dialog": {
+      "block": {
+        "title": "Zablokuj użytkownika",
+        "description": "Czy na pewno chcesz zablokować"
+      },
+      "delete": {
+        "title": "Usuń plik",
+        "description": "Czy na pewno chcesz usunąć"
+      },
       "no": "Nie",
       "yes": "Tak"
     },
@@ -147,12 +154,84 @@
       "description": "Dla wymagających użytkowników potrzebujących więcej miejsca"
     }
   },
+
+  "blockReasons": {
+    "malware": "złośliwe lub szkodliwe pliki",
+    "nsfw_content": "treści dla dorosłych lub nieodpowiednie",
+    "copyright_violation": "pirackie lub skradzione treści",
+    "phishing_or_scam": "oszukańcze pliki lub linki",
+    "illegal_content": "treści naruszające prawo lub przepisy",
+    "storage_abuse": "nadużywanie przesyłania lub limitów pamięci",
+    "upload_spam": "masowe lub automatyczne przesyłanie plików",
+    "suspicious_activity": "nietypowe lub podejrzane zachowanie użytkownika"
+  },
+
+  "settings": {
+    "title": "Ustawienia",
+    "description": "Zarządzaj ustawieniami i preferencjami konta.",
+
+    "account": {
+      "title": "Konto",
+      "description": "Podstawowe informacje o koncie",
+      "userId": "ID użytkownika",
+      "role": "Rola",
+      "email": "Email"
+    },
+
+    "subscription": {
+      "title": "Subskrypcja",
+      "description": "Zarządzaj planem i pamięcią",
+      "currentPlan": "Aktualny plan",
+      "freePlan": "Obecnie korzystasz z darmowego planu.",
+      "storage": "Pamięć",
+      "upgrade": "Ulepsz plan"
+    }
+  },
+
   "navigation": {
-    "home": "Strona główna",
+    "allFiles": "Wszystkie pliki",
     "images": "Obrazy",
     "audios": "Audio",
     "videos": "Wideo",
     "plan": "Plan",
-    "settings": "Ustawienia"
+    "settings": "Ustawienia",
+    "admin": "Admin panel"
+  },
+
+  "headings": {
+    "allFiles": {
+      "title": "Wszystkie pliki",
+      "description": "Zarządzaj i organizuj wszystkie przesłane pliki w jednym miejscu."
+    },
+
+    "images": {
+      "title": "Obrazy",
+      "description": "Przeglądaj, przesyłaj i zarządzaj swoimi obrazami."
+    },
+
+    "audios": {
+      "title": "Audio",
+      "description": "Przechowuj i organizuj nagrania audio oraz pliki muzyczne."
+    },
+
+    "videos": {
+      "title": "Wideo",
+      "description": "Zarządzaj biblioteką wideo i plikami multimedialnymi."
+    },
+
+    "plan": {
+      "title": "Plan",
+      "description": "Sprawdź aktualny plan subskrypcji i limity pamięci."
+    },
+
+    "settings": {
+      "title": "Ustawienia",
+      "description": "Dostosuj ustawienia konta i aplikacji."
+    },
+
+    "admin": {
+      "title": "Admin panel",
+      "description": "Monitoruj aktywność platformy i zarządzaj zasobami systemu."
+    }
   }
 }

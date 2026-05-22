@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
-	<Skeleton class="rounded-lg size-20 border" />
+  <Skeleton class="rounded-lg border" />
 </template>

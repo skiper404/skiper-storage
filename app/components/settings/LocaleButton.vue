@@ -12,10 +12,7 @@ const { locale, locales, setLocale } = useI18n()
 
     <DropdownMenuContent>
       <DropdownMenuItem :key="l.code" v-for="l in locales">
-        <Button
-          :variant="l.code === locale ? 'secondary' : 'ghost'"
-          @click="setLocale(l.code)"
-        >
+        <Button :variant="l.code === locale ? 'secondary' : 'ghost'" @click="setLocale(l.code)" class="w-full">
           {{ l.name }}
         </Button>
       </DropdownMenuItem>

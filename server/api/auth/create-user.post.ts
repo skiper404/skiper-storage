@@ -16,7 +16,7 @@ export default defineEventHandler(async event => {
     })
   }
 
-  const { email } = validatedBody.data
+  const { email, username } = validatedBody.data
 
   const existingUser = await prisma.user.findUnique({
     where: { email }
@@ -32,6 +32,7 @@ export default defineEventHandler(async event => {
 
   const newUser = await prisma.user.create({
     data: {
+      username: username,
       email: email,
       password: await hash(body.password)
     }

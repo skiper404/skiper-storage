@@ -5,10 +5,14 @@ export const MB = 1024 * KB
 export const GB = 1024 * MB
 
 export const ALLOWED_FORMATS = [
+  '.jpg',
   '.jpeg',
   '.png',
   '.webp',
-  '.mp3',
+  '.gif',
   '.mp4',
-  '.mov'
+  '.webm',
+  '.mp3',
+  '.wav',
+  '.ogg'
 ]

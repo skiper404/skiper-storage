@@ -2,16 +2,15 @@
 import type { File } from '~~/prisma/generated/client'
 
 const props = defineProps<{ file: File }>()
-const config = useAppConfig()
 
-const fileUrl = computed(() => `${config.S3_PUB_URL}/${props.file.key}`)
+const { data } = await useFetch<{ url: string }>(`/api/files/${props.file.id}/url`)
 </script>
 
 <template>
   <video
-    :src="fileUrl"
-    class="aspect-video absolute rounded-2xl inset-0 h-full w-full -z-10 blur-2xl opacity-40"
+    :src="data?.url"
+    class="absolute inset-0 -z-10 aspect-video h-full w-full rounded-2xl opacity-40 blur-2xl"
   ></video>
 
-  <video :src="fileUrl" controls class="aspect-video"></video>
+  <video :src="data?.url" controls class="aspect-video"></video>
 </template>

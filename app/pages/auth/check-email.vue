@@ -4,7 +4,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="flex mt-20 justify-center flex-col gap-2 items-center">
+  <div class="mt-20 flex flex-col items-center justify-center gap-2">
     <div>{{ t('auth.messages.resetLinkSent') }}</div>
     <NuxtLink to="/auth/login-user">
       <Button>{{ t('auth.messages.ok') }}</Button>
