@@ -47,7 +47,7 @@ This project is built as a portfolio-grade SaaS application to demonstrate real-
 
 ## Required env variables
 
-# DATABASE (PostgreSQL)
+- DATABASE (PostgreSQL)
 
 ```bash
 POSTGRES_USER
@@ -56,7 +56,7 @@ POSTGRES_DB
 DATABASE_URL
 ```
 
-# STORAGE (S3 / Cloudflare R2)
+- STORAGE (S3 / Cloudflare R2)
 
 ```bash
 S3_BUCKET_NAME
@@ -66,27 +66,27 @@ S3_ACCESS_KEY_ID
 S3_SECRET_ACCESS_KEY
 ```
 
-# AUTH (OAuth Providers)
+- AUTH (OAuth Providers)
 
 ```bash
 NUXT_OAUTH_GOOGLE_CLIENT_ID
 NUXT_OAUTH_GOOGLE_CLIENT_SECRET
 ```
 
-# SESSION SECURITY
+- SESSION SECURITY
 
 ```bash
 NUXT_SESSION_PASSWORD
 ```
 
-# PAYMENTS (LiqPay)
+- PAYMENTS (LiqPay)
 
 ```bash
 LIQPAY_PUBLIC_KEY
 LIQPAY_PRIVATE_KEY
 ```
 
-# APP CONFIG
+- APP CONFIG
 
 ```bash
 NUXT_PUBLIC_APP_URL
