@@ -7,11 +7,6 @@ import { z } from 'zod'
 const { user, fetch } = useUserSession()
 const { t } = useI18n()
 
-const updateProfileSchema = z.object({
-  username: z.string().min(3).max(30),
-  email: z.string().email()
-})
-
 const { handleSubmit, setErrors, isSubmitting, resetForm } = useForm({
   validationSchema: toTypedSchema(updateProfileSchema),
   initialValues: {
