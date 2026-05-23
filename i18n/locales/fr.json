@@ -1,238 +1,326 @@
 {
-  "auth": {
-    "login": {
-      "title": "Connexion",
-      "emailField": "Email",
-      "passwordField": "Mot de passe",
-      "submitButton": "Se connecter",
-      "noAccount": "Pas de compte ?",
-      "createAccount": "Créer un compte",
-      "separator": "ou",
-      "oauth": "Continuer avec",
-      "forgotPassword": "Mot de passe oublié ?"
+  "ui": {
+    "empty": {
+      "title": "Aucun fichier pour le moment",
+      "description": "Téléversez votre premier fichier pour commencer"
     },
-    "create": {
-      "title": "Créer un compte",
-      "emailField": "Email",
-      "passwordField": "Mot de passe",
-      "submitButton": "Créer un compte",
-      "haveAccount": "Déjà un compte ?",
-      "loginAccount": "Se connecter"
+    "buttons": {
+      "yes": "Oui",
+      "no": "Annuler",
+      "ok": "OK",
+      "upload": "Téléverser des fichiers",
+      "addFiles": "Ajouter des fichiers",
+      "back": "Retour"
     },
-    "forgotPassword": {
-      "title": "Mot de passe oublié",
-      "emailField": "Email",
-      "submitButton": "Envoyer le lien",
-      "link": "Mot de passe oublié ?"
+    "status": {
+      "blocked": "Bloqué"
     },
-    "resetPassword": {
-      "title": "Réinitialiser le mot de passe",
-      "passwordField": "Nouveau mot de passe",
-      "repeatPasswordField": "Répéter le mot de passe",
-      "submitButton": "Réinitialiser"
-    },
-    "messages": {
-      "resetLinkSent": "Un lien a été envoyé à votre email",
-      "passwordChanged": "Mot de passe modifié avec succès",
-      "ok": "OK"
-    },
-    "errors": {
-      "invalidEmail": "Email invalide",
-      "conflictEmail": "Cet email existe déjà",
-      "emptyField": "Champ obligatoire",
-      "minLength": "Minimum 8 caractères",
-      "maxUsernameLength": "Le nom d'utilisateur ne doit pas dépasser 30 caractères",
-      "maxLength": "Maximum 30 caractères",
-      "uppercaseRequired": "Une majuscule requise",
-      "lowercaseRequired": "Une minuscule requise",
-      "digitRequired": "Un chiffre requis",
-      "invalidCredentials": "Email ou mot de passe incorrect",
-      "passwordsMustMatch": "Les mots de passe ne correspondent pas",
-      "emailAlreadyExist": "Cet email existe déjà",
-      "notFoundEmail": "Utilisateur introuvable"
+    "notFound": {
+      "title": "Page introuvable",
+      "description": "Nous n’avons pas trouvé la page que vous recherchez",
+      "button": "Retour"
     }
   },
-  "pages": {
-    "home": { "title": "Accueil" },
-    "images": { "title": "Images" },
-    "videos": { "title": "Vidéos" },
-    "audios": { "title": "Audios" },
-    "plan": { "title": "Plan de stockage" }
+  "system": {
+    "navigation": {
+      "allFiles": "Tous les fichiers",
+      "images": "Images",
+      "audios": "Audio",
+      "videos": "Vidéos",
+      "plan": "Forfait de stockage",
+      "settings": "Paramètres",
+      "admin": "Panneau d’administration"
+    },
+    "sidebar": {
+      "show": "Afficher la barre latérale",
+      "hide": "Masquer la barre latérale"
+    }
   },
-  "ui": {
-    "upload": {
-      "uploadButton": "Téléverser des fichiers",
-      "addButton": "Ajouter des fichiers",
-      "title": "Téléversement de fichiers",
-
-      "errors": {
-        "storageLimit": "Limite de stockage dépassée"
+  "domain": {
+    "file": {
+      "category": {
+        "image": "Image",
+        "video": "Vidéo",
+        "audio": "Audio"
       },
-
-      "success": {
-        "uploaded": "Fichiers téléversés avec succès"
-      },
-
-      "description": {
-        "quantity": "Sélectionnez 1 à 10 fichiers à téléverser (1 fichier — 30 Mo max)",
-        "formats": "Formats pris en charge",
-        "remainingSpace": "Espace restant",
-        "selectedFiles": "Fichiers sélectionnés"
+      "actions": {
+        "unblock": "Débloquer le fichier",
+        "block": "Bloquer le fichier",
+        "delete": "Supprimer le fichier"
       }
     },
-
-    "messages": {
-      "fileDeleted": "Le fichier {name} a été supprimé"
+    "user": {
+      "actions": {
+        "unblock": "Débloquer l’utilisateur",
+        "block": "Bloquer l’utilisateur",
+        "delete": "Supprimer l’utilisateur"
+      }
     },
-    "dialog": {
+    "plan": {
+      "freeLabel": "Gratuit",
+      "success": {
+        "title": "Paiement réussi",
+        "description": "Votre formule {plan} est maintenant active"
+      },
+      "buy": "Acheter",
+      "change": "Changer de formule",
+      "cancel": "Annuler",
+      "confirmTitle": "Confirmer le changement de formule",
+      "confirmDescription": "Vous passez à la formule {plan}",
+      "labels": {
+        "plan": "Formule",
+        "storage": "Stockage",
+        "price": "Prix"
+      },
+      "free": {
+        "title": "Gratuit",
+        "description": "Stockage de base pour un usage personnel"
+      },
+      "pro": {
+        "title": "Pro",
+        "description": "Stockage étendu pour utilisateurs actifs"
+      },
+      "premium": {
+        "title": "Premium",
+        "description": "Stockage maximal avec fonctionnalités premium"
+      },
+      "actions": {
+        "upgrade": "Passer à une offre supérieure",
+        "downgrade": "Passer à une offre inférieure",
+        "current": "Formule actuelle"
+      },
+      "metrics": {
+        "used": "Stockage utilisé",
+        "usedPercent": "Pourcentage utilisé",
+        "remaining": "Stockage restant",
+        "free": "Stockage gratuit"
+      },
+      "storage": {
+        "title": "Utilisation du stockage"
+      }
+    }
+  },
+  "features": {
+    "auth": {
+      "login": {
+        "title": "Connexion",
+        "email": "Adresse e-mail",
+        "password": "Mot de passe",
+        "submit": "Connexion",
+        "noAccount": "Pas de compte ?",
+        "createAccount": "Créer un compte",
+        "oauth": "Continuer avec",
+        "separator": "ou",
+        "forgotPassword": "Mot de passe oublié ?"
+      },
+      "create": {
+        "title": "Créer un compte",
+        "username": "Nom d’utilisateur",
+        "email": "Adresse e-mail",
+        "password": "Mot de passe",
+        "submit": "Créer le compte",
+        "haveAccount": "Déjà un compte ?",
+        "login": "Se connecter"
+      },
+      "signOut": "Se déconnecter",
+      "forgotPassword": {
+        "title": "Réinitialiser le mot de passe",
+        "email": "Adresse e-mail",
+        "submit": "Envoyer le lien de réinitialisation"
+      },
+      "resetPassword": {
+        "title": "Créer un nouveau mot de passe",
+        "password": "Nouveau mot de passe",
+        "repeatPassword": "Répéter le mot de passe",
+        "submit": "Réinitialiser le mot de passe",
+        "success": "Mot de passe mis à jour avec succès"
+      },
+      "blocked": {
+        "title": "Compte bloqué",
+        "description": "Votre compte a été temporairement restreint.",
+        "nextTitle": "Et ensuite ?",
+        "items": {
+          "first": "Vos fichiers téléchargés peuvent être temporairement indisponibles",
+          "second": "Vous pouvez contacter le support pour plus d’informations",
+          "third": "L’accès sera rétabli après vérification"
+        }
+      },
+      "errors": {
+        "required": "Ce champ est obligatoire",
+        "invalidEmail": "Adresse e-mail invalide",
+        "tooShort": "Valeur trop courte",
+        "notFound": "Utilisateur introuvable",
+        "invalidCredentials": "Identifiants invalides",
+        "passwords_not_match": "Les mots de passe ne correspondent pas",
+        "invalid_token": "Lien invalide ou expiré",
+        "emptyField": "Le champ ne peut pas être vide",
+        "uppercaseRequired": "Doit contenir une majuscule",
+        "lowercaseRequired": "Doit contenir une minuscule",
+        "digitRequired": "Doit contenir un chiffre",
+        "minLength": "Longueur minimale non atteinte",
+        "maxLength": "Longueur maximale dépassée (30 caractères)"
+      }
+    },
+    "admin": {
+      "tabs": {
+        "dashboard": "Tableau de bord",
+        "users": "Utilisateurs",
+        "files": "Fichiers"
+      },
+      "dashboard": {
+        "users": "Utilisateurs",
+        "files": "Fichiers",
+        "avgFilesPerUser": "Moyenne de fichiers par utilisateur",
+        "topUsers": "Top {count} utilisateurs"
+      },
+      "files": {
+        "title": "Fichiers",
+        "description": "Gestion de tous les fichiers utilisateurs"
+      },
+      "users": {
+        "title": "Utilisateurs",
+        "description": "Gestion de tous les utilisateurs enregistrés"
+      },
+      "blockReasons": {
+        "malware": "Logiciels malveillants",
+        "nsfw_content": "Contenu pour adultes",
+        "copyright_violation": "Violation de droits d’auteur",
+        "phishing_or_scam": "Fraude ou escroquerie",
+        "illegal_content": "Contenu illégal",
+        "storage_abuse": "Abus de stockage",
+        "upload_spam": "Spam de téléversement",
+        "suspicious_activity": "Activité suspecte",
+        "selectPlaceholder": "Sélectionner une raison"
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "description": "Gérer votre compte",
+      "account": {
+        "title": "Paramètres du compte",
+        "description": "Mettre à jour votre profil",
+        "userId": "ID utilisateur",
+        "role": "Rôle",
+        "actions": {
+          "save": "Enregistrer les modifications",
+          "saving": "Enregistrement..."
+        }
+      },
+      "subscription": {
+        "title": "Abonnement",
+        "description": "Gérer votre forfait",
+        "currentPlan": "Forfait actuel",
+        "freePlan": "Forfait gratuit",
+        "storage": "Utilisation du stockage",
+        "upgrade": "Passer à un forfait supérieur"
+      },
+      "danger": {
+        "title": "Zone de danger",
+        "description": "Suppression définitive du compte",
+        "warning": "Cette action est irréversible",
+        "delete": "Supprimer le compte",
+        "actions": {
+          "delete": "Supprimer l’utilisateur",
+          "deleting": "Suppression..."
+        },
+        "dialog": {
+          "title": "Supprimer le compte",
+          "description": "Toutes les données seront supprimées définitivement",
+          "cancel": "Annuler",
+          "confirm": "Oui, supprimer"
+        }
+      },
+      "theme": {
+        "current": "Thème : {theme}"
+      }
+    },
+    "files": {
+      "deleteForm": {
+        "title": "Supprimer le fichier",
+        "description": "Voulez-vous vraiment supprimer ce fichier ?",
+        "confirm": "Supprimer",
+        "cancel": "Annuler"
+      }
+    }
+  },
+  "dialogs": {
+    "file": {
       "block": {
-        "title": "Bloquer l'utilisateur",
-        "description": "Êtes-vous sûr de vouloir bloquer"
+        "title": "Bloquer le fichier",
+        "description": "Voulez-vous vraiment bloquer {name} ?"
+      },
+      "unblock": {
+        "title": "Débloquer le fichier",
+        "description": "Voulez-vous vraiment débloquer {name} ?"
       },
       "delete": {
         "title": "Supprimer le fichier",
-        "description": "Êtes-vous sûr de vouloir supprimer"
-      },
-      "no": "Non",
-      "yes": "Oui"
-    },
-    "empty": {
-      "title": "Stockage vide",
-      "description": "Vous n'avez encore rien uploadé"
-    },
-    "theme": "Thème",
-    "locale": "Langue",
-    "signOut": "Déconnexion",
-    "close": "Fermer",
-    "download": "Télécharger",
-    "delete": "Supprimer",
-    "info": {
-      "totalFiles": "fichiers",
-      "categories": {
-        "audio": "audio",
-        "video": "vidéo",
-        "image": "images"
+        "description": "Voulez-vous vraiment supprimer {name} ?"
       }
     },
-    "storage": {
-      "usage": "Utilisation",
-      "used": "Utilisé",
-      "remaining": "Restant",
-      "usedPercent": "Utilisé %",
-      "freePercent": "Libre %"
+    "user": {
+      "block": {
+        "title": "Bloquer l’utilisateur",
+        "description": "Voulez-vous vraiment bloquer {name} ?"
+      },
+      "unblock": {
+        "title": "Débloquer l’utilisateur",
+        "description": "Voulez-vous vraiment débloquer {name} ?"
+      },
+      "delete": {
+        "title": "Supprimer l’utilisateur",
+        "description": "Voulez-vous vraiment supprimer {name} ?"
+      }
+    },
+    "upload": {
+      "title": "Téléverser des fichiers",
+      "remainingSpace": "Espace restant",
+      "selectedFiles": "Fichiers sélectionnés",
+      "allowedFormats": "Formats autorisés"
     }
   },
-  "plan": {
-    "confirmTitle": "Confirmer le changement de plan",
-    "confirmDescription": "Vous allez passer au plan {plan}",
-    "cancel": "Annuler",
-    "change": "Changer de plan",
-    "buy": "Acheter",
-    "free": "Gratuit",
-    "labels": {
-      "plan": "Plan",
-      "storage": "Stockage",
-      "price": "Prix"
+  "notifications": {
+    "file": {
+      "blocked": "Le fichier {name} a été bloqué",
+      "unblocked": "Le fichier {name} a été débloqué",
+      "deleted": "Le fichier {name} a été supprimé"
     },
-    "actions": {
-      "upgrade": "Améliorer",
-      "downgrade": "Rétrograder",
-      "current": "Plan actuel"
+    "user": {
+      "updated": "L’utilisateur {name} a été mis à jour",
+      "blocked": "L’utilisateur {name} a été bloqué",
+      "unblocked": "L’utilisateur {name} a été débloqué",
+      "deleted": "L’utilisateur {name} a été supprimé"
     }
   },
-
-  "plans": {
-    "free": {
-      "title": "Gratuit",
-      "description": "Idéal pour commencer et tester la plateforme"
-    },
-    "pro": {
-      "title": "Pro",
-      "description": "Parfait pour une utilisation quotidienne et le stockage personnel"
-    },
-    "premium": {
-      "title": "Premium",
-      "description": "Pour les utilisateurs ayant besoin de plus d’espace et de flexibilité"
-    }
-  },
-
-  "blockReasons": {
-    "malware": "fichiers malveillants ou dangereux",
-    "nsfw_content": "contenu adulte ou explicite",
-    "copyright_violation": "contenu piraté ou volé",
-    "phishing_or_scam": "fichiers ou liens frauduleux",
-    "illegal_content": "contenu violant les lois ou réglementations",
-    "storage_abuse": "abus des téléchargements ou du stockage",
-    "upload_spam": "téléversements massifs ou automatisés",
-    "suspicious_activity": "comportement utilisateur inhabituel ou risqué"
-  },
-
-  "settings": {
-    "title": "Paramètres",
-    "description": "Gérez les paramètres et préférences de votre compte.",
-
-    "account": {
-      "title": "Compte",
-      "description": "Informations de base du compte",
-      "userId": "ID utilisateur",
-      "role": "Rôle",
-      "email": "Email"
-    },
-
-    "subscription": {
-      "title": "Abonnement",
-      "description": "Gérez votre forfait et votre stockage",
-      "currentPlan": "Forfait actuel",
-      "freePlan": "Vous utilisez actuellement le forfait gratuit.",
-      "storage": "Stockage",
-      "upgrade": "Passer au Pro"
-    }
-  },
-
-  "navigation": {
-    "allFiles": "Tous les fichiers",
-    "images": "Images",
-    "audios": "Audios",
-    "videos": "Vidéos",
-    "plan": "Plan de stockage",
-    "settings": "Paramètres",
-    "admin": "Admin panél"
-  },
-
-  "headings": {
+  "pages": {
     "allFiles": {
       "title": "Tous les fichiers",
-      "description": "Gérez et organisez tout votre contenu téléchargé en un seul endroit."
+      "description": "Gérez et accédez à tous vos fichiers téléversés"
     },
-
     "images": {
       "title": "Images",
-      "description": "Parcourez, téléchargez et gérez vos fichiers image."
+      "description": "Parcourir et gérer vos images"
     },
-
     "audios": {
-      "title": "Audios",
-      "description": "Stockez et organisez vos enregistrements audio et fichiers musicaux."
+      "title": "Audio",
+      "description": "Parcourir et gérer vos fichiers audio"
     },
-
     "videos": {
       "title": "Vidéos",
-      "description": "Gérez votre bibliothèque vidéo et votre contenu multimédia."
+      "description": "Parcourir et gérer vos vidéos"
     },
-
     "plan": {
-      "title": "Abonnement",
-      "description": "Consultez votre abonnement actuel et vos limites de stockage."
+      "title": "Forfait de stockage",
+      "description": "Choisissez un forfait adapté à vos besoins"
     },
-
     "settings": {
       "title": "Paramètres",
-      "description": "Personnalisez les préférences de votre compte et de l'application."
+      "description": "Gérer votre compte et vos préférences"
     },
-
     "admin": {
-      "title": "Admin panel",
-      "description": "Surveillez l’activité de la plateforme et gérez les ressources système."
-    }
+      "title": "Panneau d’administration",
+      "description": "Gérer les utilisateurs, fichiers et l’activité de la plateforme"
+    },
+    "checkEmail": "Un lien de réinitialisation de mot de passe a été envoyé à votre e-mail"
   }
 }

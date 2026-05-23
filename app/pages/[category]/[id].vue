@@ -4,6 +4,8 @@ import type { File } from '~~/prisma/generated/client'
 definePageMeta({
   middleware: ['auth', 'blocked']
 })
+
+const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
 
@@ -14,6 +16,7 @@ const { data: file } = await useFetch<File>(`/api/files/${route.params.id}`)
   <div v-if="file" class="flex h-full flex-col items-center space-y-4 p-4">
     <Button variant="outline" class="mr-auto cursor-pointer" @click="router.back()">
       <Icon name="lucide:arrow-left" size="20" />
+      {{ t('ui.buttons.back') }}
     </Button>
 
     <FileHeader :name="file.fileName" :category="file.category" />

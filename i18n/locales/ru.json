@@ -1,239 +1,379 @@
 {
-  "auth": {
-    "login": {
-      "title": "Вход",
-      "emailField": "Email",
-      "passwordField": "Пароль",
-      "submitButton": "Войти",
-      "noAccount": "Нет аккаунта?",
-      "createAccount": "Создать аккаунт",
-      "separator": "или",
-      "oauth": "Продолжить через",
-      "forgotPassword": "Забыли пароль?"
-    },
-    "create": {
-      "title": "Создание аккаунта",
-      "emailField": "Email",
-      "passwordField": "Пароль",
-      "submitButton": "Создать аккаунт",
-      "haveAccount": "Уже есть аккаунт?",
-      "loginAccount": "Войти"
-    },
-    "forgotPassword": {
-      "title": "Забыли пароль",
-      "emailField": "Email",
-      "submitButton": "Отправить ссылку",
-      "link": "Забыли пароль?"
-    },
-    "resetPassword": {
-      "title": "Сброс пароля",
-      "passwordField": "Новый пароль",
-      "repeatPasswordField": "Повторите пароль",
-      "submitButton": "Сбросить пароль"
-    },
-    "messages": {
-      "resetLinkSent": "Ссылка для сброса пароля отправлена на вашу почту",
-      "passwordChanged": "Пароль успешно изменён",
-      "ok": "ОК"
-    },
-    "errors": {
-      "invalidEmail": "Введите корректный email",
-      "conflictEmail": "Этот email уже зарегистрирован",
-      "emptyField": "Поле не может быть пустым",
-      "minLength": "Минимум 8 символов",
-      "maxUsernameLength": "Имя пользователя должно содержать не более 30 символов",
-      "maxLength": "Максимум 30 символов",
-      "uppercaseRequired": "Нужна заглавная буква",
-      "lowercaseRequired": "Нужна строчная буква",
-      "digitRequired": "Нужна цифра",
-      "invalidCredentials": "Неверный email или пароль",
-      "passwordsMustMatch": "Пароли не совпадают",
-      "emailAlreadyExist": "Пользователь уже существует",
-      "notFoundEmail": "Пользователь не найден"
-    }
-  },
-  "pages": {
-    "home": { "title": "Главная" },
-    "images": { "title": "Изображения" },
-    "videos": { "title": "Видео" },
-    "audios": { "title": "Аудио" },
-    "plan": { "title": "Тариф" }
-  },
   "ui": {
-    "upload": {
-      "uploadButton": "Загрузить файлы",
-      "addButton": "Добавить файлы",
-      "title": "Загрузка файлов",
-
-      "errors": {
-        "storageLimit": "Недостаточно места в Облако"
-      },
-
-      "success": {
-        "uploaded": "Файлы успешно загружены"
-      },
-
-      "description": {
-        "quantity": "Выберите 1–10 файлов для загрузки (1 файл — максимум 30 МБ)",
-        "formats": "Поддерживаемые форматы",
-        "remainingSpace": "Свободное место",
-        "selectedFiles": "Выбранные файлы"
-      }
-    },
-    "messages": {
-      "fileDeleted": "Файл {name} удалён"
-    },
-
-    "dialog": {
-      "block": {
-        "title": "Заблокировать пользователя",
-        "description": "Вы уверены, что хотите заблокировать"
-      },
-      "delete": {
-        "title": "Удалить файл",
-        "description": "Вы уверены, что хотите удалить"
-      },
-      "no": "Нет",
-      "yes": "Да"
-    },
-
     "empty": {
-      "title": "Облако пусто",
-      "description": "Вы ещё не загрузили ни одного файла"
+      "title": "Файлов пока нет",
+      "description": "Загрузите свой первый файл, чтобы начать работу"
     },
-    "theme": "Тема",
-    "locale": "Язык",
-    "signOut": "Выйти",
-    "close": "Закрыть",
-    "download": "Скачать",
-    "delete": "Удалить",
-    "info": {
-      "totalFiles": "файлов",
-      "categories": {
-        "audio": "аудио",
-        "video": "видео",
-        "image": "изображения"
+
+    "buttons": {
+      "yes": "Да",
+      "no": "Отмена",
+      "ok": "ОК",
+      "upload": "Загрузить файлы",
+      "addFiles": "Добавить файлы",
+      "back": "Назад"
+    },
+
+    "status": {
+      "blocked": "Заблокировано"
+    },
+
+    "notFound": {
+      "title": "Страница не найдена",
+      "description": "Мы не смогли найти страницу, которую вы ищете",
+      "button": "Вернуться назад"
+    }
+  },
+
+  "system": {
+    "navigation": {
+      "allFiles": "Все файлы",
+      "images": "Изображения",
+      "audios": "Аудио",
+      "videos": "Видео",
+      "plan": "Тариф",
+      "settings": "Настройки",
+      "admin": "Админ-панель"
+    },
+
+    "sidebar": {
+      "show": "Показать сайдбар",
+      "hide": "Скрыть сайдбар"
+    }
+  },
+
+  "domain": {
+    "file": {
+      "category": {
+        "image": "Изображение",
+        "video": "Видео",
+        "audio": "Аудио"
+      },
+
+      "actions": {
+        "unblock": "Разблокировать файл",
+        "block": "Заблокировать файл",
+        "delete": "Удалить файл"
       }
     },
-    "storage": {
-      "usage": "Использование облака",
-      "used": "Использовано",
-      "remaining": "Осталось",
-      "usedPercent": "Использовано %",
-      "freePercent": "Свободно %"
-    }
-  },
-  "plan": {
-    "confirmTitle": "Подтверждение смены плана",
-    "confirmDescription": "Вы собираетесь перейти на {plan} облако",
-    "cancel": "Отмена",
-    "change": "Сменить план облака",
-    "buy": "Купить план облака",
-    "free": "Бесплатно",
-    "labels": {
-      "plan": "План облака",
-      "storage": "Облако",
-      "price": "Цена"
-    },
-    "actions": {
-      "upgrade": "Повысить",
-      "downgrade": "Понизить",
-      "current": "Текущий план"
-    }
-  },
 
-  "plans": {
-    "free": {
-      "title": "Бесплатный",
-      "description": "Подходит для начала и тестирования платформы"
-    },
-    "pro": {
-      "title": "Про",
-      "description": "Идеально для повседневного использования"
-    },
-    "premium": {
-      "title": "Премиум",
-      "description": "Для пользователей, которым нужно больше места"
-    }
-  },
-
-  "blockReasons": {
-    "malware": "вредоносные или опасные файлы",
-    "nsfw_content": "контент для взрослых или откровенный",
-    "copyright_violation": "пиратский или украденный контент",
-    "phishing_or_scam": "мошеннические файлы или ссылки",
-    "illegal_content": "контент, нарушающий законы или правила",
-    "storage_abuse": "злоупотребление загрузками или хранилищем",
-    "upload_spam": "массовые или автоматические загрузки файлов",
-    "suspicious_activity": "подозрительное поведение пользователя"
-  },
-
-  "settings": {
-    "title": "Настройки",
-    "description": "Управляйте настройками и предпочтениями аккаунта.",
-
-    "account": {
-      "title": "Аккаунт",
-      "description": "Основная информация об аккаунте",
-      "userId": "ID пользователя",
-      "role": "Роль",
-      "email": "Электронная почта"
-    },
-
-    "subscription": {
-      "title": "Подписка",
-      "description": "Управляйте тарифом и хранилищем",
-      "currentPlan": "Текущий тариф",
-      "freePlan": "Сейчас вы используете бесплатный тариф.",
-      "storage": "Хранилище",
-      "upgrade": "Улучшить тариф"
-    }
-  },
-
-  "navigation": {
-    "allFiles": "Все файлы",
-    "images": "Изображения",
-    "audios": "Аудио",
-    "videos": "Видео",
-    "plan": "План облака",
-    "settings": "Настройки",
-    "admin": "Админ панель"
-  },
-
-  "headings": {
-    "allFiles": {
-      "title": "Все файлы",
-      "description": "Управляйте и организовывайте весь загруженный контент в одном месте."
-    },
-
-    "images": {
-      "title": "Изображения",
-      "description": "Просматривайте, загружайте и управляйте своими изображениями."
-    },
-
-    "audios": {
-      "title": "Аудио",
-      "description": "Храните и организовывайте аудиофайлы и музыкальные записи."
-    },
-
-    "videos": {
-      "title": "Видео",
-      "description": "Управляйте своей видеотекой и медиафайлами."
+    "user": {
+      "actions": {
+        "unblock": "Разблокировать пользователя",
+        "block": "Заблокировать пользователя",
+        "delete": "Удалить пользователя"
+      }
     },
 
     "plan": {
-      "title": "План облака",
-      "description": "Просматривайте текущий тариф и лимиты хранилища."
+      "freeLabel": "Бесплатный",
+
+      "success": {
+        "title": "Оплата прошла успешно",
+        "description": "Тариф {plan} активирован"
+      },
+
+      "buy": "Купить",
+      "change": "Сменить тариф",
+      "cancel": "Отмена",
+
+      "confirmTitle": "Подтверждение смены тарифа",
+      "confirmDescription": "Вы переходите на тариф {plan}",
+
+      "labels": {
+        "plan": "Тариф",
+        "storage": "Хранилище",
+        "price": "Цена"
+      },
+
+      "free": {
+        "title": "Бесплатный",
+        "description": "Базовое хранилище для личного использования"
+      },
+
+      "pro": {
+        "title": "Pro",
+        "description": "Расширенное хранилище для активных пользователей"
+      },
+
+      "premium": {
+        "title": "Premium",
+        "description": "Максимальное хранилище с премиум-функциями"
+      },
+
+      "actions": {
+        "upgrade": "Повысить тариф",
+        "downgrade": "Понизить тариф",
+        "current": "Текущий тариф"
+      },
+
+      "metrics": {
+        "used": "Использовано",
+        "usedPercent": "Использовано %",
+        "remaining": "Осталось",
+        "free": "Свободно"
+      },
+
+      "storage": {
+        "title": "Использование хранилища"
+      }
+    }
+  },
+
+  "features": {
+    "auth": {
+      "login": {
+        "title": "Вход",
+        "email": "Email",
+        "password": "Пароль",
+        "submit": "Войти",
+        "noAccount": "Нет аккаунта?",
+        "createAccount": "Создать аккаунт",
+        "oauth": "Продолжить через",
+        "separator": "или",
+        "forgotPassword": "Забыли пароль?"
+      },
+
+      "create": {
+        "title": "Регистрация",
+        "username": "Имя пользователя",
+        "email": "Email",
+        "password": "Пароль",
+        "submit": "Создать аккаунт",
+        "haveAccount": "Уже есть аккаунт?",
+        "login": "Войти"
+      },
+
+      "signOut": "Выйти",
+
+      "forgotPassword": {
+        "title": "Сброс пароля",
+        "email": "Email",
+        "submit": "Отправить ссылку"
+      },
+
+      "resetPassword": {
+        "title": "Новый пароль",
+        "password": "Новый пароль",
+        "repeatPassword": "Повторите пароль",
+        "submit": "Сменить пароль",
+        "success": "Пароль успешно обновлён"
+      },
+
+      "blocked": {
+        "title": "Аккаунт заблокирован",
+        "description": "Ваш аккаунт временно ограничен.",
+        "nextTitle": "Что дальше?",
+        "items": {
+          "first": "Файлы могут быть временно недоступны",
+          "second": "Вы можете обратиться в поддержку",
+          "third": "Доступ будет восстановлен после проверки"
+        }
+      },
+
+      "errors": {
+        "required": "Поле обязательно",
+        "invalidEmail": "Введите корректный email",
+        "tooShort": "Слишком короткое значение",
+        "notFound": "Пользователь не найден",
+        "invalidCredentials": "Неверный email или пароль",
+        "passwords_not_match": "Пароли не совпадают",
+        "invalid_token": "Ссылка недействительна или устарела",
+        "emptyField": "Поле не может быть пустым",
+        "uppercaseRequired": "Должна быть заглавная буква",
+        "lowercaseRequired": "Должна быть строчная буква",
+        "digitRequired": "Должна быть цифра",
+        "minLength": "Недостаточная длина",
+        "maxLength": "Превышена максимальная длина (30 символов)"
+      }
+    },
+
+    "admin": {
+      "tabs": {
+        "dashboard": "Панель",
+        "users": "Пользователи",
+        "files": "Файлы"
+      },
+
+      "dashboard": {
+        "users": "Пользователи",
+        "files": "Файлы",
+        "avgFilesPerUser": "Среднее файлов на пользователя",
+        "topUsers": "Топ {count} пользователей"
+      },
+
+      "files": {
+        "title": "Файлы",
+        "description": "Управление всеми файлами пользователей"
+      },
+
+      "users": {
+        "title": "Пользователи",
+        "description": "Управление всеми пользователями"
+      },
+
+      "blockReasons": {
+        "malware": "Вредоносные файлы",
+        "nsfw_content": "Контент 18+",
+        "copyright_violation": "Нарушение авторских прав",
+        "phishing_or_scam": "Мошенничество",
+        "illegal_content": "Незаконный контент",
+        "storage_abuse": "Злоупотребление хранилищем",
+        "upload_spam": "Спам-загрузки",
+        "suspicious_activity": "Подозрительная активность",
+        "selectPlaceholder": "Выберите причину"
+      }
     },
 
     "settings": {
       "title": "Настройки",
-      "description": "Настраивайте параметры аккаунта и приложения."
+      "description": "Управление аккаунтом",
+
+      "account": {
+        "title": "Настройки аккаунта",
+        "description": "Обновление профиля",
+        "userId": "ID пользователя",
+        "role": "Роль",
+
+        "actions": {
+          "save": "Сохранить",
+          "saving": "Сохранение..."
+        }
+      },
+
+      "subscription": {
+        "title": "Подписка",
+        "description": "Управление тарифом",
+        "currentPlan": "Текущий тариф",
+        "freePlan": "Бесплатный тариф",
+        "storage": "Использование хранилища",
+        "upgrade": "Улучшить тариф"
+      },
+
+      "danger": {
+        "title": "Опасная зона",
+        "description": "Удаление аккаунта",
+        "warning": "Действие нельзя отменить",
+        "delete": "Удалить аккаунт",
+
+        "actions": {
+          "delete": "Удалить пользователя",
+          "deleting": "Удаление..."
+        },
+
+        "dialog": {
+          "title": "Удаление аккаунта",
+          "description": "Все данные будут удалены навсегда",
+          "cancel": "Отмена",
+          "confirm": "Да, удалить"
+        }
+      },
+
+      "theme": {
+        "current": "Тема: {theme}"
+      }
+    },
+
+    "files": {
+      "deleteForm": {
+        "title": "Удаление файла",
+        "description": "Вы уверены, что хотите удалить этот файл?",
+        "confirm": "Удалить",
+        "cancel": "Отмена"
+      }
+    }
+  },
+
+  "dialogs": {
+    "file": {
+      "block": {
+        "title": "Блокировка файла",
+        "description": "Заблокировать {name}?"
+      },
+      "unblock": {
+        "title": "Разблокировка файла",
+        "description": "Разблокировать {name}?"
+      },
+      "delete": {
+        "title": "Удаление файла",
+        "description": "Удалить {name}?"
+      }
+    },
+
+    "user": {
+      "block": {
+        "title": "Блокировка пользователя",
+        "description": "Заблокировать {name}?"
+      },
+      "unblock": {
+        "title": "Разблокировка пользователя",
+        "description": "Разблокировать {name}?"
+      },
+      "delete": {
+        "title": "Удаление пользователя",
+        "description": "Удалить {name}?"
+      }
+    },
+
+    "upload": {
+      "title": "Загрузка файлов",
+      "remainingSpace": "Осталось места",
+      "selectedFiles": "Выбранные файлы",
+      "allowedFormats": "Разрешённые форматы"
+    }
+  },
+
+  "notifications": {
+    "file": {
+      "blocked": "Файл {name} заблокирован",
+      "unblocked": "Файл {name} разблокирован",
+      "deleted": "Файл {name} удалён"
+    },
+
+    "user": {
+      "updated": "Пользователь {name} обновлён",
+      "blocked": "Пользователь {name} заблокирован",
+      "unblocked": "Пользователь {name} разблокирован",
+      "deleted": "Пользователь {name} удалён"
+    }
+  },
+
+  "pages": {
+    "allFiles": {
+      "title": "Все файлы",
+      "description": "Управляйте всеми загруженными файлами"
+    },
+
+    "images": {
+      "title": "Изображения",
+      "description": "Просмотр и управление изображениями"
+    },
+
+    "audios": {
+      "title": "Аудио",
+      "description": "Просмотр и управление аудио файлами"
+    },
+
+    "videos": {
+      "title": "Видео",
+      "description": "Просмотр и управление видео файлами"
+    },
+
+    "plan": {
+      "title": "Тарифный план",
+      "description": "Выберите подходящий тариф"
+    },
+
+    "settings": {
+      "title": "Настройки",
+      "description": "Управление аккаунтом и параметрами"
     },
 
     "admin": {
-      "title": "Админ панель",
-      "description": "Контролируйте активность платформы и системные ресурсы."
-    }
+      "title": "Админ-панель",
+      "description": "Управление пользователями, файлами и активностью"
+    },
+
+    "checkEmail": "Ссылка для сброса пароля отправлена на вашу почту"
   }
 }

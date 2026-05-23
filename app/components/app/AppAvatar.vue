@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { user } = useUserSession()
 const localePath = useLocalePath()
+const { t } = useI18n()
 </script>
 
 <template>
@@ -15,8 +16,11 @@ const localePath = useLocalePath()
         </Avatar>
       </TooltipTrigger>
     </NuxtLink>
+
     <TooltipContent>
-      <p>{{ user?.username }}</p>
+      <p>
+        {{ user?.username }}
+      </p>
     </TooltipContent>
   </Tooltip>
 </template>

@@ -7,7 +7,7 @@ useHead({ title: `Settings | ${appName}` })
 
 <template>
   <div class="flex w-full flex-col gap-4">
-    <AppHeading :title="t('headings.settings.title')" :description="t('headings.settings.description')" />
+    <AppHeading :title="t('pages.settings.title')" :description="t('pages.settings.description')" />
     <SettingsUserHeader />
     <SettingsAccountUpdate />
     <SettingsUserPlan />

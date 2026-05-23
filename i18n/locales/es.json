@@ -1,239 +1,326 @@
 {
-  "auth": {
-    "login": {
-      "title": "Iniciar sesión",
-      "emailField": "Email",
-      "passwordField": "Contraseña",
-      "submitButton": "Entrar",
-      "noAccount": "¿No tienes cuenta?",
-      "createAccount": "Crear cuenta",
-      "separator": "o",
-      "oauth": "Continuar con",
-      "forgotPassword": "¿Olvidaste la contraseña?"
+  "ui": {
+    "empty": {
+      "title": "Aún no hay archivos",
+      "description": "Sube tu primer archivo para empezar"
     },
-    "create": {
-      "title": "Crear cuenta",
-      "emailField": "Email",
-      "passwordField": "Contraseña",
-      "submitButton": "Crear cuenta",
-      "haveAccount": "¿Ya tienes cuenta?",
-      "loginAccount": "Iniciar sesión"
+    "buttons": {
+      "yes": "Sí",
+      "no": "Cancelar",
+      "ok": "OK",
+      "upload": "Subir archivos",
+      "addFiles": "Añadir archivos",
+      "back": "Atrás"
     },
-    "forgotPassword": {
-      "title": "Recuperar contraseña",
-      "emailField": "Email",
-      "submitButton": "Enviar enlace",
-      "link": "¿Olvidaste la contraseña?"
+    "status": {
+      "blocked": "Bloqueado"
     },
-    "resetPassword": {
-      "title": "Restablecer contraseña",
-      "passwordField": "Nueva contraseña",
-      "repeatPasswordField": "Repetir contraseña",
-      "submitButton": "Restablecer"
-    },
-    "messages": {
-      "resetLinkSent": "Se ha enviado un enlace a tu email",
-      "passwordChanged": "La contraseña se ha cambiado correctamente",
-      "ok": "OK"
-    },
-    "errors": {
-      "invalidEmail": "Introduce un email válido",
-      "conflictEmail": "Este email ya está registrado",
-      "emptyField": "Este campo es obligatorio",
-      "minLength": "Mínimo 8 caracteres",
-      "maxUsernameLength": "El nombre de usuario no debe tener más de 30 caracteres",
-      "maxLength": "Máximo 30 caracteres",
-      "uppercaseRequired": "Debe contener mayúscula",
-      "lowercaseRequired": "Debe contener minúscula",
-      "digitRequired": "Debe contener un número",
-      "invalidCredentials": "Email o contraseña incorrectos",
-      "passwordsMustMatch": "Las contraseñas no coinciden",
-      "emailAlreadyExist": "Este email ya existe",
-      "notFoundEmail": "Usuario no encontrado"
+    "notFound": {
+      "title": "Página no encontrada",
+      "description": "No pudimos encontrar la página que buscas",
+      "button": "Volver"
     }
   },
-  "pages": {
-    "home": { "title": "Inicio" },
-    "images": { "title": "Imágenes" },
-    "videos": { "title": "Vídeos" },
-    "audios": { "title": "Audios" },
-    "plan": { "title": "Plan de almacenamiento" }
+  "system": {
+    "navigation": {
+      "allFiles": "Todos los archivos",
+      "images": "Imágenes",
+      "audios": "Audio",
+      "videos": "Videos",
+      "plan": "Plan de almacenamiento",
+      "settings": "Configuración",
+      "admin": "Panel de administración"
+    },
+    "sidebar": {
+      "show": "Mostrar barra lateral",
+      "hide": "Ocultar barra lateral"
+    }
   },
-  "ui": {
-    "upload": {
-      "uploadButton": "Subir archivos",
-      "addButton": "Añadir archivos",
-      "title": "Subir archivos",
-
-      "errors": {
-        "storageLimit": "Se ha superado el límite de almacenamiento"
+  "domain": {
+    "file": {
+      "category": {
+        "image": "Imagen",
+        "video": "Video",
+        "audio": "Audio"
       },
-
-      "success": {
-        "uploaded": "Archivos subidos correctamente"
-      },
-
-      "description": {
-        "quantity": "Selecciona de 1 a 10 archivos para subir (1 archivo — máximo 30 MB)",
-        "formats": "Formatos compatibles",
-        "remainingSpace": "Espacio restante",
-        "selectedFiles": "Archivos seleccionados"
+      "actions": {
+        "unblock": "Desbloquear archivo",
+        "block": "Bloquear archivo",
+        "delete": "Eliminar archivo"
       }
     },
-
-    "messages": {
-      "fileDeleted": "El archivo {name} ha sido eliminado"
+    "user": {
+      "actions": {
+        "unblock": "Desbloquear usuario",
+        "block": "Bloquear usuario",
+        "delete": "Eliminar usuario"
+      }
     },
-
-    "dialog": {
+    "plan": {
+      "freeLabel": "Gratis",
+      "success": {
+        "title": "Pago exitoso",
+        "description": "Tu plan {plan} ahora está activo"
+      },
+      "buy": "Comprar",
+      "change": "Cambiar plan",
+      "cancel": "Cancelar",
+      "confirmTitle": "Confirmar cambio de plan",
+      "confirmDescription": "Vas a cambiar al plan {plan}",
+      "labels": {
+        "plan": "Plan",
+        "storage": "Almacenamiento",
+        "price": "Precio"
+      },
+      "free": {
+        "title": "Gratis",
+        "description": "Almacenamiento básico para uso personal"
+      },
+      "pro": {
+        "title": "Pro",
+        "description": "Almacenamiento ampliado para usuarios activos"
+      },
+      "premium": {
+        "title": "Premium",
+        "description": "Almacenamiento máximo con funciones premium"
+      },
+      "actions": {
+        "upgrade": "Mejorar",
+        "downgrade": "Reducir plan",
+        "current": "Plan actual"
+      },
+      "metrics": {
+        "used": "Almacenamiento usado",
+        "usedPercent": "Porcentaje usado",
+        "remaining": "Almacenamiento restante",
+        "free": "Almacenamiento libre"
+      },
+      "storage": {
+        "title": "Uso de almacenamiento"
+      }
+    }
+  },
+  "features": {
+    "auth": {
+      "login": {
+        "title": "Iniciar sesión",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "submit": "Entrar",
+        "noAccount": "¿No tienes cuenta?",
+        "createAccount": "Crear cuenta",
+        "oauth": "Continuar con",
+        "separator": "o",
+        "forgotPassword": "¿Olvidaste tu contraseña?"
+      },
+      "create": {
+        "title": "Crear cuenta",
+        "username": "Nombre de usuario",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "submit": "Crear cuenta",
+        "haveAccount": "¿Ya tienes cuenta?",
+        "login": "Iniciar sesión"
+      },
+      "signOut": "Cerrar sesión",
+      "forgotPassword": {
+        "title": "Restablecer contraseña",
+        "email": "Correo electrónico",
+        "submit": "Enviar enlace"
+      },
+      "resetPassword": {
+        "title": "Crear nueva contraseña",
+        "password": "Nueva contraseña",
+        "repeatPassword": "Repetir contraseña",
+        "submit": "Restablecer contraseña",
+        "success": "Contraseña actualizada con éxito"
+      },
+      "blocked": {
+        "title": "Cuenta bloqueada",
+        "description": "Tu cuenta ha sido restringida temporalmente.",
+        "nextTitle": "¿Qué sigue?",
+        "items": {
+          "first": "Tus archivos pueden estar temporalmente no disponibles",
+          "second": "Puedes contactar con soporte para más información",
+          "third": "El acceso será restaurado tras la revisión"
+        }
+      },
+      "errors": {
+        "required": "Este campo es obligatorio",
+        "invalidEmail": "Introduce un correo válido",
+        "tooShort": "Valor demasiado corto",
+        "notFound": "Usuario no encontrado",
+        "invalidCredentials": "Credenciales inválidas",
+        "passwords_not_match": "Las contraseñas no coinciden",
+        "invalid_token": "El enlace es inválido o ha expirado",
+        "emptyField": "El campo no puede estar vacío",
+        "uppercaseRequired": "Debe contener una mayúscula",
+        "lowercaseRequired": "Debe contener una minúscula",
+        "digitRequired": "Debe contener un número",
+        "minLength": "No se cumple la longitud mínima",
+        "maxLength": "Longitud máxima excedida (30 caracteres)"
+      }
+    },
+    "admin": {
+      "tabs": {
+        "dashboard": "Panel",
+        "users": "Usuarios",
+        "files": "Archivos"
+      },
+      "dashboard": {
+        "users": "Usuarios",
+        "files": "Archivos",
+        "avgFilesPerUser": "Promedio de archivos por usuario",
+        "topUsers": "Top {count} usuarios"
+      },
+      "files": {
+        "title": "Archivos",
+        "description": "Gestiona todos los archivos de usuarios"
+      },
+      "users": {
+        "title": "Usuarios",
+        "description": "Gestiona todos los usuarios registrados"
+      },
+      "blockReasons": {
+        "malware": "Archivos maliciosos",
+        "nsfw_content": "Contenido para adultos",
+        "copyright_violation": "Violación de derechos de autor",
+        "phishing_or_scam": "Fraude o estafa",
+        "illegal_content": "Contenido ilegal",
+        "storage_abuse": "Abuso de almacenamiento",
+        "upload_spam": "Spam de subidas",
+        "suspicious_activity": "Actividad sospechosa",
+        "selectPlaceholder": "Selecciona un motivo"
+      }
+    },
+    "settings": {
+      "title": "Configuración",
+      "description": "Gestiona tu cuenta",
+      "account": {
+        "title": "Configuración de cuenta",
+        "description": "Actualiza tu perfil",
+        "userId": "ID de usuario",
+        "role": "Rol",
+        "actions": {
+          "save": "Guardar cambios",
+          "saving": "Guardando..."
+        }
+      },
+      "subscription": {
+        "title": "Suscripción",
+        "description": "Gestiona tu plan",
+        "currentPlan": "Plan actual",
+        "freePlan": "Plan gratuito",
+        "storage": "Uso de almacenamiento",
+        "upgrade": "Mejorar plan"
+      },
+      "danger": {
+        "title": "Zona de peligro",
+        "description": "Eliminación permanente de la cuenta",
+        "warning": "Esta acción no se puede deshacer",
+        "delete": "Eliminar cuenta",
+        "actions": {
+          "delete": "Eliminar usuario",
+          "deleting": "Eliminando..."
+        },
+        "dialog": {
+          "title": "Eliminar cuenta",
+          "description": "Todos los datos se eliminarán permanentemente",
+          "cancel": "Cancelar",
+          "confirm": "Sí, eliminar"
+        }
+      },
+      "theme": {
+        "current": "Tema: {theme}"
+      }
+    },
+    "files": {
+      "deleteForm": {
+        "title": "Eliminar archivo",
+        "description": "¿Seguro que quieres eliminar este archivo?",
+        "confirm": "Eliminar",
+        "cancel": "Cancelar"
+      }
+    }
+  },
+  "dialogs": {
+    "file": {
       "block": {
-        "title": "Bloquear usuario",
-        "description": "¿Estás seguro de que quieres bloquear"
+        "title": "Bloquear archivo",
+        "description": "¿Seguro que quieres bloquear {name}?"
+      },
+      "unblock": {
+        "title": "Desbloquear archivo",
+        "description": "¿Seguro que quieres desbloquear {name}?"
       },
       "delete": {
         "title": "Eliminar archivo",
-        "description": "¿Estás seguro de que quieres eliminar"
-      },
-      "no": "No",
-      "yes": "Sí"
-    },
-
-    "empty": {
-      "title": "Almacenamiento vacío",
-      "description": "Aún no has subido archivos"
-    },
-    "theme": "Tema",
-    "locale": "Idioma",
-    "signOut": "Cerrar sesión",
-    "close": "Cerrar",
-    "download": "Descargar",
-    "delete": "Eliminar",
-    "info": {
-      "totalFiles": "archivos",
-      "categories": {
-        "audio": "audio",
-        "video": "video",
-        "image": "imágenes"
+        "description": "¿Seguro que quieres eliminar {name}?"
       }
     },
-    "storage": {
-      "usage": "Uso de almacenamiento",
-      "used": "Usado",
-      "remaining": "Restante",
-      "usedPercent": "Usado %",
-      "freePercent": "Libre %"
+    "user": {
+      "block": {
+        "title": "Bloquear usuario",
+        "description": "¿Seguro que quieres bloquear {name}?"
+      },
+      "unblock": {
+        "title": "Desbloquear usuario",
+        "description": "¿Seguro que quieres desbloquear {name}?"
+      },
+      "delete": {
+        "title": "Eliminar usuario",
+        "description": "¿Seguro que quieres eliminar {name}?"
+      }
+    },
+    "upload": {
+      "title": "Subir archivos",
+      "remainingSpace": "Espacio restante",
+      "selectedFiles": "Archivos seleccionados",
+      "allowedFormats": "Formatos permitidos"
     }
   },
-  "plan": {
-    "confirmTitle": "Confirmar cambio de plan",
-    "confirmDescription": "Estás a punto de cambiar al plan {plan}",
-    "cancel": "Cancelar",
-    "change": "Cambiar plan",
-    "buy": "Comprar plan",
-    "free": "Gratis",
-    "labels": {
-      "plan": "Plan",
-      "storage": "Almacenamiento",
-      "price": "Precio"
+  "notifications": {
+    "file": {
+      "blocked": "El archivo {name} ha sido bloqueado",
+      "unblocked": "El archivo {name} ha sido desbloqueado",
+      "deleted": "El archivo {name} ha sido eliminado"
     },
-    "actions": {
-      "upgrade": "Mejorar",
-      "downgrade": "Reducir",
-      "current": "Plan actual"
+    "user": {
+      "updated": "El usuario {name} ha sido actualizado",
+      "blocked": "El usuario {name} ha sido bloqueado",
+      "unblocked": "El usuario {name} ha sido desbloqueado",
+      "deleted": "El usuario {name} ha sido eliminado"
     }
   },
-  "plans": {
-    "free": {
-      "title": "Gratis",
-      "description": "Ideal para comenzar y probar la plataforma"
-    },
-    "pro": {
-      "title": "Pro",
-      "description": "Perfecto para el uso diario y almacenamiento personal"
-    },
-    "premium": {
-      "title": "Premium",
-      "description": "Para usuarios que necesitan más espacio y flexibilidad"
-    }
-  },
-
-  "blockReasons": {
-    "malware": "archivos maliciosos o dañinos",
-    "nsfw_content": "contenido adulto o explícito",
-    "copyright_violation": "contenido pirateado o robado",
-    "phishing_or_scam": "archivos o enlaces engañosos o fraudulentos",
-    "illegal_content": "contenido que viola las leyes o regulaciones",
-    "storage_abuse": "abuso de subidas o límites de almacenamiento",
-    "upload_spam": "subidas masivas o automatizadas de archivos",
-    "suspicious_activity": "comportamiento de usuario inusual o riesgoso"
-  },
-
-  "settings": {
-    "title": "Configuración",
-    "description": "Administra la configuración y preferencias de tu cuenta.",
-
-    "account": {
-      "title": "Cuenta",
-      "description": "Información básica de la cuenta",
-      "userId": "ID de usuario",
-      "role": "Rol",
-      "email": "Correo electrónico"
-    },
-
-    "subscription": {
-      "title": "Suscripción",
-      "description": "Administra tu plan y almacenamiento",
-      "currentPlan": "Plan actual",
-      "freePlan": "Actualmente estás usando el plan gratuito.",
-      "storage": "Almacenamiento",
-      "upgrade": "Mejorar plan"
-    }
-  },
-
-  "navigation": {
-    "allFiles": "Todos los archivos",
-    "images": "Imágenes",
-    "audios": "Audios",
-    "videos": "Vídeos",
-    "plan": "Plan de almacenamiento",
-    "settings": "Ajustes",
-    "admin": "Admin Panel"
-  },
-
-  "headings": {
+  "pages": {
     "allFiles": {
       "title": "Todos los archivos",
-      "description": "Administra y organiza todo tu contenido subido en un solo lugar."
+      "description": "Gestiona y accede a todos tus archivos subidos"
     },
-
     "images": {
       "title": "Imágenes",
-      "description": "Explora, sube y administra tus archivos de imágenes."
+      "description": "Explora y gestiona tus imágenes"
     },
-
     "audios": {
-      "title": "Audios",
-      "description": "Guarda y organiza tus grabaciones de audio y archivos de música."
+      "title": "Audio",
+      "description": "Explora y gestiona tus archivos de audio"
     },
-
     "videos": {
       "title": "Videos",
-      "description": "Administra tu biblioteca de videos y contenido multimedia."
+      "description": "Explora y gestiona tus videos"
     },
-
     "plan": {
-      "title": "Plan",
-      "description": "Consulta tu suscripción actual y los límites de almacenamiento."
+      "title": "Plan de almacenamiento",
+      "description": "Elige un plan que se adapte a tus necesidades"
     },
-
     "settings": {
       "title": "Configuración",
-      "description": "Personaliza las preferencias de tu cuenta y la aplicación."
+      "description": "Gestiona tu cuenta y preferencias"
     },
-
     "admin": {
-      "title": "Admin panel",
-      "description": "Supervisa la actividad de la plataforma y administra los recursos del sistema."
-    }
+      "title": "Panel de administración",
+      "description": "Gestiona usuarios, archivos y actividad de la plataforma"
+    },
+    "checkEmail": "Se ha enviado un enlace de restablecimiento de contraseña a tu correo"
   }
 }

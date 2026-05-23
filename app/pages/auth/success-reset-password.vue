@@ -5,9 +5,9 @@ const { t } = useI18n()
 
 <template>
   <div class="mt-20 flex flex-col items-center justify-center gap-2">
-    <div>{{ t('auth.messages.passwordChanged') }}</div>
+    <div>{{ t('features.auth.resetPassword.success') }}</div>
     <NuxtLink to="/auth/login-user">
-      <Button>{{ t('auth.messages.ok') }}</Button>
+      <Button>{{ t('ui.buttons.ok') }}</Button>
     </NuxtLink>
   </div>
 </template>

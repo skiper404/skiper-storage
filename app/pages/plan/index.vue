@@ -10,7 +10,7 @@ useHead({ title: `Storage Plan | ${appName}` })
 
 <template>
   <div class="space-y-4">
-    <AppHeading :title="t('headings.plan.title')" :description="t('headings.plan.description')" />
+    <AppHeading :title="t('pages.plan.title')" :description="t('pages.plan.description')" />
     <StorageBar />
     <div class="grid gap-6 md:grid-cols-3">
       <PlanCard :plan="plan" v-for="plan in plans" :key="plan.value" />

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { user } = useUserSession()
-
 const isLoading = ref(false)
 const isAuth = computed(() => user.value)
 

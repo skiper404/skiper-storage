@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ middleware: ['auth', 'blocked'] })
 
+const { t } = useI18n()
 const { user, fetch } = useUserSession()
 
 onMounted(async () => {
@@ -9,11 +10,11 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <div class="mt-20 flex flex-col items-center justify-center">
+  <div class="mt-20 flex flex-col items-center justify-center gap-2">
+    <div>{{ t('domain.plan.success.title') }}</div>
+    <div>{{ t('domain.plan.success.description', { plan: user?.plan }) }}</div>
     <NuxtLink to="/plan">
-      <Button variant="secondary">Back</Button>
+      <Button variant="secondary">{{ t('ui.buttons.ok') }}</Button>
     </NuxtLink>
-    <div>Congratulation!!!</div>
-    <div>Now you Storage Plan is: {{ user?.plan }}</div>
   </div>
 </template>

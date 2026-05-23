@@ -15,7 +15,7 @@ export default defineEventHandler(async event => {
   })
 
   for (const file of files) {
-    const res = await s3.send(
+    await s3.send(
       new DeleteObjectCommand({
         Bucket: process.env.S3_BUCKET_NAME!,
         Key: file.key

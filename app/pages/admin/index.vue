@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-import DashboardTab from '../../components/admin/DashboardTab.vue'
+import DashboardTab from '../../components/features/admin/DashboardTab.vue'
 
 definePageMeta({
   middleware: 'admin',
@@ -25,12 +25,12 @@ watch(activeTab, val => {
 
 <template>
   <div class="flex w-full flex-col gap-4">
-    <AppHeading :title="t('headings.admin.title')" :description="t('headings.admin.description')" />
+    <AppHeading :title="t('pages.admin.title')" :description="t('pages.admin.description')" />
     <Tabs v-model="activeTab">
       <TabsList>
-        <TabsTrigger value="dashboard"> Dashboard </TabsTrigger>
-        <TabsTrigger value="users"> Users </TabsTrigger>
-        <TabsTrigger value="files"> Files </TabsTrigger>
+        <TabsTrigger value="dashboard"> {{ t('features.admin.tabs.dashboard') }} </TabsTrigger>
+        <TabsTrigger value="users"> {{ t('features.admin.tabs.users') }} </TabsTrigger>
+        <TabsTrigger value="files"> {{ t('features.admin.tabs.files') }} </TabsTrigger>
       </TabsList>
       <DashboardTab :users="adminUsers ?? []" />
       <UsersTab :users="adminUsers ?? []" />

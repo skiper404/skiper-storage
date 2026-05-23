@@ -1,237 +1,379 @@
 {
-  "auth": {
-    "login": {
-      "title": "Logowanie",
-      "emailField": "Email",
-      "passwordField": "Hasło",
-      "submitButton": "Zaloguj się",
-      "noAccount": "Nie masz konta?",
-      "createAccount": "Utwórz konto",
-      "separator": "lub",
-      "oauth": "Kontynuuj przez",
-      "forgotPassword": "Zapomniałeś hasła?"
-    },
-    "create": {
-      "title": "Utwórz konto",
-      "emailField": "Email",
-      "passwordField": "Hasło",
-      "submitButton": "Utwórz konto",
-      "haveAccount": "Masz już konto?",
-      "loginAccount": "Zaloguj się"
-    },
-    "forgotPassword": {
-      "title": "Zapomniałeś hasła",
-      "emailField": "Email",
-      "submitButton": "Wyślij link",
-      "link": "Zapomniałeś hasła?"
-    },
-    "resetPassword": {
-      "title": "Reset hasła",
-      "passwordField": "Nowe hasło",
-      "repeatPasswordField": "Powtórz hasło",
-      "submitButton": "Zresetuj hasło"
-    },
-    "messages": {
-      "resetLinkSent": "Link do resetu hasła został wysłany",
-      "passwordChanged": "Hasło zostało zmienione",
-      "ok": "OK"
-    },
-    "errors": {
-      "invalidEmail": "Podaj poprawny email",
-      "conflictEmail": "Email już istnieje",
-      "emptyField": "Pole nie może być puste",
-      "minLength": "Minimum 8 znaków",
-      "maxUsernameLength": "Nazwa użytkownika nie może mieć więcej niż 30 znaków",
-      "maxLength": "Maksimum 30 znaków",
-      "uppercaseRequired": "Wymagana wielka litera",
-      "lowercaseRequired": "Wymagana mała litera",
-      "digitRequired": "Wymagana cyfra",
-      "invalidCredentials": "Nieprawidłowy email lub hasło",
-      "passwordsMustMatch": "Hasła nie są zgodne",
-      "emailAlreadyExist": "Użytkownik już istnieje",
-      "notFoundEmail": "Użytkownik nie istnieje"
-    }
-  },
-  "pages": {
-    "home": { "title": "Strona główna" },
-    "images": { "title": "Obrazy" },
-    "videos": { "title": "Wideo" },
-    "audios": { "title": "Audio" },
-    "plan": { "title": "Plan" }
-  },
   "ui": {
-    "upload": {
-      "uploadButton": "Prześlij pliki",
-      "addButton": "Dodaj pliki",
-      "title": "Przesyłanie plików",
-
-      "errors": {
-        "storageLimit": "Przekroczono limit przestrzeni"
-      },
-
-      "success": {
-        "uploaded": "Pliki zostały przesłane"
-      },
-
-      "description": {
-        "quantity": "Wybierz 1–10 plików do przesłania (1 plik — maks. 30 MB)",
-        "formats": "Obsługiwane formaty",
-        "remainingSpace": "Pozostałe miejsce",
-        "selectedFiles": "Wybrane pliki"
-      }
-    },
-
-    "messages": {
-      "fileDeleted": "Plik {name} został usunięty"
-    },
-    "dialog": {
-      "block": {
-        "title": "Zablokuj użytkownika",
-        "description": "Czy na pewno chcesz zablokować"
-      },
-      "delete": {
-        "title": "Usuń plik",
-        "description": "Czy na pewno chcesz usunąć"
-      },
-      "no": "Nie",
-      "yes": "Tak"
-    },
     "empty": {
-      "title": "Puste miejsce",
-      "description": "Nie przesłałeś jeszcze żadnych plików"
+      "title": "Brak plików",
+      "description": "Prześlij swój pierwszy plik, aby rozpocząć"
     },
-    "theme": "Motyw",
-    "locale": "Język",
-    "signOut": "Wyloguj się",
-    "close": "Zamknij",
-    "download": "Pobierz",
-    "delete": "Usuń",
-    "info": {
-      "totalFiles": "plików",
-      "categories": {
-        "audio": "audio",
-        "video": "wideo",
-        "image": "obrazy"
+
+    "buttons": {
+      "yes": "Tak",
+      "no": "Anuluj",
+      "ok": "OK",
+      "upload": "Prześlij pliki",
+      "addFiles": "Dodaj pliki",
+      "back": "Wstecz"
+    },
+
+    "status": {
+      "blocked": "Zablokowany"
+    },
+
+    "notFound": {
+      "title": "Strona nie znaleziona",
+      "description": "Nie mogliśmy znaleźć strony, której szukasz",
+      "button": "Wróć"
+    }
+  },
+
+  "system": {
+    "navigation": {
+      "allFiles": "Wszystkie pliki",
+      "images": "Obrazy",
+      "audios": "Audio",
+      "videos": "Wideo",
+      "plan": "Plan pamięci",
+      "settings": "Ustawienia",
+      "admin": "Panel administratora"
+    },
+
+    "sidebar": {
+      "show": "Pokaż pasek boczny",
+      "hide": "Ukryj pasek boczny"
+    }
+  },
+
+  "domain": {
+    "file": {
+      "category": {
+        "image": "Obraz",
+        "video": "Wideo",
+        "audio": "Audio"
+      },
+
+      "actions": {
+        "unblock": "Odblokuj plik",
+        "block": "Zablokuj plik",
+        "delete": "Usuń plik"
       }
     },
-    "storage": {
-      "usage": "Użycie pamięci",
-      "used": "Użyte",
-      "remaining": "Pozostało",
-      "usedPercent": "Użyte %",
-      "freePercent": "Wolne %"
-    }
-  },
-  "plan": {
-    "confirmTitle": "Potwierdzenie zmiany planu",
-    "confirmDescription": "Zamierzasz przejść na plan {plan}",
-    "cancel": "Anuluj",
-    "change": "Zmień plan",
-    "buy": "Kup plan",
-    "free": "Darmowy",
-    "labels": {
-      "plan": "Plan",
-      "storage": "Pamięć",
-      "price": "Cena"
-    },
-    "actions": {
-      "upgrade": "Ulepsz",
-      "downgrade": "Obniż",
-      "current": "Aktualny plan"
-    }
-  },
-  "plans": {
-    "free": {
-      "title": "Darmowy",
-      "description": "Dobry na start i do testowania platformy"
-    },
-    "pro": {
-      "title": "Pro",
-      "description": "Idealny do codziennego użytku i przechowywania danych"
-    },
-    "premium": {
-      "title": "Premium",
-      "description": "Dla wymagających użytkowników potrzebujących więcej miejsca"
-    }
-  },
 
-  "blockReasons": {
-    "malware": "złośliwe lub szkodliwe pliki",
-    "nsfw_content": "treści dla dorosłych lub nieodpowiednie",
-    "copyright_violation": "pirackie lub skradzione treści",
-    "phishing_or_scam": "oszukańcze pliki lub linki",
-    "illegal_content": "treści naruszające prawo lub przepisy",
-    "storage_abuse": "nadużywanie przesyłania lub limitów pamięci",
-    "upload_spam": "masowe lub automatyczne przesyłanie plików",
-    "suspicious_activity": "nietypowe lub podejrzane zachowanie użytkownika"
-  },
-
-  "settings": {
-    "title": "Ustawienia",
-    "description": "Zarządzaj ustawieniami i preferencjami konta.",
-
-    "account": {
-      "title": "Konto",
-      "description": "Podstawowe informacje o koncie",
-      "userId": "ID użytkownika",
-      "role": "Rola",
-      "email": "Email"
-    },
-
-    "subscription": {
-      "title": "Subskrypcja",
-      "description": "Zarządzaj planem i pamięcią",
-      "currentPlan": "Aktualny plan",
-      "freePlan": "Obecnie korzystasz z darmowego planu.",
-      "storage": "Pamięć",
-      "upgrade": "Ulepsz plan"
-    }
-  },
-
-  "navigation": {
-    "allFiles": "Wszystkie pliki",
-    "images": "Obrazy",
-    "audios": "Audio",
-    "videos": "Wideo",
-    "plan": "Plan",
-    "settings": "Ustawienia",
-    "admin": "Admin panel"
-  },
-
-  "headings": {
-    "allFiles": {
-      "title": "Wszystkie pliki",
-      "description": "Zarządzaj i organizuj wszystkie przesłane pliki w jednym miejscu."
-    },
-
-    "images": {
-      "title": "Obrazy",
-      "description": "Przeglądaj, przesyłaj i zarządzaj swoimi obrazami."
-    },
-
-    "audios": {
-      "title": "Audio",
-      "description": "Przechowuj i organizuj nagrania audio oraz pliki muzyczne."
-    },
-
-    "videos": {
-      "title": "Wideo",
-      "description": "Zarządzaj biblioteką wideo i plikami multimedialnymi."
+    "user": {
+      "actions": {
+        "unblock": "Odblokuj użytkownika",
+        "block": "Zablokuj użytkownika",
+        "delete": "Usuń użytkownika"
+      }
     },
 
     "plan": {
-      "title": "Plan",
-      "description": "Sprawdź aktualny plan subskrypcji i limity pamięci."
+      "freeLabel": "Darmowy",
+
+      "success": {
+        "title": "Płatność zakończona sukcesem",
+        "description": "Twój plan {plan} jest aktywny"
+      },
+
+      "buy": "Kup",
+      "change": "Zmień plan",
+      "cancel": "Anuluj",
+
+      "confirmTitle": "Potwierdź zmianę planu",
+      "confirmDescription": "Przechodzisz na plan {plan}",
+
+      "labels": {
+        "plan": "Plan",
+        "storage": "Pamięć",
+        "price": "Cena"
+      },
+
+      "free": {
+        "title": "Darmowy",
+        "description": "Podstawowa przestrzeń do użytku osobistego"
+      },
+
+      "pro": {
+        "title": "Pro",
+        "description": "Rozszerzona przestrzeń dla aktywnych użytkowników"
+      },
+
+      "premium": {
+        "title": "Premium",
+        "description": "Maksymalna przestrzeń z funkcjami premium"
+      },
+
+      "actions": {
+        "upgrade": "Ulepsz",
+        "downgrade": "Obniż",
+        "current": "Aktualny plan"
+      },
+
+      "metrics": {
+        "used": "Zużyta przestrzeń",
+        "usedPercent": "Procent użycia",
+        "remaining": "Pozostała przestrzeń",
+        "free": "Darmowa przestrzeń"
+      },
+
+      "storage": {
+        "title": "Wykorzystanie pamięci"
+      }
+    }
+  },
+
+  "features": {
+    "auth": {
+      "login": {
+        "title": "Logowanie",
+        "email": "Adres e-mail",
+        "password": "Hasło",
+        "submit": "Zaloguj się",
+        "noAccount": "Nie masz konta?",
+        "createAccount": "Utwórz konto",
+        "oauth": "Kontynuuj z",
+        "separator": "lub",
+        "forgotPassword": "Nie pamiętasz hasła?"
+      },
+
+      "create": {
+        "title": "Utwórz konto",
+        "username": "Nazwa użytkownika",
+        "email": "Adres e-mail",
+        "password": "Hasło",
+        "submit": "Utwórz konto",
+        "haveAccount": "Masz już konto?",
+        "login": "Zaloguj się"
+      },
+
+      "signOut": "Wyloguj się",
+
+      "forgotPassword": {
+        "title": "Reset hasła",
+        "email": "Adres e-mail",
+        "submit": "Wyślij link resetujący"
+      },
+
+      "resetPassword": {
+        "title": "Utwórz nowe hasło",
+        "password": "Nowe hasło",
+        "repeatPassword": "Powtórz hasło",
+        "submit": "Zresetuj hasło",
+        "success": "Hasło zostało pomyślnie zaktualizowane"
+      },
+
+      "blocked": {
+        "title": "Konto zablokowane",
+        "description": "Twoje konto zostało tymczasowo ograniczone.",
+        "nextTitle": "Co dalej?",
+        "items": {
+          "first": "Twoje pliki mogą być tymczasowo niedostępne",
+          "second": "Możesz skontaktować się z pomocą techniczną",
+          "third": "Dostęp zostanie przywrócony po weryfikacji"
+        }
+      },
+
+      "errors": {
+        "required": "To pole jest wymagane",
+        "invalidEmail": "Podaj prawidłowy adres e-mail",
+        "tooShort": "Wartość jest zbyt krótka",
+        "notFound": "Nie znaleziono użytkownika",
+        "invalidCredentials": "Nieprawidłowy e-mail lub hasło",
+        "passwords_not_match": "Hasła nie są zgodne",
+        "invalid_token": "Link jest nieprawidłowy lub wygasł",
+        "emptyField": "Pole nie może być puste",
+        "uppercaseRequired": "Wymagana wielka litera",
+        "lowercaseRequired": "Wymagana mała litera",
+        "digitRequired": "Wymagana cyfra",
+        "minLength": "Nie spełniono minimalnej długości",
+        "maxLength": "Przekroczono maksymalną długość (30 znaków)"
+      }
+    },
+
+    "admin": {
+      "tabs": {
+        "dashboard": "Panel",
+        "users": "Użytkownicy",
+        "files": "Pliki"
+      },
+
+      "dashboard": {
+        "users": "Użytkownicy",
+        "files": "Pliki",
+        "avgFilesPerUser": "Średnia liczba plików na użytkownika",
+        "topUsers": "Top {count} użytkowników"
+      },
+
+      "files": {
+        "title": "Pliki",
+        "description": "Zarządzaj plikami użytkowników"
+      },
+
+      "users": {
+        "title": "Użytkownicy",
+        "description": "Zarządzaj zarejestrowanymi użytkownikami"
+      },
+
+      "blockReasons": {
+        "malware": "Złośliwe pliki",
+        "nsfw_content": "Treści dla dorosłych",
+        "copyright_violation": "Naruszenie praw autorskich",
+        "phishing_or_scam": "Oszustwo lub scam",
+        "illegal_content": "Nielegalna treść",
+        "storage_abuse": "Nadużycie pamięci",
+        "upload_spam": "Spam",
+        "suspicious_activity": "Podejrzana aktywność",
+        "selectPlaceholder": "Wybierz powód"
+      }
     },
 
     "settings": {
       "title": "Ustawienia",
-      "description": "Dostosuj ustawienia konta i aplikacji."
+      "description": "Zarządzaj swoim kontem",
+
+      "account": {
+        "title": "Ustawienia konta",
+        "description": "Zaktualizuj profil",
+        "userId": "ID użytkownika",
+        "role": "Rola",
+
+        "actions": {
+          "save": "Zapisz zmiany",
+          "saving": "Zapisywanie..."
+        }
+      },
+
+      "subscription": {
+        "title": "Subskrypcja",
+        "description": "Zarządzaj planem",
+        "currentPlan": "Aktualny plan",
+        "freePlan": "Darmowy plan",
+        "storage": "Wykorzystanie pamięci",
+        "upgrade": "Ulepsz plan"
+      },
+
+      "danger": {
+        "title": "Strefa zagrożenia",
+        "description": "Trwałe usunięcie konta",
+        "warning": "Tej operacji nie można cofnąć",
+        "delete": "Usuń konto",
+
+        "actions": {
+          "delete": "Usuń użytkownika",
+          "deleting": "Usuwanie..."
+        },
+
+        "dialog": {
+          "title": "Usuń konto",
+          "description": "Wszystkie dane zostaną trwale usunięte",
+          "cancel": "Anuluj",
+          "confirm": "Tak, usuń"
+        }
+      },
+
+      "theme": {
+        "current": "Motyw: {theme}"
+      }
+    },
+
+    "files": {
+      "deleteForm": {
+        "title": "Usuń plik",
+        "description": "Czy na pewno chcesz usunąć ten plik?",
+        "confirm": "Usuń",
+        "cancel": "Anuluj"
+      }
+    }
+  },
+
+  "dialogs": {
+    "file": {
+      "block": {
+        "title": "Zablokuj plik",
+        "description": "Czy na pewno chcesz zablokować {name}?"
+      },
+      "unblock": {
+        "title": "Odblokuj plik",
+        "description": "Czy na pewno chcesz odblokować {name}?"
+      },
+      "delete": {
+        "title": "Usuń plik",
+        "description": "Czy na pewno chcesz usunąć {name}?"
+      }
+    },
+
+    "user": {
+      "block": {
+        "title": "Zablokuj użytkownika",
+        "description": "Czy na pewno chcesz zablokować {name}?"
+      },
+      "unblock": {
+        "title": "Odblokuj użytkownika",
+        "description": "Czy na pewno chcesz odblokować {name}?"
+      },
+      "delete": {
+        "title": "Usuń użytkownika",
+        "description": "Czy na pewno chcesz usunąć {name}?"
+      }
+    },
+
+    "upload": {
+      "title": "Przesyłanie plików",
+      "remainingSpace": "Pozostałe miejsce",
+      "selectedFiles": "Wybrane pliki",
+      "allowedFormats": "Dozwolone formaty"
+    }
+  },
+
+  "notifications": {
+    "file": {
+      "blocked": "Plik {name} został zablokowany",
+      "unblocked": "Plik {name} został odblokowany",
+      "deleted": "Plik {name} został usunięty"
+    },
+
+    "user": {
+      "updated": "Użytkownik {name} został zaktualizowany",
+      "blocked": "Użytkownik {name} został zablokowany",
+      "unblocked": "Użytkownik {name} został odblokowany",
+      "deleted": "Użytkownik {name} został usunięty"
+    }
+  },
+
+  "pages": {
+    "allFiles": {
+      "title": "Wszystkie pliki",
+      "description": "Zarządzaj i przeglądaj swoje pliki"
+    },
+
+    "images": {
+      "title": "Obrazy",
+      "description": "Przeglądaj i zarządzaj obrazami"
+    },
+
+    "audios": {
+      "title": "Audio",
+      "description": "Przeglądaj i zarządzaj plikami audio"
+    },
+
+    "videos": {
+      "title": "Wideo",
+      "description": "Przeglądaj i zarządzaj wideo"
+    },
+
+    "plan": {
+      "title": "Plan pamięci",
+      "description": "Wybierz plan dopasowany do Twoich potrzeb"
+    },
+
+    "settings": {
+      "title": "Ustawienia",
+      "description": "Zarządzaj kontem i preferencjami"
     },
 
     "admin": {
-      "title": "Admin panel",
-      "description": "Monitoruj aktywność platformy i zarządzaj zasobami systemu."
-    }
+      "title": "Panel administratora",
+      "description": "Zarządzaj użytkownikami, plikami i systemem"
+    },
+
+    "checkEmail": "Link resetujący hasło został wysłany na e-mail"
   }
 }

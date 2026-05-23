@@ -9,7 +9,7 @@ useHead({ title: `Images | ${appName}` })
 <template>
   <div class="flex min-h-full flex-col">
     <div class="sticky top-16 z-30 flex items-center justify-between">
-      <AppHeading :title="t('headings.images.title')" :description="t('headings.images.description')" />
+      <AppHeading :title="t('pages.images.title')" :description="t('pages.images.description')" />
       <UploadButton v-if="images.length" />
     </div>
     <FilesList v-if="images.length" :files="images" />

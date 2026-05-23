@@ -76,7 +76,7 @@ const items = computed(() => {
                   <component :is="item.icon" :class="item.color" />
 
                   <span>
-                    {{ t(`navigation.${item.key}`) }}
+                    {{ t(`system.navigation.${item.key}`) }}
                   </span>
                 </NuxtLink>
               </SidebarMenuButton>

@@ -9,7 +9,7 @@ const { t } = useI18n()
 <template>
   <div class="flex min-h-full flex-col">
     <div class="sticky top-16 z-30 flex items-center justify-between">
-      <AppHeading :title="t('headings.audios.title')" :description="t('headings.audios.description')" />
+      <AppHeading :title="t('pages.audios.title')" :description="t('pages.audios.description')" />
       <UploadButton v-if="audios.length" />
     </div>
     <FilesList v-if="audios.length" :files="audios" />
