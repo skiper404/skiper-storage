@@ -184,7 +184,8 @@
         "lowercaseRequired": "Wymagana mała litera",
         "digitRequired": "Wymagana cyfra",
         "minLength": "Nie spełniono minimalnej długości",
-        "maxLength": "Przekroczono maksymalną długość (30 znaków)"
+        "maxLength": "Przekroczono maksymalną długość (30 znaków)",
+        "maxUsernameLength": "Przekroczono maksymalną długość (30 znaków)"
       }
     },
 

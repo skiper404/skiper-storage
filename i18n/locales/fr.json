@@ -158,7 +158,8 @@
         "lowercaseRequired": "Doit contenir une minuscule",
         "digitRequired": "Doit contenir un chiffre",
         "minLength": "Longueur minimale non atteinte",
-        "maxLength": "Longueur maximale dépassée (30 caractères)"
+        "maxLength": "Longueur maximale dépassée (30 caractères)",
+        "maxUsernameLength": "Longueur maximale dépassée (30 caractères)"
       }
     },
     "admin": {

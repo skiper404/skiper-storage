@@ -87,7 +87,7 @@ const onSubmit = handleSubmit(async values => {
 
             <Input v-bind="field" class="h-10" :aria-invalid="!!errors.length" :placeholder="user?.username || ''" />
 
-            <FieldError v-if="errors.length" :errors="errors.map(e => t(`auth.errors.${e}`))" />
+            <FieldError v-if="errors.length" :errors="errors.map(e => t(`features.auth.errors.${e}`))" />
           </Field>
         </VeeField>
 
@@ -103,7 +103,7 @@ const onSubmit = handleSubmit(async values => {
               :placeholder="user?.email || ''"
             />
 
-            <FieldError v-if="errors.length" :errors="errors.map(e => t(`auth.errors.${e}`))" />
+            <FieldError v-if="errors.length" :errors="errors.map(e => t(`features.auth.errors.${e}`))" />
           </Field>
         </VeeField>
 
