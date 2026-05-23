@@ -288,30 +288,30 @@
     "file": {
       "block": {
         "title": "Zablokuj plik",
-        "description": "Czy na pewno chcesz zablokować {name}?"
+        "description": "Czy na pewno chcesz zablokować {name}"
       },
       "unblock": {
         "title": "Odblokuj plik",
-        "description": "Czy na pewno chcesz odblokować {name}?"
+        "description": "Czy na pewno chcesz odblokować {name}"
       },
       "delete": {
         "title": "Usuń plik",
-        "description": "Czy na pewno chcesz usunąć {name}?"
+        "description": "Czy na pewno chcesz usunąć {name}"
       }
     },
 
     "user": {
       "block": {
         "title": "Zablokuj użytkownika",
-        "description": "Czy na pewno chcesz zablokować {name}?"
+        "description": "Czy na pewno chcesz zablokować {name}"
       },
       "unblock": {
         "title": "Odblokuj użytkownika",
-        "description": "Czy na pewno chcesz odblokować {name}?"
+        "description": "Czy na pewno chcesz odblokować {name}"
       },
       "delete": {
         "title": "Usuń użytkownika",
-        "description": "Czy na pewno chcesz usunąć {name}?"
+        "description": "Czy na pewno chcesz usunąć {name}"
       }
     },
 

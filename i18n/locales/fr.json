@@ -247,29 +247,29 @@
     "file": {
       "block": {
         "title": "Bloquer le fichier",
-        "description": "Voulez-vous vraiment bloquer {name} ?"
+        "description": "Voulez-vous vraiment bloquer {name} "
       },
       "unblock": {
         "title": "Débloquer le fichier",
-        "description": "Voulez-vous vraiment débloquer {name} ?"
+        "description": "Voulez-vous vraiment débloquer {name} "
       },
       "delete": {
         "title": "Supprimer le fichier",
-        "description": "Voulez-vous vraiment supprimer {name} ?"
+        "description": "Voulez-vous vraiment supprimer {name} "
       }
     },
     "user": {
       "block": {
         "title": "Bloquer l’utilisateur",
-        "description": "Voulez-vous vraiment bloquer {name} ?"
+        "description": "Voulez-vous vraiment bloquer {name} "
       },
       "unblock": {
         "title": "Débloquer l’utilisateur",
-        "description": "Voulez-vous vraiment débloquer {name} ?"
+        "description": "Voulez-vous vraiment débloquer {name} "
       },
       "delete": {
         "title": "Supprimer l’utilisateur",
-        "description": "Voulez-vous vraiment supprimer {name} ?"
+        "description": "Voulez-vous vraiment supprimer {name} "
       }
     },
     "upload": {

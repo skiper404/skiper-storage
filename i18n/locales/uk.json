@@ -288,30 +288,30 @@
     "file": {
       "block": {
         "title": "Блокування файлу",
-        "description": "Заблокувати {name}?"
+        "description": "Заблокувати {name}"
       },
       "unblock": {
         "title": "Розблокування файлу",
-        "description": "Розблокувати {name}?"
+        "description": "Розблокувати {name}"
       },
       "delete": {
         "title": "Видалення файлу",
-        "description": "Видалити {name}?"
+        "description": "Видалити {name}"
       }
     },
 
     "user": {
       "block": {
         "title": "Блокування користувача",
-        "description": "Заблокувати {name}?"
+        "description": "Заблокувати {name}"
       },
       "unblock": {
         "title": "Розблокування користувача",
-        "description": "Розблокувати {name}?"
+        "description": "Розблокувати {name}"
       },
       "delete": {
         "title": "Видалення користувача",
-        "description": "Видалити {name}?"
+        "description": "Видалити {name}"
       }
     },
 

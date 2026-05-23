@@ -2,7 +2,7 @@
 import { toTypedSchema } from '@vee-validate/zod'
 import { useForm, Field as VeeField } from 'vee-validate'
 import { toast } from 'vue-sonner'
-import { z } from 'zod'
+import { updateProfileSchema } from '~~/shared/schemas/update-profile-schema'
 
 const { user, fetch } = useUserSession()
 const { t } = useI18n()

@@ -288,30 +288,30 @@
     "file": {
       "block": {
         "title": "Block file",
-        "description": "Are you sure you want to block {name}?"
+        "description": "Are you sure you want to block {name}"
       },
       "unblock": {
         "title": "Unblock file",
-        "description": "Are you sure you want to unblock {name}?"
+        "description": "Are you sure you want to unblock {name}"
       },
       "delete": {
         "title": "Delete file",
-        "description": "Are you sure you want to delete {name}?"
+        "description": "Are you sure you want to delete {name}"
       }
     },
 
     "user": {
       "block": {
         "title": "Block user",
-        "description": "Are you sure you want to block {name}?"
+        "description": "Are you sure you want to block {name}"
       },
       "unblock": {
         "title": "Unblock user",
-        "description": "Are you sure you want to unblock {name}?"
+        "description": "Are you sure you want to unblock {name}"
       },
       "delete": {
         "title": "Delete user",
-        "description": "Are you sure you want to delete {name}?"
+        "description": "Are you sure you want to delete {name}"
       }
     },
 
