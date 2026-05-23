@@ -1,93 +1,96 @@
 # Nuxt Storage
 
-A modern file storage and management platform built with Nuxt 4 and a full TypeScript fullstack ecosystem.
+A modern fullstack cloud file storage platform built with Nuxt 4, Prisma, PostgreSQL, LiqPay and R2 Cloudflare.
 
-This project demonstrates a production-ready architecture with authentication, file uploads, cloud blob storage, internationalization, and a clean UI system.
+The project is designed as a SaaS-style application with authentication, role-based access, file moderation, subscription plans, and a scalable architecture.
 
 ## Goal of the project
 
-This project is built as a portfolio-grade fullstack application to demonstrate:
+This project is built as a portfolio-grade SaaS application to demonstrate real-world fullstack architecture, scalable frontend design, secure authentication, and cloud file management workflows.
 
-- real-world Nuxt 4 architecture
-- secure authentication flow
-- file storage workflows
-- scalable frontend structure
-- modern developer experience
+## Features
 
-## ✨ Features
-
-- 🔐 Authentication (NextAuth via @sidebase/nuxt-auth)
-- ☁️ Cloud file storage (Vercel Blob / Nuxthub integration)
-- 📁 File management system (upload, preview, delete, metadata)
-- 🌍 Internationalization (i18n with multiple locales)
-- 🎨 Modern UI (Tailwind CSS + shadcn-nuxt components)
-- 🌙 Dark mode support (Nuxt color mode)
-- ⚡ Optimized DX (Nuxt 4, Vite, TypeScript)
-- 🧠 Form validation (VeeValidate + Zod)
-- 🗄️ Database layer (Prisma + PostgreSQL)
-- 🧩 Scalable architecture (stores, composables, modules)
-
----
+- 🔐 Authentication (email/password, sessions, token system)
+- 👤 Role-based access control (USER / ADMIN)
+- ☁️ Cloud file storage (images, audio, video)
+- 📁 File management (upload, preview, download, delete)
+- 🛡️ Admin panel (users/files management, moderation tools)
+- 🚫 Blocking system (users & files with reasons)
+- 💳 Subscription plans (Free / Pro / Premium)
+- 📊 Storage usage tracking per user
+- 🌍 Internationalization (multi-language support)
+- 🎨 Modern UI system (component-based design system)
+- ⚡ Form validation (Zod + VeeValidate)
+- 🔔 Notifications & dialogs system
 
 ## 🧱 Tech Stack
 
-- **Framework:** Nuxt 4
-- **Frontend:** Vue 3, Tailwind CSS, shadcn-nuxt
-- **Auth:** NextAuth / Sidebase Nuxt Auth
-- **Database:** PostgreSQL + Prisma
-- **Storage:** Vercel Blob / Nuxthub
-- **State:** Pinia
-- **Validation:** Zod + VeeValidate
-- **Utilities:** VueUse, DayJS, clsx, tailwind-merge
+- **Frontend**: Nuxt 4, Vue 3, TypeScript, Tailwind CSS
+- **Backend**: Nuxt Server (Nitro)
+- **Database**: PostgreSQL + Prisma ORM
+- **Auth**: JWT + Argon2 password hashing
+- **Storage**: AWS S3 compatible storage
+- **State** management: Pinia
+- **Validation**: Zod + VeeValidate
+- **UI**: shadcn-nuxt + custom component system
+- **Email**: Nodemailer
+- **Payments**: LiqPay integration
+- **Utilities**: VueUse, DayJS, clsx, tailwind-merge
 
----
+## 🏗️ Architecture
 
-## 🚀 Getting Started
+- app/ — frontend layer (UI, pages, components)
+- server/ - backend API (auth, files, payments)
+- prisma/ — database layer
+- shared/ — shared contracts (schemas, types)
+- i18n/ — localization system
 
-### 1. Install dependencies
+## Required env variables
 
-npm install
+# DATABASE (PostgreSQL)
 
 ```bash
-npm install
+POSTGRES_USER
+POSTGRES_PASSWORD
+POSTGRES_DB
+DATABASE_URL
 ```
 
-### 2. Create .env file
-
-# Docker Image (if needed)
-
-POSTGRES_USER='root'
-POSTGRES_PASSWORD='1234'
-POSTGRES_DB='image-storage'
-DATABASE_URL='postgres://XXXX'
-
-# R2 Account Token
-
-R2_ACCESS_KEY_ID='XXXX'
-R2_SECRET_ACCESS_KEY='XXXX'
-R2_ENDPOINT='XXXX'
-R2_BUCKET_NAME='XXXX'
-
-# Auth
-
-AUTH_SECRET='XXXX'
-AUTH_ORIGIN="http://localhost:3000/api/auth"
-
-GITHUB_CLIENT_ID = 'XXXX'
-GITHUB_CLIENT_SECRET = 'XXXX'
-
-GOOGLE_CLIENT_ID = 'XXXX'
-GOOGLE_CLIENT_SECRET = 'XXXX'
-
-### 2. Run database
+# STORAGE (S3 / Cloudflare R2)
 
 ```bash
-npx prisma generate
-npx prisma db push
+S3_BUCKET_NAME
+S3_ACCOUNT_ID
+S3_ENDPOINT
+S3_ACCESS_KEY_ID
+S3_SECRET_ACCESS_KEY
 ```
 
-### 3. Start Development Server
+# AUTH (OAuth Providers)
 
 ```bash
-npm run dev
+NUXT_OAUTH_GOOGLE_CLIENT_ID
+NUXT_OAUTH_GOOGLE_CLIENT_SECRET
+```
+
+# SESSION SECURITY
+
+```bash
+NUXT_SESSION_PASSWORD
+```
+
+# PAYMENTS (LiqPay)
+
+```bash
+LIQPAY_PUBLIC_KEY
+LIQPAY_PRIVATE_KEY
+```
+
+# APP CONFIG
+
+```bash
+NUXT_PUBLIC_APP_URL
+MAIL_HOST
+MAIL_LOGIN
+MAIL_PASSWORD
 ```
