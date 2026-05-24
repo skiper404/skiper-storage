@@ -66,8 +66,8 @@ const handleClick = async () => {
     <UserInfo :user="localUser" />
 
     <div class="ml-auto flex gap-1">
-      <UserStatus v-if="localUser.isBlocked" class="hidden sm:block" />
-      <UserRole :role="localUser.role" />
+      <UserStatus v-if="localUser.isBlocked" />
+      <UserRole :role="localUser.role" class="hidden sm:block" />
       <UserPlan :plan="localUser.plan" />
       <UserCountFiles :count="localUser._count.files" />
     </div>
@@ -81,7 +81,7 @@ const handleClick = async () => {
             {{ title }}
           </DialogTitle>
 
-          <DialogDescription class="text-center text-sm leading-relaxed text-gray-400">
+          <DialogDescription class="text-center text-xs leading-relaxed text-gray-400">
             {{ description }}
             <span class="font-semibold break-all text-white">
               {{ localUser.username }}

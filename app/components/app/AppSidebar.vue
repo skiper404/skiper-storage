@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { BadgeDollarSign, FileImageIcon, FileMusic, FileVideo2Icon, Home, Settings, Shield } from 'lucide-vue-next'
+import { useSidebar } from '../ui/sidebar'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
 const { user } = useUserSession()
+const { toggleSidebar, open } = useSidebar()
+const isMobile = useMediaQuery('(max-width: 768px)')
 
 const items = computed(() => {
   const baseItems = [
@@ -72,7 +75,11 @@ const items = computed(() => {
                   'bg-secondary': route.path === localePath(item.path)
                 }"
               >
-                <NuxtLink :to="localePath(item.path)" class="flex items-center gap-2">
+                <NuxtLink
+                  :to="localePath(item.path)"
+                  class="flex items-center gap-2"
+                  @click="isMobile ? toggleSidebar() : null"
+                >
                   <component :is="item.icon" :class="item.color" />
 
                   <span>

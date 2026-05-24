@@ -8,7 +8,7 @@ const { t } = useI18n()
 
 <template>
   <div class="flex min-h-full flex-col">
-    <div class="aaa sticky top-16 z-30 flex items-center justify-between">
+    <div class="aaa sticky top-12 z-30 flex items-center justify-between backdrop-blur-sm">
       <AppHeading :title="t('pages.videos.title')" :description="t('pages.videos.description')" />
       <UploadButton v-if="videos.length" />
     </div>

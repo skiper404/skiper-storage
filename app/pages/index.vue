@@ -9,7 +9,7 @@ useHead({ title: `Home | ${appName}` })
 
 <template>
   <div class="relative flex min-h-full flex-col">
-    <div class="sticky top-16 z-30 flex items-center justify-between">
+    <div class="sticky top-12 z-30 flex items-center justify-between backdrop-blur-sm">
       <AppHeading :title="t('pages.allFiles.title')" :description="t('pages.allFiles.description')" />
       <UploadButton v-if="files.length" />
     </div>

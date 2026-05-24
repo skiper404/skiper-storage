@@ -51,32 +51,35 @@ const startUpload = async () => {
       </Button>
     </DialogTrigger>
 
-    <DialogContent class="bg-primary-foreground space-y-4 transition-all duration-300">
+    <DialogContent
+      class="bg-primary-foreground flex max-h-[80vh] flex-col space-y-4 overflow-auto rounded-2xl transition-all duration-300"
+    >
       <DialogHeader>
         <DialogTitle class="flex items-center gap-2">
           {{ t('dialogs.upload.title') }}
           <Icon v-if="isUploading" name="lucide:loader-circle" size="20" class="animate-spin" />
         </DialogTitle>
 
-        <DialogDescription class="mt-4 flex flex-col space-y-2 space-x-2 text-left">
-          <span>
+        <DialogDescription class="flex flex-col gap-2 space-y-2 space-x-2 text-left md:flex-row md:justify-between">
+          <span class="landscape:hidden">
             {{ t('dialogs.upload.remainingSpace') }}:
             {{ filesize(remainingStorageSize) }}
           </span>
 
-          <span>
+          <span class="landscape:hidden">
             {{ t('dialogs.upload.selectedFiles') }}:
             {{ filesize(selectedFilesSize) }}
           </span>
-          <span>{{ t('dialogs.upload.allowedFormats') }}: </span>
-          <div class="flex flex-wrap gap-2">
+
+          <span class="landscape:hidden">{{ t('dialogs.upload.allowedFormats') }}: </span>
+          <div class="flex flex-wrap gap-2 landscape:hidden">
             <Badge variant="secondary" class="text-gray-400" v-for="(format, id) in ALLOWED_FORMATS" :key="id">
               {{ format }}
             </Badge>
           </div>
         </DialogDescription>
       </DialogHeader>
-      <div class="flex max-h-100 flex-wrap justify-center gap-3 overflow-auto p-2">
+      <div class="flex max-h-100 flex-wrap justify-center gap-3 overflow-y-auto p-2">
         <div
           v-for="(file, id) in selectedFiles"
           :key="id"
