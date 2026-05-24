@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { File } from '@prisma/client'
+import type { File } from '~~/shared/types/file'
 
 definePageMeta({
   middleware: ['auth', 'blocked']

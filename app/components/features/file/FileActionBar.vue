@@ -2,7 +2,7 @@
 import { filesize } from 'filesize'
 import { toast } from 'vue-sonner'
 
-import type { File } from '@prisma/client'
+import type { File } from '~~/shared/types/file'
 
 const { file } = defineProps<{ file: File }>()
 const { t } = useI18n()
