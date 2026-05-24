@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { File } from '~~/prisma/generated/client'
+import type { File } from '~~/shared/types/file'
 
 const props = defineProps<{ file: File }>()
 

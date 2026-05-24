@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { filesize } from 'filesize'
 
-import { Plan } from '@prisma/client'
-
 const props = defineProps<{ plan: StoragePlan }>()
 
 const { fetch } = useUserSession()
@@ -48,11 +46,11 @@ const changePlan = async (plan: StoragePlan) => {
     :class="[
       'flex flex-col justify-between rounded-2xl border-2 p-6',
       {
-        'border-zinc-200 dark:border-zinc-800': plan.value === Plan.FREE,
+        'border-zinc-200 dark:border-zinc-800': plan.value === 'FREE',
 
-        'border-violet-300 dark:border-violet-950': plan.value === Plan.PRO,
+        'border-violet-300 dark:border-violet-950': plan.value === 'PRO',
 
-        'border-yellow-300 dark:border-yellow-500': plan.value === Plan.PREMIUM
+        'border-yellow-300 dark:border-yellow-500': plan.value === 'PREMIUM'
       }
     ]"
   >
@@ -72,91 +70,93 @@ const changePlan = async (plan: StoragePlan) => {
       </div>
     </div>
 
-    <Dialog>
-      <DialogTrigger :disabled="storagePlan === plan.value || totalFileSizeInBytes > plan.storage">
-        <Button
-          variant="secondary"
-          :class="[
-            'mt-6 w-full',
-            {
-              'bg-zinc-800 text-gray-200': plan.value === Plan.FREE,
+    <ClientOnly>
+      <Dialog>
+        <DialogTrigger :disabled="storagePlan === plan.value || totalFileSizeInBytes > plan.storage">
+          <Button
+            variant="secondary"
+            :class="[
+              'mt-6 w-full',
+              {
+                'bg-zinc-800 text-gray-200': plan.value === 'FREE',
 
-              'bg-violet-400 text-gray-200 dark:bg-violet-900': plan.value === Plan.PRO,
+                'bg-violet-400 text-gray-200 dark:bg-violet-900': plan.value === 'PRO',
 
-              'bg-yellow-200 dark:bg-yellow-300/80': plan.value === Plan.PREMIUM
-            }
-          ]"
-          :disabled="storagePlan === plan.value || totalFileSizeInBytes > plan.storage"
-        >
-          {{ t(`domain.plan.actions.${getAction(storagePlan, plan.value)}`) }}
-        </Button>
-      </DialogTrigger>
+                'bg-yellow-200 dark:bg-yellow-300/80': plan.value === 'PREMIUM'
+              }
+            ]"
+            :disabled="storagePlan === plan.value || totalFileSizeInBytes > plan.storage"
+          >
+            {{ t(`domain.plan.actions.${getAction(storagePlan, plan.value)}`) }}
+          </Button>
+        </DialogTrigger>
 
-      <DialogContent class="bg-secondary sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle class="text-lg font-semibold">
-            {{ t('domain.plan.confirmTitle') }}
-          </DialogTitle>
+        <DialogContent class="bg-secondary sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle class="text-lg font-semibold">
+              {{ t('domain.plan.confirmTitle') }}
+            </DialogTitle>
 
-          <DialogDescription class="text-muted-foreground mt-2 text-sm">
-            {{
-              t('domain.plan.confirmDescription', {
-                plan: title
-              })
-            }}
-          </DialogDescription>
-        </DialogHeader>
+            <DialogDescription class="text-muted-foreground mt-2 text-sm">
+              {{
+                t('domain.plan.confirmDescription', {
+                  plan: title
+                })
+              }}
+            </DialogDescription>
+          </DialogHeader>
 
-        <div class="mt-6 flex flex-col gap-3 rounded-xl border bg-zinc-300 p-4 dark:bg-zinc-900">
-          <div class="flex items-center justify-between">
-            <span class="text-muted-foreground text-sm">
-              {{ t('domain.plan.labels.plan') }}
-            </span>
+          <div class="mt-6 flex flex-col gap-3 rounded-xl border bg-zinc-300 p-4 dark:bg-zinc-900">
+            <div class="flex items-center justify-between">
+              <span class="text-muted-foreground text-sm">
+                {{ t('domain.plan.labels.plan') }}
+              </span>
 
-            <span class="font-medium">
-              {{ title }}
-            </span>
+              <span class="font-medium">
+                {{ title }}
+              </span>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <span class="text-muted-foreground text-sm">
+                {{ t('domain.plan.labels.storage') }}
+              </span>
+
+              <span class="font-medium">
+                {{ filesize(plan.storage) }}
+              </span>
+            </div>
+
+            <div class="flex items-center justify-between border-t pt-3">
+              <span class="text-muted-foreground text-sm">
+                {{ t('domain.plan.labels.price') }}
+              </span>
+
+              <span class="text-xl font-bold">
+                {{ isUpgrade(storagePlan, plan.value) ? `${plan.price} ${plan.currency}` : t('domain.plan.freeLabel') }}
+              </span>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between">
-            <span class="text-muted-foreground text-sm">
-              {{ t('domain.plan.labels.storage') }}
-            </span>
+          <p class="text-muted-foreground mt-4 text-center text-sm">
+            {{ description }}
+          </p>
 
-            <span class="font-medium">
-              {{ filesize(plan.storage) }}
-            </span>
+          <div class="mt-6 flex justify-center gap-3">
+            <DialogClose as-child>
+              <Button variant="outline" class="flex-1">
+                {{ t('domain.plan.cancel') }}
+              </Button>
+            </DialogClose>
+
+            <DialogClose as-child>
+              <Button class="flex-1" @click="changePlan(plan)">
+                {{ plan.price === 0 ? t('domain.plan.change') : t('domain.plan.buy') }}
+              </Button>
+            </DialogClose>
           </div>
-
-          <div class="flex items-center justify-between border-t pt-3">
-            <span class="text-muted-foreground text-sm">
-              {{ t('domain.plan.labels.price') }}
-            </span>
-
-            <span class="text-xl font-bold">
-              {{ isUpgrade(storagePlan, plan.value) ? `${plan.price} ${plan.currency}` : t('domain.plan.freeLabel') }}
-            </span>
-          </div>
-        </div>
-
-        <p class="text-muted-foreground mt-4 text-center text-sm">
-          {{ description }}
-        </p>
-
-        <div class="mt-6 flex justify-center gap-3">
-          <DialogClose as-child>
-            <Button variant="outline" class="flex-1">
-              {{ t('domain.plan.cancel') }}
-            </Button>
-          </DialogClose>
-
-          <DialogClose as-child>
-            <Button class="flex-1" @click="changePlan(plan)">
-              {{ plan.price === 0 ? t('domain.plan.change') : t('domain.plan.buy') }}
-            </Button>
-          </DialogClose>
-        </div>
-      </DialogContent>
-    </Dialog>
+        </DialogContent>
+      </Dialog>
+    </ClientOnly>
   </div>
 </template>

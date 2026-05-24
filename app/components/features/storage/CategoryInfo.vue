@@ -10,7 +10,6 @@ const { getFileSizeByCategory, getFilesByCategory } = useStorage()
 
 const files = computed(() => getFilesByCategory(category))
 const fileSize = computed(() => getFileSizeByCategory(category))
-const categoryLabel = computed(() => t(`${category}`))
 
 const icon = computed(() => {
   if (category === 'audio') return 'lucide:file-audio'
@@ -42,7 +41,7 @@ const icon = computed(() => {
         }
       ]"
     />
-    <span class="hidden truncate capitalize sm:inline" variant="outline"> {{ categoryLabel }} : </span>
+    <span class="hidden truncate capitalize sm:inline" variant="outline"> {{ category }} : </span>
     <span class="font-bold">{{ files.length }}</span>
     <span class="hidden sm:inline">|</span>
     <span class="hidden truncate sm:inline">
