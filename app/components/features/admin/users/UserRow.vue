@@ -35,7 +35,6 @@ const handleClick = async () => {
   const prevState = { ...user }
 
   applyOptimisticUpdate()
-  close()
 
   try {
     if (activeAction.value === 'unblock') {
@@ -54,6 +53,7 @@ const handleClick = async () => {
     }
 
     executeUsers()
+    close()
   } catch (err) {
     localUser.value = prevState
     toast.error(t('notifications.error') || 'Something went wrong')

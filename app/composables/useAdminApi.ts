@@ -7,6 +7,7 @@ export const useAdminApi = (type: 'file' | 'user') => {
   }
 
   const block = async (id: string, reason: string) => {
+    console.log(111)
     return await $fetch(`/api/admin/${type}`, {
       method: 'PATCH',
       body: { id, reason, isBlocked: true }

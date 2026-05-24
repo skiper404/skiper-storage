@@ -38,25 +38,25 @@ const handleClick = async () => {
   const prevState = { ...file }
 
   applyOptimisticUpdate()
-  close()
 
   try {
     if (activeAction.value === 'unblock') {
-      unblock(id)
+      await unblock(id)
       toast.success(t('notifications.file.unblocked', { name: fileName }))
     }
 
     if (activeAction.value === 'block') {
-      block(id, selectedReason.value)
+      await block(id, selectedReason.value)
       toast.success(t('notifications.file.blocked', { name: fileName }))
     }
 
     if (activeAction.value === 'delete') {
-      remove(id, selectedReason.value)
+      await remove(id, selectedReason.value)
       toast.success(t('notifications.file.deleted', { name: fileName }))
     }
 
     executeFiles()
+    close()
   } catch (err) {
     localFile.value = prevState
     toast.error(t('notifications.error') || 'Something went wrong')

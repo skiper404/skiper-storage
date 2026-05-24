@@ -38,5 +38,7 @@ export default defineEventHandler(async event => {
     to: file.user.email
   })
 
+  console.log('delete file')
+
   return true
 })

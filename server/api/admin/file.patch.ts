@@ -18,5 +18,7 @@ export default defineEventHandler(async event => {
     to: file.user.email
   })
 
+  console.log(isBlocked ? `Skiper Storage | Block File` : `Skiper Storage | Unblock File`)
+
   return true
 })

@@ -16,5 +16,7 @@ export default defineEventHandler(async event => {
     to: user.email
   })
 
+  console.log('delete user')
+
   return true
 })
