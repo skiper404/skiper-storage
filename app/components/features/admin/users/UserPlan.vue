@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Plan } from '~~/prisma/generated/enums'
+import { Plan } from '@prisma/client'
 
 const props = defineProps<{ plan: Plan }>()
 </script>

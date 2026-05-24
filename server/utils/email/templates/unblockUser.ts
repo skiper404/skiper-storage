@@ -1,4 +1,4 @@
-import { User } from '~~/prisma/generated/client'
+import { User } from '@prisma/client'
 
 const config = useRuntimeConfig()
 

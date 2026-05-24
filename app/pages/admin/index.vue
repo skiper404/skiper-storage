@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-import DashboardTab from '../../components/features/admin/DashboardTab.vue'
-
 definePageMeta({
   middleware: 'admin',
   layout: 'default'

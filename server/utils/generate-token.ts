@@ -1,4 +1,6 @@
-import { TokenType, User } from '~~/prisma/generated/client'
+import { TokenType, User } from '@prisma/client'
+
+import { prisma } from '~~/server/utils/db-client'
 
 export const generateToken = async (type: TokenType, user: User) => {
   await prisma.token.deleteMany({

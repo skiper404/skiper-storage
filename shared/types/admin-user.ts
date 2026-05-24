@@ -1,4 +1,4 @@
-import type { Plan, Role } from '~~/prisma/generated/enums'
+import type { Plan, Role } from '@prisma/client'
 
 export interface AdminUser {
   id: string

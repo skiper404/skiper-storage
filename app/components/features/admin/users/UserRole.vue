@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Role } from '~~/prisma/generated/enums'
+import { Role } from '@prisma/client'
 
 const props = defineProps<{ role: Role }>()
 </script>

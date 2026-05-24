@@ -1,4 +1,4 @@
-import { Token } from '~~/prisma/generated/client'
+import { Token } from '@prisma/client'
 
 const config = useRuntimeConfig()
 

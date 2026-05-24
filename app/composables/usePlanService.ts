@@ -1,4 +1,4 @@
-import { Plan } from '~~/prisma/generated/enums'
+import { Plan } from '@prisma/client'
 
 export const usePlanService = () => {
   const { fetch } = useUserSession()

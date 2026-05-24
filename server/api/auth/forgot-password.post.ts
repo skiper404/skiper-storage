@@ -1,4 +1,5 @@
-import { TokenType } from '~~/prisma/generated/enums'
+import { TokenType } from '@prisma/client'
+
 import { resetPasswordTemplate } from '~~/server/utils/email/templates/resetPassword'
 import { generateToken } from '~~/server/utils/generate-token'
 import { forgotPasswordSchema } from '~~/shared/schemas/forgot-password-schema'

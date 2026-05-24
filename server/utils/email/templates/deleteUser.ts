@@ -1,4 +1,5 @@
-import { User } from '~~/prisma/generated/client'
+import { User } from '@prisma/client'
+
 import { blockReasonMap } from '~~/shared/data/block-reasons'
 
 export const deleteUserTemplate = (user: User, reasonKey: string) => {

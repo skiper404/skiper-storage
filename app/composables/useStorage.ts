@@ -1,5 +1,6 @@
-import { Plan } from '~~/prisma/generated/enums'
-import { GB, MB } from '~~/shared/constants'
+import { Plan } from '@prisma/client'
+
+import { MB } from '~~/shared/constants'
 
 export const useStorage = () => {
   const { user } = useUserSession()
@@ -15,24 +16,19 @@ export const useStorage = () => {
 
   const storagePlanLimit = computed(() => STORAGE_PLANS[storagePlan.value])
 
-  const totalFileSizeInBytes = computed(() =>
-    files.value.reduce((sum, file) => sum + file.size, 0)
-  )
+  const totalFileSizeInBytes = computed(() => files.value.reduce((sum, file) => sum + file.size, 0))
 
   const totalFileSizeInPercentage = computed(() =>
     Math.floor((totalFileSizeInBytes.value * 100) / storagePlanLimit.value)
   )
 
-  const remainingStorageSize = computed(
-    () => storagePlanLimit.value - totalFileSizeInBytes.value
-  )
+  const remainingStorageSize = computed(() => storagePlanLimit.value - totalFileSizeInBytes.value)
 
   const remainingStorageSizeInPercentage = computed(() =>
     Math.floor((remainingStorageSize.value * 100) / storagePlanLimit.value)
   )
 
-  const getFilesByCategory = (category: string) =>
-    files.value.filter(file => file.category === category)
+  const getFilesByCategory = (category: string) => files.value.filter(file => file.category === category)
 
   const getFileSizeByCategory = (category: string) =>
     getFilesByCategory(category).reduce((acc, file) => file.size + acc, 0)

@@ -1,4 +1,4 @@
-import type { Plan } from '~~/prisma/generated/enums'
+import type { Plan } from '@prisma/client'
 
 export interface StoragePlan {
   key: string

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { filesize } from 'filesize'
 
-import { Plan } from '~~/prisma/generated/enums'
+import { Plan } from '@prisma/client'
 
 const props = defineProps<{ plan: StoragePlan }>()
 
