@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { filesize } from 'filesize'
+import { Plan } from '~~/shared/types/plan-type'
 
 const props = defineProps<{ plan: StoragePlan }>()
 
@@ -46,11 +47,11 @@ const changePlan = async (plan: StoragePlan) => {
     :class="[
       'flex flex-col justify-between rounded-2xl border-2 p-6',
       {
-        'border-zinc-200 dark:border-zinc-800': plan.value === 'FREE',
+        'border-zinc-200 dark:border-zinc-800': plan.value === Plan.FREE,
 
-        'border-violet-300 dark:border-violet-950': plan.value === 'PRO',
+        'border-violet-300 dark:border-violet-950': plan.value === Plan.PRO,
 
-        'border-yellow-300 dark:border-yellow-500': plan.value === 'PREMIUM'
+        'border-yellow-300 dark:border-yellow-500': plan.value === Plan.PREMIUM
       }
     ]"
   >
@@ -78,11 +79,11 @@ const changePlan = async (plan: StoragePlan) => {
             :class="[
               'mt-6 w-full',
               {
-                'bg-zinc-800 text-gray-200': plan.value === 'FREE',
+                'bg-zinc-800 text-gray-200': plan.value === Plan.FREE,
 
-                'bg-violet-400 text-gray-200 dark:bg-violet-900': plan.value === 'PRO',
+                'bg-violet-400 text-gray-200 dark:bg-violet-900': plan.value === Plan.PRO,
 
-                'bg-yellow-200 dark:bg-yellow-300/80': plan.value === 'PREMIUM'
+                'bg-yellow-200 dark:bg-yellow-300/80': plan.value === Plan.PREMIUM
               }
             ]"
             :disabled="storagePlan === plan.value || totalFileSizeInBytes > plan.storage"

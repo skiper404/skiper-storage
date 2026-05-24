@@ -1,4 +1,4 @@
-import { Plan } from '@prisma/client'
+import { Plan } from '~~/shared/types/plan-type'
 
 export const usePlanService = () => {
   const { fetch } = useUserSession()

@@ -1,6 +1,5 @@
-import { Plan } from '@prisma/client'
-
 import { MB } from '~~/shared/constants'
+import { Plan } from '~~/shared/types/plan-type'
 
 export const useStorage = () => {
   const { user } = useUserSession()
