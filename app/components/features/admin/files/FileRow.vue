@@ -7,7 +7,7 @@ const localePath = useLocalePath()
 const props = defineProps<{ file: AdminFile }>()
 
 const { executeFiles } = useAdminFetchData()
-const { unblockFile, blockFile, deleteFile } = useAdminFileApi()
+const { unblock, block, remove } = useAdminApi('file')
 
 const { activeAction, setAction, selectedReason, close, title, description, isConfirmDisabled } =
   useAdminActions('file')
@@ -42,17 +42,17 @@ const handleClick = async () => {
 
   try {
     if (activeAction.value === 'unblock') {
-      unblockFile(id)
+      unblock(id)
       toast.success(t('notifications.file.unblocked', { name: fileName }))
     }
 
     if (activeAction.value === 'block') {
-      blockFile(id, selectedReason.value)
+      block(id, selectedReason.value)
       toast.success(t('notifications.file.blocked', { name: fileName }))
     }
 
     if (activeAction.value === 'delete') {
-      deleteFile(id, selectedReason.value)
+      remove(id, selectedReason.value)
       toast.success(t('notifications.file.deleted', { name: fileName }))
     }
 

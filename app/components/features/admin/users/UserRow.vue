@@ -6,7 +6,7 @@ const props = defineProps<{ user: AdminUser }>()
 const { t } = useI18n()
 const { executeUsers } = useAdminFetchData()
 
-const { unblockUser, blockUser, deleteUser } = useAdminUserApi()
+const { unblock, block, remove } = useAdminApi('user')
 
 const { activeAction, selectedReason, close, setAction, title, description, isConfirmDisabled } =
   useAdminActions('user')
@@ -39,17 +39,17 @@ const handleClick = async () => {
 
   try {
     if (activeAction.value === 'unblock') {
-      unblockUser(id)
+      await unblock(id)
       toast.success(t('notifications.user.unblocked', { name: username }))
     }
 
     if (activeAction.value === 'block') {
-      blockUser(id, selectedReason.value)
+      await block(id, selectedReason.value)
       toast.success(t('notifications.user.blocked', { name: username }))
     }
 
     if (activeAction.value === 'delete') {
-      deleteUser(id, selectedReason.value)
+      await remove(id, selectedReason.value)
       toast.success(t('notifications.user.deleted', { name: username }))
     }
 
