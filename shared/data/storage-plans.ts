@@ -1,7 +1,6 @@
-import { Plan } from '@prisma/client'
-
 import { MB } from '../constants'
 import type { StoragePlan } from '../types/storage-plan'
+import { Plan } from '~~/shared/types/plan-type'
 
 export const plans: StoragePlan[] = [
   {
