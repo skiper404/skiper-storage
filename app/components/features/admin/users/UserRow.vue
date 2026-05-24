@@ -2,47 +2,78 @@
 import { toast } from 'vue-sonner'
 
 const props = defineProps<{ user: AdminUser }>()
+
 const { t } = useI18n()
 const { executeUsers } = useAdminFetchData()
+
 const { unblockUser, blockUser, deleteUser } = useAdminUserApi()
+
 const { activeAction, selectedReason, close, setAction, title, description, isConfirmDisabled } =
   useAdminActions('user')
 
-const handleClick = async () => {
-  const username = props.user.username
+const localUser = ref({ ...props.user })
 
-  if (activeAction.value === 'unblock') {
-    unblockUser(props.user.id)
-    toast.success(t('notifications.user.unblocked', { name: username }))
+const applyOptimisticUpdate = () => {
+  if (activeAction.value === 'block') {
+    localUser.value.isBlocked = true
   }
 
-  if (activeAction.value === 'block') {
-    blockUser(props.user.id, selectedReason.value)
-    toast.success(t('notifications.user.blocked', { name: username }))
+  if (activeAction.value === 'unblock') {
+    localUser.value.isBlocked = false
   }
 
   if (activeAction.value === 'delete') {
-    deleteUser(props.user.id, selectedReason.value)
-    toast.success(t('notifications.user.deleted', { name: username }))
+    ;(localUser.value as any).isDeleted = true
   }
+}
+
+const handleClick = async () => {
+  const user = localUser.value
+  const username = user.username
+  const id = user.id
+
+  const prevState = { ...user }
+
+  applyOptimisticUpdate()
   close()
-  setTimeout(async () => await executeUsers(), 100)
+
+  try {
+    if (activeAction.value === 'unblock') {
+      unblockUser(id)
+      toast.success(t('notifications.user.unblocked', { name: username }))
+    }
+
+    if (activeAction.value === 'block') {
+      blockUser(id, selectedReason.value)
+      toast.success(t('notifications.user.blocked', { name: username }))
+    }
+
+    if (activeAction.value === 'delete') {
+      deleteUser(id, selectedReason.value)
+      toast.success(t('notifications.user.deleted', { name: username }))
+    }
+
+    executeUsers()
+  } catch (err) {
+    localUser.value = prevState
+    toast.error(t('notifications.error') || 'Something went wrong')
+  }
 }
 </script>
 
 <template>
   <div class="hover:bg-muted/40 flex items-center gap-2 py-2">
-    <UserInfo :user="user" />
+    <UserInfo :user="localUser" />
 
     <div class="ml-auto flex gap-1">
-      <UserStatus v-if="user.isBlocked" class="hidden sm:block" />
-      <UserRole :role="user.role" />
-      <UserPlan :plan="user.plan" />
-      <UserCountFiles :count="user._count.files" />
+      <UserStatus v-if="localUser.isBlocked" class="hidden sm:block" />
+      <UserRole :role="localUser.role" />
+      <UserPlan :plan="localUser.plan" />
+      <UserCountFiles :count="localUser._count.files" />
     </div>
 
     <Dialog :open="!!activeAction" @update:open="close">
-      <UserDropdownMenu :user="user" @set-action="setAction" />
+      <UserDropdownMenu :user="localUser" @set-action="setAction" />
 
       <DialogContent class="bg-secondary/20 border-white/10 backdrop-blur-2xl">
         <DialogHeader class="space-y-3">
@@ -52,8 +83,9 @@ const handleClick = async () => {
 
           <DialogDescription class="text-center text-sm leading-relaxed text-gray-400">
             {{ description }}
-
-            <span class="font-semibold break-all text-white">{{ user.username }}</span>
+            <span class="font-semibold break-all text-white">
+              {{ localUser.username }}
+            </span>
             ?
           </DialogDescription>
 
