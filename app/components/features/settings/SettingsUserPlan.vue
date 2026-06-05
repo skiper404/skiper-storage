@@ -50,7 +50,7 @@ const { totalFileSizeInBytes, storagePlanLimit, totalFileSizeInPercentage } = us
         <Progress :model-value="totalFileSizeInPercentage" />
       </div>
 
-      <NuxtLink :to="localePath('/plan')">
+      <NuxtLink :to="localePath('/dashboard/plan')">
         <Button
           class="w-full bg-linear-to-r from-violet-700 via-indigo-700 to-blue-900 text-zinc-200 hover:bg-linear-to-l"
         >
