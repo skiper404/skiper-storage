@@ -340,6 +340,97 @@
   },
 
   "pages": {
+    "home": {
+      "hero": {
+        "badge": "☁️ Modern Cloud Storage Platform",
+        "title_part_1": "Store your files with",
+        "title_highlight": "Skiper cloud Storage",
+        "description": "Modern SaaS file storage built with Nuxt 4, PostgreSQL and Cloudflare R2. Upload, organize and manage files with subscriptions, authentication and powerful admin tools.",
+
+        "buttons": {
+          "get_started": "Get Started",
+          "view_features": "View Features"
+        },
+
+        "features": {
+          "auth": "Secure Authentication",
+          "storage": "Cloudflare R2",
+          "db": "PostgreSQL",
+          "subscriptions": "Subscription Plans"
+        }
+      },
+
+      "features": {
+        "title": "Everything you need to manage files",
+        "description": "Production-ready cloud storage platform with secure authentication, subscriptions and administration tools.",
+
+        "items": {
+          "auth": {
+            "title": "Authentication",
+            "description": "Secure login, sessions and password protection."
+          },
+          "storage": {
+            "title": "Cloud Storage",
+            "description": "Upload images, videos and documents to cloud storage."
+          },
+          "files": {
+            "title": "File Management",
+            "description": "Preview, download and organize your files."
+          },
+          "roles": {
+            "title": "Role System",
+            "description": "Separate permissions for users and administrators."
+          },
+          "moderation": {
+            "title": "Moderation Tools",
+            "description": "Block users and files with moderation controls."
+          },
+          "subscriptions": {
+            "title": "Subscriptions",
+            "description": "Free, Pro and Premium plans with storage limits."
+          }
+        }
+      },
+
+      "stats": {
+        "items": {
+          "uptime": {
+            "label": "Uptime"
+          },
+          "plans": {
+            "label": "Subscription Plans"
+          },
+          "uploads": {
+            "label": "File Uploads"
+          },
+          "cloud": {
+            "label": "Cloud Based"
+          }
+        }
+      },
+
+      "pricing": {
+        "title": "Simple pricing",
+        "description": "Choose the plan that fits your needs.",
+
+        "popular": "Most Popular",
+
+        "price_suffix": "UAH",
+
+        "features": {
+          "storage": "Storage",
+          "uploads": "File uploads",
+          "account": "Account management"
+        }
+      },
+
+      "cta": {
+        "title": "Ready to store your files?",
+        "description": "Join Nuxt Storage and start managing your files securely in the cloud.",
+        "button": "Start for Free"
+      }
+    },
+
     "allFiles": {
       "title": "All Files",
       "description": "Manage and access all your uploaded files"

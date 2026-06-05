@@ -1,19 +1,25 @@
 <script setup lang="ts">
-const { appName } = useAppConfig()
-const { files, pending } = useFetchedFiles()
-const { t } = useI18n()
+const config = useRuntimeConfig()
 
-definePageMeta({ middleware: ['auth', 'blocked'], layout: 'default' })
-useHead({ title: `Home | ${appName}` })
+definePageMeta({
+  layout: 'guest'
+})
+
+useHead({ title: config.public.appName })
+
+const router = useRouter()
+
+router.beforeEach(to => {
+  console.log('going to:', to.fullPath)
+})
 </script>
 
 <template>
-  <div class="relative flex min-h-full flex-col">
-    <div class="sticky top-12 z-30 flex items-center justify-between backdrop-blur-sm">
-      <AppHeading :title="t('pages.allFiles.title')" :description="t('pages.allFiles.description')" />
-      <UploadButton v-if="files.length" />
-    </div>
-    <FilesList v-if="files.length" :files="files" />
-    <NoFiles v-if="!files.length && !pending" />
+  <div class="mt-16">
+    <AppHero />
+    <AppFeatures id="features" />
+    <AppStats />
+    <AppPricing />
+    <AppCTA />
   </div>
 </template>

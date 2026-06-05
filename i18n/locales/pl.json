@@ -340,6 +340,97 @@
   },
 
   "pages": {
+    "home": {
+      "hero": {
+        "badge": "☁️ Nowoczesna platforma chmurowego przechowywania plików",
+        "title_part_1": "Przechowuj swoje pliki z",
+        "title_highlight": "Skiper Cloud Storage",
+        "description": "Nowoczesne SaaS-owe przechowywanie plików stworzone w Nuxt 4, PostgreSQL i Cloudflare R2. Przesyłaj, organizuj i zarządzaj plikami z subskrypcjami, uwierzytelnianiem i zaawansowanym panelem administracyjnym.",
+
+        "buttons": {
+          "get_started": "Rozpocznij",
+          "view_features": "Zobacz funkcje"
+        },
+
+        "features": {
+          "auth": "Bezpieczne uwierzytelnianie",
+          "storage": "Cloudflare R2",
+          "db": "PostgreSQL",
+          "subscriptions": "Plany subskrypcji"
+        }
+      },
+
+      "features": {
+        "title": "Wszystko, czego potrzebujesz do zarządzania plikami",
+        "description": "Gotowa do produkcji platforma chmurowa z bezpiecznym uwierzytelnianiem, subskrypcjami i narzędziami administracyjnymi.",
+
+        "items": {
+          "auth": {
+            "title": "Uwierzytelnianie",
+            "description": "Bezpieczne logowanie, sesje i ochrona hasłem."
+          },
+          "storage": {
+            "title": "Chmura",
+            "description": "Przesyłanie obrazów, filmów i dokumentów do chmury."
+          },
+          "files": {
+            "title": "Zarządzanie plikami",
+            "description": "Podgląd, pobieranie i organizacja plików."
+          },
+          "roles": {
+            "title": "System ról",
+            "description": "Oddzielne uprawnienia dla użytkowników i administratorów."
+          },
+          "moderation": {
+            "title": "Narzędzia moderacji",
+            "description": "Blokowanie użytkowników i plików w panelu administracyjnym."
+          },
+          "subscriptions": {
+            "title": "Subskrypcje",
+            "description": "Darmowy, Pro i Premium plan z limitami pamięci."
+          }
+        }
+      },
+
+      "stats": {
+        "items": {
+          "uptime": {
+            "label": "Dostępność"
+          },
+          "plans": {
+            "label": "Plany subskrypcji"
+          },
+          "uploads": {
+            "label": "Przesyłanie plików"
+          },
+          "cloud": {
+            "label": "Chmura"
+          }
+        }
+      },
+
+      "pricing": {
+        "title": "Proste ceny",
+        "description": "Wybierz plan, który najlepiej Ci odpowiada.",
+
+        "popular": "Najpopularniejszy",
+
+        "price_suffix": "UAH",
+
+        "features": {
+          "storage": "Pojemność",
+          "uploads": "Przesyłanie plików",
+          "account": "Zarządzanie kontem"
+        }
+      },
+
+      "cta": {
+        "title": "Gotowy, aby przechowywać swoje pliki?",
+        "description": "Dołącz do Nuxt Storage i zacznij bezpiecznie zarządzać plikami w chmurze.",
+        "button": "Zacznij za darmo"
+      }
+    },
+
     "allFiles": {
       "title": "Wszystkie pliki",
       "description": "Zarządzaj i przeglądaj swoje pliki"

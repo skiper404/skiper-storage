@@ -6,6 +6,10 @@ definePageMeta({
   layout: 'default'
 })
 
+const config = useRuntimeConfig()
+
+useHead({ title: `Audios | ${config.public.appName}` })
+
 const { t } = useI18n()
 const { adminFiles, adminUsers } = useAdminFetchData()
 

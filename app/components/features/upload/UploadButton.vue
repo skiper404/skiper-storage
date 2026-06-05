@@ -30,7 +30,7 @@ const startUpload = async () => {
   try {
     await upload()
     await execute()
-    await navigateTo(localePath('/'))
+    await navigateTo(localePath('/dashboard'))
   } catch (e: any) {
     toast.error(e.message)
   } finally {

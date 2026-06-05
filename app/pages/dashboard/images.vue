@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const { appName } = useAppConfig()
+const config = useRuntimeConfig()
 const { files: images, pending } = useFetchedFiles('image')
 definePageMeta({ middleware: ['auth', 'blocked'], layout: 'default' })
-useHead({ title: `Images | ${appName}` })
+useHead({ title: `Images | ${config.public.appName}` })
 </script>
 
 <template>

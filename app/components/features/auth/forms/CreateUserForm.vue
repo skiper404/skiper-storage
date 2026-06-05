@@ -20,7 +20,7 @@ const onSubmit = handleSubmit(async data => {
       method: 'POST',
       body: data
     })
-    await navigateTo('/')
+    await navigateTo('/dashboard')
   } catch (e: any) {
     setErrors({email: e.data.message})
   }

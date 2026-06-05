@@ -4,6 +4,9 @@ definePageMeta({ middleware: ['auth', 'blocked'] })
 const { t } = useI18n()
 const { user, fetch } = useUserSession()
 
+const config = useRuntimeConfig()
+useHead({ title: `Success | ${config.public.appName}` })
+
 onMounted(async () => {
   await $fetch('/api/user/refresh-user')
   await fetch()

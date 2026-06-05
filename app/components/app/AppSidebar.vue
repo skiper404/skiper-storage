@@ -6,44 +6,44 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
 const { user } = useUserSession()
-const { toggleSidebar, open } = useSidebar()
+const { toggleSidebar } = useSidebar()
 const isMobile = useMediaQuery('(max-width: 768px)')
 
 const items = computed(() => {
   const baseItems = [
     {
       key: 'allFiles',
-      path: '/',
+      path: '/dashboard',
       icon: Home,
       color: 'text-violet-500'
     },
     {
       key: 'images',
-      path: '/images',
+      path: '/dashboard/images',
       icon: FileImageIcon,
       color: 'text-indigo-500'
     },
     {
       key: 'audios',
-      path: '/audios',
+      path: '/dashboard/audios',
       icon: FileMusic,
       color: 'text-blue-500'
     },
     {
       key: 'videos',
-      path: '/videos',
+      path: '/dashboard/videos',
       icon: FileVideo2Icon,
       color: 'text-sky-500'
     },
     {
       key: 'plan',
-      path: '/plan',
+      path: '/dashboard/plan',
       icon: BadgeDollarSign,
       color: 'text-blue-400'
     },
     {
       key: 'settings',
-      path: '/settings',
+      path: '/dashboard/settings',
       icon: Settings,
       color: 'text-indigo-400'
     }
@@ -52,7 +52,7 @@ const items = computed(() => {
   if (user.value?.role === 'ADMIN') {
     baseItems.push({
       key: 'admin',
-      path: '/admin',
+      path: '/dashboard/admin',
       icon: Shield,
       color: 'text-indigo-400'
     })

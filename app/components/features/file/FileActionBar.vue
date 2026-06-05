@@ -17,7 +17,7 @@ const deleteFile = async () => {
         name: file.fileName
       })
     )
-    return navigateTo('/')
+    return navigateTo('/dashboard')
   } catch (e: any) {
     toast.error(e.message)
   }

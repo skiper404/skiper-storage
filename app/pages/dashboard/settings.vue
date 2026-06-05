@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const { appName } = useAppConfig()
+const config = useRuntimeConfig()
 definePageMeta({ middleware: ['auth', 'blocked'], layout: 'default' })
-useHead({ title: `Settings | ${appName}` })
+useHead({ title: `Settings | ${config.public.appName}` })
 </script>
 
 <template>

@@ -5,7 +5,7 @@ const { user, clear } = useUserSession()
 
 const handleSignOut = async () => {
   await clear()
-  await navigateTo('/auth/login')
+  await navigateTo('/')
 }
 </script>
 

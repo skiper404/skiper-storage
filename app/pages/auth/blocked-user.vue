@@ -3,7 +3,10 @@ definePageMeta({
   layout: 'guest'
 })
 
-const { t, tm } = useI18n()
+const config = useRuntimeConfig()
+useHead({ title: `Blocked user | ${config.public.appName}` })
+
+const { t } = useI18n()
 const { clear } = useUserSession()
 
 const items = [

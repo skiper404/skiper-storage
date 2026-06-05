@@ -19,7 +19,7 @@ export default defineOAuthGoogleEventHandler({
 
     if (account) {
       await setSession(event, account.user)
-      return sendRedirect(event, '/')
+      return sendRedirect(event, '/dashboard')
     }
 
     const existingUser = user.email
@@ -34,7 +34,7 @@ export default defineOAuthGoogleEventHandler({
       })
 
       await setSession(event, existingUser)
-      return sendRedirect(event, '/')
+      return sendRedirect(event, '/dashboard')
     }
 
     const newUser = await prisma.user.create({
@@ -47,6 +47,6 @@ export default defineOAuthGoogleEventHandler({
     })
 
     await setSession(event, newUser)
-    return sendRedirect(event, '/')
+    return sendRedirect(event, '/dashboard')
   }
 })

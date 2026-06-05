@@ -6,7 +6,6 @@ import 'vue-sonner/style.css'
   <div class="h-dvh">
     <TooltipProvider>
       <SidebarProvider storage-key="sidebar">
-        <AppHeader />
         <NuxtLayout>
           <NuxtPage />
         </NuxtLayout>

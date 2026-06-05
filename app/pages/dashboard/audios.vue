@@ -1,9 +1,10 @@
 <script setup lang="ts">
-const { appName } = useAppConfig()
-const { files: audios, pending } = useFetchedFiles('audio')
-definePageMeta({ middleware: ['auth', 'blocked'], layout: 'default' })
-useHead({ title: `Audios | ${appName}` })
 const { t } = useI18n()
+const config = useRuntimeConfig()
+const { files: audios, pending } = useFetchedFiles('audio')
+
+definePageMeta({ middleware: ['auth', 'blocked'], layout: 'default' })
+useHead({ title: `Audios | ${config.public.appName}` })
 </script>
 
 <template>

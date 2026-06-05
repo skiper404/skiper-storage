@@ -1,12 +1,11 @@
 <script setup lang="ts">
 const { user } = useUserSession()
 const localePath = useLocalePath()
-const { t } = useI18n()
 </script>
 
 <template>
   <Tooltip>
-    <NuxtLink :to="localePath('/settings')">
+    <NuxtLink :to="localePath('/dashboard/settings')">
       <TooltipTrigger as-child>
         <Avatar v-if="user">
           <AvatarImage v-if="user.image" :src="user.image" />

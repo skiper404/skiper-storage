@@ -3,7 +3,7 @@ export default defineNuxtRouteMiddleware(async to => {
 
   await fetch()
 
-  if (loggedIn.value && to.path !== '/') {
-    return navigateTo('/')
+  if (loggedIn.value) {
+    return navigateTo('/dashboard')
   }
 })

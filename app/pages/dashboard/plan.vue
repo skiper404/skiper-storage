@@ -2,10 +2,10 @@
 import { plans } from '~~/shared/data/storage-plans'
 
 const { t } = useI18n()
-const { appName } = useAppConfig()
+const config = useRuntimeConfig()
 
 definePageMeta({ middleware: ['auth', 'blocked'], layout: 'default' })
-useHead({ title: `Storage Plan | ${appName}` })
+useHead({ title: `Storage Plan | ${config.public.appName}` })
 </script>
 
 <template>

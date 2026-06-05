@@ -1,8 +1,8 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'guest', middleware: 'guest' })
 
-const { appName } = useAppConfig()
-useHead({ title: `Create user | ${appName}` })
+const config = useRuntimeConfig()
+useHead({ title: `Create user | ${config.public.appName}` })
 </script>
 
 <template>

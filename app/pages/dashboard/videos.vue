@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const { appName } = useAppConfig()
+const config = useRuntimeConfig()
 const { files: videos, pending } = useFetchedFiles('video')
 definePageMeta({ middleware: ['auth', 'blocked'], layout: 'default' })
-useHead({ title: `Videos | ${appName}` })
+useHead({ title: `Videos | ${config.public.appName}` })
 const { t } = useI18n()
 </script>
 

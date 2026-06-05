@@ -294,6 +294,97 @@
     }
   },
   "pages": {
+    "home": {
+      "hero": {
+        "badge": "☁️ Plateforme moderne de stockage cloud",
+        "title_part_1": "Stockez vos fichiers avec",
+        "title_highlight": "Skiper Cloud Storage",
+        "description": "Plateforme SaaS moderne de stockage de fichiers construite avec Nuxt 4, PostgreSQL et Cloudflare R2. Téléversez, organisez et gérez vos fichiers avec des abonnements, une authentification et des outils d'administration puissants.",
+
+        "buttons": {
+          "get_started": "Commencer",
+          "view_features": "Voir les fonctionnalités"
+        },
+
+        "features": {
+          "auth": "Authentification sécurisée",
+          "storage": "Cloudflare R2",
+          "db": "PostgreSQL",
+          "subscriptions": "Plans d'abonnement"
+        }
+      },
+
+      "features": {
+        "title": "Tout ce dont vous avez besoin pour gérer vos fichiers",
+        "description": "Plateforme de stockage cloud prête pour la production avec authentification sécurisée, abonnements et outils d'administration.",
+
+        "items": {
+          "auth": {
+            "title": "Authentification",
+            "description": "Connexion sécurisée, sessions et protection par mot de passe."
+          },
+          "storage": {
+            "title": "Stockage cloud",
+            "description": "Téléversez des images, vidéos et documents dans le cloud."
+          },
+          "files": {
+            "title": "Gestion des fichiers",
+            "description": "Prévisualisation, téléchargement et organisation des fichiers."
+          },
+          "roles": {
+            "title": "Système de rôles",
+            "description": "Permissions séparées pour les utilisateurs et les administrateurs."
+          },
+          "moderation": {
+            "title": "Outils de modération",
+            "description": "Blocage des utilisateurs et des fichiers depuis le panneau d'administration."
+          },
+          "subscriptions": {
+            "title": "Abonnements",
+            "description": "Plans Gratuit, Pro et Premium avec limites de stockage."
+          }
+        }
+      },
+
+      "stats": {
+        "items": {
+          "uptime": {
+            "label": "Disponibilité"
+          },
+          "plans": {
+            "label": "Plans d'abonnement"
+          },
+          "uploads": {
+            "label": "Téléversements"
+          },
+          "cloud": {
+            "label": "Basé sur le cloud"
+          }
+        }
+      },
+
+      "pricing": {
+        "title": "Tarifs simples",
+        "description": "Choisissez le plan qui vous convient le mieux.",
+
+        "popular": "Le plus populaire",
+
+        "price_suffix": "UAH",
+
+        "features": {
+          "storage": "Stockage",
+          "uploads": "Téléversement de fichiers",
+          "account": "Gestion du compte"
+        }
+      },
+
+      "cta": {
+        "title": "Prêt à stocker vos fichiers ?",
+        "description": "Rejoignez Nuxt Storage et commencez à gérer vos fichiers en toute sécurité dans le cloud.",
+        "button": "Commencer gratuitement"
+      }
+    },
+
     "allFiles": {
       "title": "Tous les fichiers",
       "description": "Gérez et accédez à tous vos fichiers téléversés"

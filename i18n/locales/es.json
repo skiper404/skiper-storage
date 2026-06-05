@@ -294,6 +294,97 @@
     }
   },
   "pages": {
+    "home": {
+      "hero": {
+        "badge": "☁️ Plataforma moderna de almacenamiento en la nube",
+        "title_part_1": "Guarda tus archivos con",
+        "title_highlight": "Skiper Cloud Storage",
+        "description": "Plataforma SaaS moderna de almacenamiento de archivos creada con Nuxt 4, PostgreSQL y Cloudflare R2. Sube, organiza y gestiona archivos con suscripciones, autenticación y potentes herramientas de administración.",
+
+        "buttons": {
+          "get_started": "Comenzar",
+          "view_features": "Ver características"
+        },
+
+        "features": {
+          "auth": "Autenticación segura",
+          "storage": "Cloudflare R2",
+          "db": "PostgreSQL",
+          "subscriptions": "Planes de suscripción"
+        }
+      },
+
+      "features": {
+        "title": "Todo lo que necesitas para gestionar archivos",
+        "description": "Plataforma de almacenamiento en la nube lista para producción con autenticación segura, suscripciones y herramientas de administración.",
+
+        "items": {
+          "auth": {
+            "title": "Autenticación",
+            "description": "Inicio de sesión seguro, sesiones y protección por contraseña."
+          },
+          "storage": {
+            "title": "Almacenamiento en la nube",
+            "description": "Sube imágenes, videos y documentos a la nube."
+          },
+          "files": {
+            "title": "Gestión de archivos",
+            "description": "Vista previa, descarga y organización de archivos."
+          },
+          "roles": {
+            "title": "Sistema de roles",
+            "description": "Permisos separados para usuarios y administradores."
+          },
+          "moderation": {
+            "title": "Herramientas de moderación",
+            "description": "Bloqueo de usuarios y archivos desde el panel de administración."
+          },
+          "subscriptions": {
+            "title": "Suscripciones",
+            "description": "Planes Gratis, Pro y Premium con límites de almacenamiento."
+          }
+        }
+      },
+
+      "stats": {
+        "items": {
+          "uptime": {
+            "label": "Disponibilidad"
+          },
+          "plans": {
+            "label": "Planes de suscripción"
+          },
+          "uploads": {
+            "label": "Subidas de archivos"
+          },
+          "cloud": {
+            "label": "Basado en la nube"
+          }
+        }
+      },
+
+      "pricing": {
+        "title": "Precios simples",
+        "description": "Elige el plan que mejor se adapte a tus necesidades.",
+
+        "popular": "Más popular",
+
+        "price_suffix": "UAH",
+
+        "features": {
+          "storage": "Almacenamiento",
+          "uploads": "Subida de archivos",
+          "account": "Gestión de cuenta"
+        }
+      },
+
+      "cta": {
+        "title": "¿Listo para almacenar tus archivos?",
+        "description": "Únete a Nuxt Storage y empieza a gestionar tus archivos de forma segura en la nube.",
+        "button": "Empezar gratis"
+      }
+    },
+
     "allFiles": {
       "title": "Todos los archivos",
       "description": "Gestiona y accede a todos tus archivos subidos"

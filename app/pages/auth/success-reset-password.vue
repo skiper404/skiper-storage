@@ -1,6 +1,10 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'guest', middleware: 'guest' })
 const { t } = useI18n()
+
+const config = useRuntimeConfig()
+useHead({ title: `Reset password | ${config.public.appName}` })
+
 </script>
 
 <template>
