@@ -65,9 +65,11 @@ const scrollToFeatures = () => {
       </div>
 
       <Card class="mt-20 w-full max-w-6xl">
-        <CardContent class="p-0">
-          <NuxtImg :src="theme.value === 'dark' ? '/preview-dark.png' : '/preview-light.png'" alt="preview" />
-        </CardContent>
+        <NuxtImg
+          :src="theme.preference === 'dark' ? '/preview-dark.png' : '/preview-light.png'"
+          alt="preview"
+          class="w-full"
+        />
       </Card>
     </div>
   </section>
