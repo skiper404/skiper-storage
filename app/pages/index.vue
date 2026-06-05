@@ -6,12 +6,6 @@ definePageMeta({
 })
 
 useHead({ title: config.public.appName })
-
-const router = useRouter()
-
-router.beforeEach(to => {
-  console.log('going to:', to.fullPath)
-})
 </script>
 
 <template>
