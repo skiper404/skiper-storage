@@ -6,6 +6,7 @@ import type { File } from '~~/shared/types/file'
 
 const { file } = defineProps<{ file: File }>()
 const { t } = useI18n()
+const localePath = useLocalePath()
 const { execute } = useFetchedFiles()
 
 const deleteFile = async () => {
@@ -17,7 +18,7 @@ const deleteFile = async () => {
         name: file.fileName
       })
     )
-    return navigateTo('/dashboard')
+    return navigateTo(localePath('/dashboard'))
   } catch (e: any) {
     toast.error(e.message)
   }

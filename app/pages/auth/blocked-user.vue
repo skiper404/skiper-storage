@@ -7,6 +7,7 @@ const config = useRuntimeConfig()
 useHead({ title: `Blocked user | ${config.public.appName}` })
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 const { clear } = useUserSession()
 
 const items = [
@@ -17,7 +18,7 @@ const items = [
 
 const handleLogout = async () => {
   await clear()
-  await navigateTo('/auth/login-user')
+  await navigateTo(localePath('/auth/login-user'))
 }
 </script>
 
