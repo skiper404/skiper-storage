@@ -4,6 +4,7 @@ import { useForm, Field as VeeField } from 'vee-validate'
 import {createUserSchema} from '~~/shared/schemas/create-users-schema'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 const { handleSubmit, setErrors } = useForm({
   validationSchema: toTypedSchema(createUserSchema),
@@ -20,7 +21,7 @@ const onSubmit = handleSubmit(async data => {
       method: 'POST',
       body: data
     })
-    await navigateTo('/dashboard')
+    await navigateTo(localePath('/dashboard'))
   } catch (e: any) {
     setErrors({email: e.data.message})
   }
@@ -108,7 +109,7 @@ const onSubmit = handleSubmit(async data => {
       <Field class="mt-4 text-center text-xs">
         <span class="text-xs">{{ t('features.auth.create.haveAccount') }}</span>
 
-        <NuxtLink to="/auth/login-user" class="hover:underline text-gray-500">
+        <NuxtLink :to="localePath('/auth/login-user')" class="hover:underline text-gray-500">
           {{ t('features.auth.create.login') }}
         </NuxtLink>
       </Field>

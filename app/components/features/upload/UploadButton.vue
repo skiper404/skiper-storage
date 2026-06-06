@@ -92,7 +92,11 @@ const startUpload = async () => {
             <Icon name="lucide:file-music" size="50" />
           </div>
 
-          <img v-if="isMatchType(file, FileType.IMAGE)" :src="file.preview" class="size-18 rounded-2xl object-cover" />
+          <NuxtImg
+            v-if="isMatchType(file, FileType.IMAGE)"
+            :src="file.preview"
+            class="size-18 rounded-2xl object-cover"
+          />
 
           <video
             v-if="isMatchType(file, FileType.VIDEO)"

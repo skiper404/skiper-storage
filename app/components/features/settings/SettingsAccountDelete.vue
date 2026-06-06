@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { toast } from 'vue-sonner'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 const { clear } = useUserSession()
 
 const isDeleting = ref(false)
@@ -18,7 +19,8 @@ const deleteAccount = async () => {
 
     toast.success(t('notifications.user.deleted'))
     await clear()
-    await navigateTo('/auth/login-user')
+
+    await navigateTo(localePath('/auth/login-user'))
   } finally {
     isDeleting.value = false
     open.value = false

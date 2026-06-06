@@ -1,11 +1,12 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 const { user, clear } = useUserSession()
 
 const handleSignOut = async () => {
   await clear()
-  await navigateTo('/')
+  await navigateTo(localePath('/'))
 }
 </script>
 

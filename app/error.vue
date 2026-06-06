@@ -1,11 +1,9 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const localePath = useLocalePath()
-const { appName } = useAppConfig()
+const config = useRuntimeConfig()
 
-useHead({ title: `Not found | ${appName}` })
-
-const error = useError()
+useHead({ title: `Not found | ${config.public.appName}` })
 </script>
 
 <template>
@@ -18,7 +16,7 @@ const error = useError()
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
-        <NuxtLink :to="localePath('/')">
+        <NuxtLink :to="localePath('/dashboard')">
           <Button variant="secondary">{{ t('ui.notFound.button') }}</Button>
         </NuxtLink>
       </EmptyContent>

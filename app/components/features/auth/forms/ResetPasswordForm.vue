@@ -14,6 +14,7 @@ const { handleSubmit, setErrors } = useForm({
 
 const { t } = useI18n()
 const route = useRoute()
+const localePath = useLocalePath()
 
 const onSubmit = handleSubmit(async data => {
   try {
@@ -21,10 +22,8 @@ const onSubmit = handleSubmit(async data => {
       method: 'POST',
       body: { ...data, token: route.query.token }
     })
-    await navigateTo('/auth/success-reset-password')
+    await navigateTo(localePath('/auth/success-reset-password'))
   } catch (e: any) {
-    console.log(e)
-
     setErrors({ password: e.data.message })
   }
 })
@@ -87,7 +86,7 @@ const onSubmit = handleSubmit(async data => {
       <Field class="mt-4 text-center text-xs">
         <span class="text-xs">{{ t('features.auth.login.noAccount') }}</span>
 
-        <NuxtLink to="/auth/login-user" class="text-gray-500 hover:underline">
+        <NuxtLink :to="localePath('/auth/login-user')" class="text-gray-500 hover:underline">
           {{ t('features.auth.login.createAccount') }}
         </NuxtLink>
       </Field>

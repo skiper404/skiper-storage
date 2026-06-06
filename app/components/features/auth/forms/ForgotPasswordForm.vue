@@ -5,6 +5,7 @@ import { useForm, Field as VeeField } from 'vee-validate'
 import { forgotPasswordSchema } from '~~/shared/schemas/forgot-password-schema'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 const { handleSubmit, setErrors } = useForm({
   validationSchema: toTypedSchema(forgotPasswordSchema),
@@ -19,7 +20,7 @@ const onSubmit = handleSubmit(async data => {
       method: 'POST',
       body: data
     })
-    await navigateTo('/auth/check-email')
+    await navigateTo(localePath('/auth/check-email'))
   } catch (e: any) {
     setErrors({ email: e.data.message })
   }
@@ -64,7 +65,7 @@ const onSubmit = handleSubmit(async data => {
       <Field class="mt-4 text-center text-xs">
         <span class="text-xs">{{ t('features.auth.login.noAccount') }}</span>
 
-        <NuxtLink to="/auth/create-user" class="text-gray-500 hover:underline">
+        <NuxtLink :to="localePath('/auth/create-user')" class="text-gray-500 hover:underline">
           {{ t('features.auth.login.createAccount') }}
         </NuxtLink>
       </Field>

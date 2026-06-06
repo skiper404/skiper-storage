@@ -9,6 +9,8 @@ const scrollToFeatures = () => {
     behavior: 'smooth'
   })
 }
+
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -31,7 +33,7 @@ const scrollToFeatures = () => {
       </p>
 
       <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <NuxtLink href="/auth/login-user">
+        <NuxtLink :href="localePath('/auth/login-user')">
           <Button size="lg">
             {{ t('pages.home.hero.buttons.get_started') }}
           </Button>

@@ -4,6 +4,8 @@ import type { File } from '~~/shared/types/file'
 const props = defineProps<{ file: File }>()
 
 const { data } = await useFetch<{ url: string }>(`/api/files/${props.file.id}/url`)
+
+const src = computed(() => data.value?.url || '')
 </script>
 
 <template>
@@ -20,6 +22,6 @@ const { data } = await useFetch<{ url: string }>(`/api/files/${props.file.id}/ur
       <Icon name="lucide:file-music" size="300" />
     </div>
 
-    <audio :src="data?.url" controls class="w-full overflow-hidden rounded-2xl bg-gray-500"></audio>
+    <audio :src="src" controls class="w-full overflow-hidden rounded-2xl bg-gray-500"></audio>
   </div>
 </template>

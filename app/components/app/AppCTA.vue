@@ -2,6 +2,7 @@
 import { Upload } from 'lucide-vue-next'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -18,7 +19,7 @@ const { t } = useI18n()
           {{ t('pages.home.cta.description') }}
         </p>
 
-        <NuxtLink href="/auth/login-user">
+        <NuxtLink :href="localePath('/auth/login-user')">
           <Button size="lg" class="mt-8">
             {{ t('pages.home.cta.button') }}
           </Button>
